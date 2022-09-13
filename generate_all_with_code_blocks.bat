@@ -27,6 +27,9 @@ REM 	Détails des modifications : 	Ce deuxième paramètre décale par conséque
 REM 	Version de ce script :			1.1.0 ->  "Version majeure" . "Version mineure" . "niveau de patch"
 REM
 REM ---------------------------------------------------------------------------------------------------
+
+REM         ATTENTION, à date (septembre 2022), je n'ai pas encore réussi à procéder à cette génération "en mode batch" avec succés.
+REM         Je conseille donc d'utiliser directement l'interface de l'IDE CB pour obtenir les générations souhaitées. To investigate !
   
 if [%1]==[] goto usage
 if [%2]==[] goto usage
