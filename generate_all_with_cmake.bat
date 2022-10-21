@@ -62,10 +62,14 @@ del /Q makefile_Borland.mak
 copy build.cmake\BC55\makefile_Borland.mak *.*
 make -DCFG=Debug -DNAME_APPLI=%NAME_APPLI% /f MakeFile_Borland.mak 
 move /Y *.exe binBC55\Debug\
+move /Y *.map binBC55\Debug\
+move /Y *.tds binBC55\Debug\
 move /Y *.obj objBC55\Debug\
 move /Y *.res objBC55\Debug\
 make -DCFG=Release -DNAME_APPLI=%NAME_APPLI% /f MakeFile_Borland.mak 
 move /Y *.exe binBC55\Release\
+move /Y *.map binBC55\Release\
+move /Y *.tds binBC55\Release\
 move /Y *.obj objBC55\Release\
 move /Y *.res objBC55\Release\
 cd %SOURCE_DIR%
@@ -257,8 +261,6 @@ REM             Génération cmake pour NMAKE en version 32 BITS
 :NMAKEX32 
 SET PATH=C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\bin\Hostx86\x86;C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\bin\%KIT_WIN_NUM%\x86;%PATH%
 SET PATH=C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\Msbuild\Current\Bin;%PATH%
-set INCSAV=""
-set LIBSAV=""
 set INCLUDE="C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\Include\%KIT_WIN_NUM%\shared";"C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\Include\%KIT_WIN_NUM%\ucrt";"C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\Include\%KIT_WIN_NUM%\um";"C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\include"
 set LIB="C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\Lib\%KIT_WIN_NUM%\ucrt\x86";"C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\Lib\%KIT_WIN_NUM%\um\x86";"C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\lib\x86";"C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\lib\x86\store"
 del /Q CMAKELists.txt
@@ -270,8 +272,8 @@ nmake /f Makefile
 cd ..
 cd Release
 nmake /f Makefile
-set INCLUDE=%INCSAV%
-set LIB=%LIBSAV%
+set INCLUDE=
+set LIB=
 cd %SOURCE_DIR%
 SET PATH=%PATHSAV%
 IF "%3" NEQ "" GOTO FIN
@@ -280,8 +282,6 @@ REM             Génération cmake pour NMAKE en version 64 BITS
 :NMAKEX64 
 SET PATH=C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\bin\Hostx64\x64;C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\bin\%KIT_WIN_NUM%\x64;%PATH%
 SET PATH=C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\Msbuild\Current\Bin\amd64;%PATH%
-set INCSAV=""
-set LIBSAV=""
 set INCLUDE="C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\Include\%KIT_WIN_NUM%\shared";"C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\Include\%KIT_WIN_NUM%\ucrt";"C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\Include\%KIT_WIN_NUM%\um";"C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\include"
 set LIB="C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\Lib\%KIT_WIN_NUM%\ucrt\x64";"C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\Lib\%KIT_WIN_NUM%\um\x64";"C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\lib\x64";"C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\lib\x64\store"
 del /Q CMAKELists.txt
@@ -293,8 +293,8 @@ nmake /f Makefile
 cd ..
 cd Release
 nmake /f Makefile
-set INCLUDE=%INCSAV%
-set LIB=%LIBSAV%
+set INCLUDE=
+set LIB=
 cd %SOURCE_DIR%
 SET PATH=%PATHSAV%
 IF "%3" NEQ "" GOTO FIN
@@ -340,9 +340,9 @@ IF "%3" NEQ "" GOTO FIN
 REM             Génération cmake pour CLANG en version 32 BITS adossé à Visual Studio 2022 
 :CLANGX32 
 SET PATH=C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\bin\Hostx86\x86;C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\bin\%KIT_WIN_NUM%\x86;%PATH%
-SET PATH=C:\Program Files (x86)\LLVM\bin;C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\Msbuild\Current\Bin;%PATH%
-setx INCLUDE "C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\Include\%KIT_WIN_NUM%\shared";"C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\Include\%KIT_WIN_NUM%\ucrt";"C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\Include\%KIT_WIN_NUM%\um";"C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\include"
-setx LIB "C:\Program Files (x86)\LLVM\lib\clang\%CLANG_VERSION%\lib\windows";"C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\Lib\%KIT_WIN_NUM%\ucrt\x86";"C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\Lib\%KIT_WIN_NUM%\um\x86";"C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\lib\x86";"C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\lib\x86\store"
+SET PATH=%LLVM%\bin;C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\Msbuild\Current\Bin;%PATH%
+setx INCLUDE "%LLVM%\lib\clang\%CLANG_VERSION%\include";"C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\Include\%KIT_WIN_NUM%\shared";"C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\Include\%KIT_WIN_NUM%\ucrt";"C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\Include\%KIT_WIN_NUM%\um";"C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\include"
+setx LIB "%LLVM%\lib\clang\%CLANG_VERSION%\lib\windows";"C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\Lib\%KIT_WIN_NUM%\ucrt\x86";"C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\Lib\%KIT_WIN_NUM%\um\x86";"C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\lib\x86";"C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\lib\x86\store"
 del /Q CMAKELists.txt
 copy build.cmake\CLANGX32\CMAKELists.txt *.*
 cmake --fresh -G "NMake Makefiles" -B build.cmake/CLANGX32/Debug -DCMAKE_BUILD_TYPE="Debug" -DNAME_APPLI=%NAME_APPLI% .
@@ -363,9 +363,9 @@ IF "%3" NEQ "" GOTO FIN
 REM             Génération cmake pour CLANG en version 64 BITS adossé à Visual Studio 2022 
 :CLANGX64 
 SET PATH=C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\bin\Hostx64\x64;C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\bin\%KIT_WIN_NUM%\x64;%PATH%
-SET PATH=C:\Program Files\LLVM\bin;C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\Msbuild\Current\Bin\amd64;%PATH%
-setx INCLUDE "C:\Program Files\LLVM\lib\clang\%CLANG_VERSION%\include";"C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\Include\%KIT_WIN_NUM%\shared";"C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\Include\%KIT_WIN_NUM%\ucrt";"C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\Include\%KIT_WIN_NUM%\um";"C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\include"
-setx LIB "C:\Program Files\LLVM\lib\clang\%CLANG_VERSION%\lib\windows";"C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\Lib\%KIT_WIN_NUM%\ucrt\x64";"C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\Lib\%KIT_WIN_NUM%\um\x64";"C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\lib\x64";"C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\lib\x64\store"
+SET PATH=%LLVM64%\bin;C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\Msbuild\Current\Bin\amd64;%PATH%
+setx INCLUDE "%LLVM64%\lib\clang\%CLANG_VERSION%\include";"C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\Include\%KIT_WIN_NUM%\shared";"C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\Include\%KIT_WIN_NUM%\ucrt";"C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\Include\%KIT_WIN_NUM%\um";"C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\include"
+setx LIB "%LLVM64%\lib\clang\%CLANG_VERSION%\lib\windows";"C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\Lib\%KIT_WIN_NUM%\ucrt\x64";"C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\Lib\%KIT_WIN_NUM%\um\x64";"C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\lib\x64";"C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\lib\x64\store"
 del /Q CMAKELists.txt
 copy build.cmake\CLANGX64\CMAKELists.txt *.*
 cmake --fresh -G "NMake Makefiles" -B build.cmake/CLANGX64/Debug -DCMAKE_BUILD_TYPE="Debug" -DNAME_APPLI=%NAME_APPLI% .
@@ -380,6 +380,7 @@ reg delete HKCU\Environment /v LIB /f
 SET INCLUDE=
 SET LIB=
 cd %SOURCE_DIR%
+del /Q CMAKELists.txt
 SET PATH=%PATHSAV%
 IF "%3" NEQ "" GOTO FIN
 
@@ -396,6 +397,7 @@ cd ..
 cd Release
 mingw32-make . all
 cd %SOURCE_DIR%
+del /Q CMAKELists.txt
 SET PATH=%PATHSAV%
 IF "%3" NEQ "" GOTO FIN
 
@@ -412,6 +414,7 @@ cd ..
 cd Release
 mingw32-make . all
 cd %SOURCE_DIR%
+del /Q CMAKELists.txt
 SET PATH=%PATHSAV%
 IF "%3" NEQ "" GOTO FIN
 
@@ -429,6 +432,7 @@ cd Release
 mingw32-make . all
 cd %SOURCE_DIR%
 SET PATH=%PATHSAV%
+del /Q CMAKELists.txt
 IF "%3" NEQ "" GOTO FIN
 
 REM             Génération cmake pour CLANG MSYS2 GNU/GCC en version 64 bits
@@ -443,7 +447,10 @@ mingw32-make . all
 cd ..
 cd Release
 mingw32-make . all
+SET INCLUDE=
+SET LIB=
 cd %SOURCE_DIR%
+del /Q CMAKELists.txt
 SET PATH=%PATHSAV%
 IF "%3" NEQ "" GOTO FIN
 
@@ -579,6 +586,8 @@ wmake -f makefile_OW64_release.mak NAME_APPLI=%NAME_APPLI%
 move /Y *.exe binOW64\Release\
 move /Y *.obj objOW64\Release\
 move /Y *.res objOW64\Release\
+SET INCLUDE=
+SET LIB=
 cd %SOURCE_DIR%
 SET PATH=%PATHSAV%
 del /Q makefile_OW64_debug.mak makefile_OW64_release.mak
@@ -614,14 +623,14 @@ echo Current time is %mydate%:%mytime%
 echo Jour : %DAY%
 echo Mois : %MONTH%
 echo Année : %YEAR%
-"C:\Program Files\7-Zip\7z" a %NAME_APPLI%_%YEAR%-%MONTH%-%DAY%_src.7z src\*.* res\*.* data\*.* build.cmake\* *.bat *.txt *.html *.md doxygen\*.* *.cbp *.workspace -x!*.bak -p"%NAME_APPLI%_tde"
-"C:\Program Files\7-Zip\7z" a -ttar %NAME_APPLI%-%YEAR%-%MONTH%_%DAY%_all.tar * -x!*.7z x!*.bak
+"C:\Program Files\7-Zip\7z" a %NAME_APPLI%_%YEAR%-%MONTH%-%DAY%_src.7z src\*.* res\*.* data\*.* build.cmake\* build.batch\* *.bat *.txt *.html *.md doxygen\* doc\* *.cbp *.workspace -x!*.bak -p"%NAME_APPLI%_tde"
+"C:\Program Files\7-Zip\7z" a -ttar %NAME_APPLI%-%YEAR%-%MONTH%_%DAY%_all.tar * -x!*.7z x!*.bak -p"%NAME_APPLI%_tde"
 "C:\Program Files\7-Zip\7z" a -tgzip %NAME_APPLI%_%YEAR%-%MONTH%-%DAY%_all.tgz *.tar
 del /Q *.tar
 GOTO FIN
 
 :usage
-echo Usage : %0 DIRECTORY_SRC [Compilateur] 
+echo Usage : %0 DIRECTORY_SAPPLI NAME_APPLI [Compilateur] 
 echo   avec compilateur = [BCC|MINGW32OF|MINGW64CB|DEVCPP|CYGWIN32|CYGWIN64|MINGW32WL|MINGW64WL|TDM32|TDM64|MSYS2W32|MSYS2W64|NMAKEX32|NMAKEX64|VS2022X32|VS2022X64|CLANGX32|CLANGX64|CLANGW32|CLANGW64|CLANGMW32|CLANGMW64|DMC|LCC32|LCC64|PELLESC32|PELLESC64|WATCOM32|WATCOM64]
 echo   et si pas de deuxième paramètre, génération de toutes les compilations avec les utilitaires "make" spécifiques à chaque catégorie de compilateurs (hors compilateur VS2022 car génération d'une solution)
  

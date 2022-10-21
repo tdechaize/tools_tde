@@ -115,10 +115,17 @@ mkdir %1\objVS2022X32\Release
 mkdir %1\objVS2022X64\Debug
 mkdir %1\objVS2022X64\Release
 mkdir %1\doxygen
-mkdir %1\Data
+mkdir %1\data
 mkdir %1\res
 mkdir %1\src
+mkdir %1\doc\pdf
+mkdir %1\doc\html
+mkdir %1\doc\word
+mkdir %1\doc\epub
+mkdir %1\doc\mobi
+mkdir %1\build.batch
 xcopy C:\src\models\build.cmake\*.* %1\build.cmake\ /E /Y
+xcopy C:\src\scripts_build\*.* %1\build.batch\ /E /Y
 goto exit
 
 :usage

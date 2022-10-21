@@ -6,7 +6,7 @@ def convert_bytes(num):
     """
     for x in ['bytes', 'KB', 'MB', 'GB', 'TB']:
         if num < 1024.0:
-            return "%3.1f %s" % (num, x)
+            return "%5.1f %s" % (num, x)
         num /= 1024.0
 
 def file_size(file_path):
@@ -140,166 +140,220 @@ file_path = fr".\src\resource.h"
 if os.path.isfile(file_path):
     s = 'Date dernière modification du source ' + file_path + ' : ' + time.ctime(os.path.getmtime(file_path))
     print(s)
-print(f'Tableau récapitulatif de la taille des exécutables générés pour le projet : {sys.argv[1]}')
+print(f'        Tableau récapitulatif de la taille des exécutables générés pour le projet : {sys.argv[1]}')
 file_path = fr".\binBC55\Debug\{sys.argv[1]}"+".exe"
 if os.path.isfile(file_path):
-    print(file_size(file_path))
+    s = file_size(file_path) + ' et sa date dernière modification ' + time.ctime(os.path.getmtime(file_path))  + ' ->' + file_path + '.'
+    print(s)
 file_path = fr".\binBC55\Release\{sys.argv[1]}"+".exe"
 if os.path.isfile(file_path):
-    print(file_size(file_path))
+    s = file_size(file_path) + ' et sa date dernière modification ' + time.ctime(os.path.getmtime(file_path))  + ' ->' + file_path + '.' 
+    print(s)
 file_path = fr".\binCLANGMW32\Debug\{sys.argv[1]}"+".exe"
 if os.path.isfile(file_path):
-    print(file_size(file_path))
+    s = file_size(file_path) + ' et sa date dernière modification ' + time.ctime(os.path.getmtime(file_path))  + ' ->' + file_path + '.'
+    print(s)
 file_path = fr".\binCLANGMW32\Release\{sys.argv[1]}"+".exe"
 if os.path.isfile(file_path):
-    print(file_size(file_path))
+    s = file_size(file_path) + ' et sa date dernière modification ' + time.ctime(os.path.getmtime(file_path))  + ' ->' + file_path + '.'
+    print(s)
 file_path = fr".\binCLANGMW64\Debug\{sys.argv[1]}"+".exe"
 if os.path.isfile(file_path):
-    print(file_size(file_path))
+    s = file_size(file_path) + ' et sa date dernière modification ' + time.ctime(os.path.getmtime(file_path))  + ' ->' + file_path + '.'
+    print(s)
 file_path = fr".\binCLANGMW64\Release\{sys.argv[1]}"+".exe"
 if os.path.isfile(file_path):
-    print(file_size(file_path))
+    s = file_size(file_path) + ' et sa date dernière modification ' + time.ctime(os.path.getmtime(file_path))  + ' ->' + file_path + '.'
+    print(s)
 file_path = fr".\binCLANGW32\Debug\{sys.argv[1]}"+".exe"
 if os.path.isfile(file_path):
-    print(file_size(file_path))
+    s = file_size(file_path) + ' et sa date dernière modification ' + time.ctime(os.path.getmtime(file_path))  + ' ->' + file_path + '.'
+    print(s)
 file_path = fr".\binCLANGW32\Release\{sys.argv[1]}"+".exe"
 if os.path.isfile(file_path):
-    print(file_size(file_path))
+    s = file_size(file_path) + ' et sa date dernière modification ' + time.ctime(os.path.getmtime(file_path))  + ' ->' + file_path + '.'
+    print(s)
 file_path = fr".\binCLANGW64\Debug\{sys.argv[1]}"+".exe"
 if os.path.isfile(file_path):
-    print(file_size(file_path))
+    s = file_size(file_path) + ' et sa date dernière modification ' + time.ctime(os.path.getmtime(file_path))  + ' ->' + file_path + '.'
+    print(s)
 file_path = fr".\binCLANGW64\Release\{sys.argv[1]}"+".exe"
 if os.path.isfile(file_path):
-    print(file_size(file_path))
+    s = file_size(file_path) + ' et sa date dernière modification ' + time.ctime(os.path.getmtime(file_path))  + ' ->' + file_path + '.'
+    print(s)
 file_path = fr".\binCLANGX32\Debug\{sys.argv[1]}"+".exe"
 if os.path.isfile(file_path):
-    print(file_size(file_path))
+    s = file_size(file_path) + ' et sa date dernière modification ' + time.ctime(os.path.getmtime(file_path))  + ' ->' + file_path + '.'
+    print(s)
 file_path = fr".\binCLANGX32\Release\{sys.argv[1]}"+".exe"
 if os.path.isfile(file_path):
-    print(file_size(file_path))
+    s = file_size(file_path) + ' et sa date dernière modification ' + time.ctime(os.path.getmtime(file_path))  + ' ->' + file_path + '.'
+    print(s)
 file_path = fr".\binCLANGX64\Debug\{sys.argv[1]}"+".exe"
 if os.path.isfile(file_path):
-    print(file_size(file_path))
+    s = file_size(file_path) + ' et sa date dernière modification ' + time.ctime(os.path.getmtime(file_path))  + ' ->' + file_path + '.'
+    print(s)
 file_path = fr".\binCLANGX64\Release\{sys.argv[1]}"+".exe"
 if os.path.isfile(file_path):
-    print(file_size(file_path))
+    s = file_size(file_path) + ' et sa date dernière modification ' + time.ctime(os.path.getmtime(file_path))  + ' ->' + file_path + '.'
+    print(s)
 file_path = fr".\binCYGWIN32\Debug\{sys.argv[1]}"+".exe"
 if os.path.isfile(file_path):
-    print(file_size(file_path))
+    s = file_size(file_path) + ' et sa date dernière modification ' + time.ctime(os.path.getmtime(file_path))  + ' ->' + file_path + '.'
+    print(s)
 file_path = fr".\binCYGWIN32\Release\{sys.argv[1]}"+".exe"
 if os.path.isfile(file_path):
-    print(file_size(file_path))
+    s = file_size(file_path) + ' et sa date dernière modification ' + time.ctime(os.path.getmtime(file_path))  + ' ->' + file_path + '.'
+    print(s)
 file_path = fr".\binCYGWIN64\Debug\{sys.argv[1]}"+".exe"
 if os.path.isfile(file_path):
-    print(file_size(file_path))
+    s = file_size(file_path) + ' et sa date dernière modification ' + time.ctime(os.path.getmtime(file_path))  + ' ->' + file_path + '.'
+    print(s)
 file_path = fr".\binCYGWIN64\Release\{sys.argv[1]}"+".exe"
 if os.path.isfile(file_path):
-    print(file_size(file_path))
+    s = file_size(file_path) + ' et sa date dernière modification ' + time.ctime(os.path.getmtime(file_path))  + ' ->' + file_path + '.'
+    print(s)
 file_path = fr".\binDevCpp\Debug\{sys.argv[1]}"+".exe"
 if os.path.isfile(file_path):
-    print(file_size(file_path))
+    s = file_size(file_path) + ' et sa date dernière modification ' + time.ctime(os.path.getmtime(file_path))  + ' ->' + file_path + '.'
+    print(s)
 file_path = fr".\binDevCpp\Release\{sys.argv[1]}"+".exe"
 if os.path.isfile(file_path):
-    print(file_size(file_path))
+    s = file_size(file_path) + ' et sa date dernière modification ' + time.ctime(os.path.getmtime(file_path))  + ' ->' + file_path + '.'
+    print(s)
 file_path = fr".\binDMC\Debug\{sys.argv[1]}"+".exe"
 if os.path.isfile(file_path):
-    print(file_size(file_path))
+    s = file_size(file_path) + ' et sa date dernière modification ' + time.ctime(os.path.getmtime(file_path))  + ' ->' + file_path + '.'
+    print(s)
 file_path = fr".\binDMC\Release\{sys.argv[1]}"+".exe"
 if os.path.isfile(file_path):
-    print(file_size(file_path))
+    s = file_size(file_path) + ' et sa date dernière modification ' + time.ctime(os.path.getmtime(file_path))  + ' ->' + file_path + '.'
+    print(s)
 file_path = fr".\binlcc32\Debug\{sys.argv[1]}"+".exe"
 if os.path.isfile(file_path):
-    print(file_size(file_path))
+    s = file_size(file_path) + ' et sa date dernière modification ' + time.ctime(os.path.getmtime(file_path))  + ' ->' + file_path + '.'
+    print(s)
 file_path = fr".\binlcc32\Release\{sys.argv[1]}"+".exe"
 if os.path.isfile(file_path):
-    print(file_size(file_path))
+    s = file_size(file_path) + ' et sa date dernière modification ' + time.ctime(os.path.getmtime(file_path))  + ' ->' + file_path + '.'
+    print(s)
 file_path = fr".\binlcc64\Debug\{sys.argv[1]}"+".exe"
 if os.path.isfile(file_path):
-    print(file_size(file_path))
+    s = file_size(file_path) + ' et sa date dernière modification ' + time.ctime(os.path.getmtime(file_path))  + ' ->' + file_path + '.'
+    print(s)
 file_path = fr".\binlcc64\Release\{sys.argv[1]}"+".exe"
 if os.path.isfile(file_path):
-    print(file_size(file_path))
+    s = file_size(file_path) + ' et sa date dernière modification ' + time.ctime(os.path.getmtime(file_path))  + ' ->' + file_path + '.'
+    print(s)
 file_path = fr".\binMingw32of\Debug\{sys.argv[1]}"+".exe"
 if os.path.isfile(file_path):
-    print(file_size(file_path))
+    s = file_size(file_path) + ' et sa date dernière modification ' + time.ctime(os.path.getmtime(file_path))  + ' ->' + file_path + '.'
+    print(s)
 file_path = fr".\binMingw32of\Release\{sys.argv[1]}"+".exe"
 if os.path.isfile(file_path):
-    print(file_size(file_path))
+    s = file_size(file_path) + ' et sa date dernière modification ' + time.ctime(os.path.getmtime(file_path))  + ' ->' + file_path + '.'
+    print(s)
 file_path = fr".\binMingw32wl\Debug\{sys.argv[1]}"+".exe"
 if os.path.isfile(file_path):
-    print(file_size(file_path))
+    s = file_size(file_path) + ' et sa date dernière modification ' + time.ctime(os.path.getmtime(file_path))  + ' ->' + file_path + '.'
+    print(s)
 file_path = fr".\binMingw32wl\Release\{sys.argv[1]}"+".exe"
 if os.path.isfile(file_path):
-    print(file_size(file_path))
+    s = file_size(file_path) + ' et sa date dernière modification ' + time.ctime(os.path.getmtime(file_path))  + ' ->' + file_path + '.'
+    print(s)
 file_path = fr".\binMingw64wl\Debug\{sys.argv[1]}"+".exe"
 if os.path.isfile(file_path):
-    print(file_size(file_path))
+    s = file_size(file_path) + ' et sa date dernière modification ' + time.ctime(os.path.getmtime(file_path))  + ' ->' + file_path + '.'
+    print(s)
 file_path = fr".\binMingw64wl\Release\{sys.argv[1]}"+".exe"
 if os.path.isfile(file_path):
-    print(file_size(file_path))
+    s = file_size(file_path) + ' et sa date dernière modification ' + time.ctime(os.path.getmtime(file_path))  + ' ->' + file_path + '.'
+    print(s)
 file_path = fr".\binMingw64CB\Debug\{sys.argv[1]}"+".exe"
 if os.path.isfile(file_path):
-    print(file_size(file_path))
+    s = file_size(file_path) + ' et sa date dernière modification ' + time.ctime(os.path.getmtime(file_path))  + ' ->' + file_path + '.'
+    print(s)
 file_path = fr".\binMingw64CB\Release\{sys.argv[1]}"+".exe"
 if os.path.isfile(file_path):
-    print(file_size(file_path))
+    s = file_size(file_path) + ' et sa date dernière modification ' + time.ctime(os.path.getmtime(file_path))  + ' ->' + file_path + '.'
+    print(s)
 file_path = fr".\binMSYS2W32\Debug\{sys.argv[1]}"+".exe"
 if os.path.isfile(file_path):
-    print(file_size(file_path))
+    s = file_size(file_path) + ' et sa date dernière modification ' + time.ctime(os.path.getmtime(file_path))  + ' ->' + file_path + '.'
+    print(s)
 file_path = fr".\binMSYS2W32\Release\{sys.argv[1]}"+".exe"
 if os.path.isfile(file_path):
-    print(file_size(file_path))
+    s = file_size(file_path) + ' et sa date dernière modification ' + time.ctime(os.path.getmtime(file_path))  + ' ->' + file_path + '.'
+    print(s)
 file_path = fr".\binMSYS2W64\Debug\{sys.argv[1]}"+".exe"
 if os.path.isfile(file_path):
-    print(file_size(file_path))
+    s = file_size(file_path) + ' et sa date dernière modification ' + time.ctime(os.path.getmtime(file_path))  + ' ->' + file_path + '.'
+    print(s)
 file_path = fr".\binMSYS2W64\Release\{sys.argv[1]}"+".exe"
 if os.path.isfile(file_path):
-    print(file_size(file_path))
+    s = file_size(file_path) + ' et sa date dernière modification ' + time.ctime(os.path.getmtime(file_path))  + ' ->' + file_path + '.'
+    print(s)
 file_path = fr".\binOW32\Debug\{sys.argv[1]}"+".exe"
 if os.path.isfile(file_path):
-    print(file_size(file_path))
+    s = file_size(file_path) + ' et sa date dernière modification ' + time.ctime(os.path.getmtime(file_path))  + ' ->' + file_path + '.'
+    print(s)
 file_path = fr".\binOW32\Release\{sys.argv[1]}"+".exe"
 if os.path.isfile(file_path):
-    print(file_size(file_path))
+    s = file_size(file_path) + ' et sa date dernière modification ' + time.ctime(os.path.getmtime(file_path))  + ' ->' + file_path + '.'
+    print(s)
 file_path = fr".\binOW64\Debug\{sys.argv[1]}"+".exe"
 if os.path.isfile(file_path):
-    print(file_size(file_path))
+    s = file_size(file_path) + ' et sa date dernière modification ' + time.ctime(os.path.getmtime(file_path))  + ' ->' + file_path + '.'
+    print(s)
 file_path = fr".\binOW64\Release\{sys.argv[1]}"+".exe"
 if os.path.isfile(file_path):
-    print(file_size(file_path))
+    s = file_size(file_path) + ' et sa date dernière modification ' + time.ctime(os.path.getmtime(file_path))  + ' ->' + file_path + '.'
+    print(s)
 file_path = fr".\binPELLESC32\Debug\{sys.argv[1]}"+".exe"
 if os.path.isfile(file_path):
-    print(file_size(file_path))
+    s = file_size(file_path) + ' et sa date dernière modification ' + time.ctime(os.path.getmtime(file_path))  + ' ->' + file_path + '.'
+    print(s)
 file_path = fr".\binPELLESC32\Release\{sys.argv[1]}"+".exe"
 if os.path.isfile(file_path):
-    print(file_size(file_path))
+    s = file_size(file_path) + ' et sa date dernière modification ' + time.ctime(os.path.getmtime(file_path))  + ' ->' + file_path + '.'
+    print(s)
 file_path = fr".\binPELLESC64\Debug\{sys.argv[1]}"+".exe"
 if os.path.isfile(file_path):
-    print(file_size(file_path))
+    s = file_size(file_path) + ' et sa date dernière modification ' + time.ctime(os.path.getmtime(file_path))  + ' ->' + file_path + '.'
+    print(s)
 file_path = fr".\binPELLESC64\Release\{sys.argv[1]}"+".exe"
 if os.path.isfile(file_path):
-    print(file_size(file_path))
+    s = file_size(file_path) + ' et sa date dernière modification ' + time.ctime(os.path.getmtime(file_path))  + ' ->' + file_path + '.'
+    print(s)
 file_path = fr".\binTDMW32\Debug\{sys.argv[1]}"+".exe"
 if os.path.isfile(file_path):
-    print(file_size(file_path))
+    s = file_size(file_path) + ' et sa date dernière modification ' + time.ctime(os.path.getmtime(file_path))  + ' ->' + file_path + '.'
+    print(s)
 file_path = fr".\binTDMW32\Release\{sys.argv[1]}"+".exe"
 if os.path.isfile(file_path):
-    print(file_size(file_path))
+    s = file_size(file_path) + ' et sa date dernière modification ' + time.ctime(os.path.getmtime(file_path))  + ' ->' + file_path + '.'
+    print(s)
 file_path = fr".\binTDMW64\Debug\{sys.argv[1]}"+".exe"
 if os.path.isfile(file_path):
-    print(file_size(file_path))
+    s = file_size(file_path) + ' et sa date dernière modification ' + time.ctime(os.path.getmtime(file_path))  + ' ->' + file_path + '.'
+    print(s)
 file_path = fr".\binTDMW64\Release\{sys.argv[1]}"+".exe"
 if os.path.isfile(file_path):
-    print(file_size(file_path))
+    s = file_size(file_path) + ' et sa date dernière modification ' + time.ctime(os.path.getmtime(file_path))  + ' ->' + file_path + '.'
+    print(s)
 file_path = fr".\binVS2022X32\Debug\{sys.argv[1]}"+".exe"
 if os.path.isfile(file_path):
-    print(file_size(file_path))
+    s = file_size(file_path) + ' et sa date dernière modification ' + time.ctime(os.path.getmtime(file_path))  + ' ->' + file_path + '.'
+    print(s)
 file_path = fr".\binVS2022X32\Release\{sys.argv[1]}"+".exe"
 if os.path.isfile(file_path):
-    print(file_size(file_path))
+    s = file_size(file_path) + ' et sa date dernière modification ' + time.ctime(os.path.getmtime(file_path))  + ' ->' + file_path + '.'
+    print(s)
 file_path = fr".\binVS2022X64\Debug\{sys.argv[1]}"+".exe"
 if os.path.isfile(file_path):
-    print(file_size(file_path))
+    s = file_size(file_path) + ' et sa date dernière modification ' + time.ctime(os.path.getmtime(file_path))  + ' ->' + file_path + '.'
+    print(s)
 file_path = fr".\binVS2022X64\Release\{sys.argv[1]}"+".exe"
 if os.path.isfile(file_path):
-    print(file_size(file_path))
+    s = file_size(file_path) + ' et sa date dernière modification ' + time.ctime(os.path.getmtime(file_path))  + ' ->' + file_path + '.'
+    print(s)

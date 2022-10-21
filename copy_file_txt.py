@@ -12,7 +12,7 @@ source = fr"C:\src\{sys.argv[1]}"
 if os.path.isfile(source):
     s = 'Date dernière modification du fichier texte ' + source + ' : ' + time.ctime(os.path.getmtime(source))
     print(s)
-    for i in range(39):
+    for i in range(47):
         if i < 10:
 # Destination path
             destination = fr"C:\src\OpenGL\NeHe_Lesson0"+str(i)+"-master"
