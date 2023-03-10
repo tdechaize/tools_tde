@@ -14,6 +14,8 @@ Pour conclure, vous trouverez des scripts "python" de calcul des tailles (volume
 celle liste est figée dans le script, mais en l'examinant, vous pouvez modifier cette trame à votre convenance).
 
 Le script de génération automatique en ligne de commande CB ne fonctionne pas (... encore !).
-je lance donc la génération dr TOUTES les générations directement dans l'IDE  Code::Blocks en choisissant la "cible virtuelle" -> All_build.
+je lance donc la génération de TOUTES les générations directement dans l'IDE  Code::Blocks en choisissant la "cible virtuelle" -> All_build.
+
+En dernier, j'ai mis à disposition TOUS les changements effectués pour chaque compilateurs ou environnements de développements dans le répertoire "modifs_compilers". Il s'agit des évolutions jugés nécessaires par rapport aux installations initiales pour que, par exemple, OpenGL fonctionne correctement avec certains compilateurs "un peu anciens".
 
 A vous de jouer, tout est là, avec des commentaires explicatifs dans chaque script (ou presque ... -) ).
