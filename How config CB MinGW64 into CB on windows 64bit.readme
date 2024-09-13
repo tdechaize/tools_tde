@@ -57,14 +57,6 @@ You can select good directory/source with option "add file" after first creation
 
 One time project created, you can generate it with selecting main menu "Build" and choose submenu "Rebuild..." (or CTRL-F11).
 If, you apply all of precedent instructions, compile and link of your program with this new compiler must be succeeded.
-
-Question : Why choose IDE CB in priority and not IDE Red Panda Dev-Cpp ? 
-Response : In my mind, CB is very much open than Red Panda. It accept multiple C/C++ compilers, and not only MinGW'types of 
-          these ... For me, it's very important that IDE can generate multiple targets on Windows with many free compilers. 
-
-Question : And why configure GCC included into IDE Red Panda Dev-Cpp into CB ? 
-Response : Just to verify that it's not difficult to add this compiler into CB, only create "new compiler" and configure this. 
-		  Simply.
 		  
 Pleasure of programming is open for you, your imagination is illimited, at your keyboard ! Enjoy !
 
