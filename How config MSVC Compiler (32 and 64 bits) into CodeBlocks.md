@@ -1,7 +1,8 @@
 	 
-Name of tutorial : How config MSVC Compiler (32 and 64 bits) into Code::Blocks on Windows 11 64 bits.
+## Full name of tutorial : How config MSVC Compiler (32 and 64 bits) into Code::Blocks on Windows 11 64 bits.
 
 	Code::Blocks : the best and great free IDE for Windows, Linux and ... Mac OS
+### Presentation of MSVC compiler (if needed ...)
 
 During first run of CB on Windows, this IDE detect automatically some compilers, or present one list of them pre-configured.
 It's very good functionnality, but, sometimes, you must "force" these configurations proposed by default to run correctly.
@@ -12,70 +13,64 @@ How to install MSVC Compiler (32 and 64 bits) ?
 This compiler is available on site Microsoft, it's included in package Visual Studio 2022 Community by example :
 	https://visualstudio.microsoft.com/fr/vs/community/    (community, only "free" version available)
 	
-But it's not enought, because you must donwload also last SDK for Windows (needed because contain all include and
-libraries files): 
+But it's not enought, because you must donwload also last SDK for Windows (needed because contain all include and libraries files) : 
 	https://developer.microsoft.com/fr-fr/windows/downloads/windows-sdk/
 
-After download clic on these files to install resuired components on your system. It's recommended to run "Visual Studio
-Installer" to verify lat available version, but also to install "Visual Studio Build Tools 2022" 
+After download clic on these files to install resuired components on your system. It's recommended to run "Visual Studio Installer" to verify last available version, but also to install "Visual Studio Build Tools 2022" 
+### Configuration of MSVC compiler C/C++ into CB
 
-First, you must access into IDE CB at menu "Settings" and submenu "Compilers" to select "Visual Studio 2022", normally auto
-detected by IDE.
-To distinguish version 32 bits or 64 bits into CB, you must rename this ident of compiler in "Visual Studio 2022 (64 bits)"
-(click on button Rename, simply).
+First, you must access into IDE CB at menu "Settings" and submenu "Compilers" to select "Visual Studio 2022", normally autodetected by IDE.
+To distinguish version 32 bits or 64 bits into CB, you must rename this ident of compiler in "Visual Studio 2022 (64 bits)" (click on button Rename, simply).
 An after, you must verify field "Compiler's installation directory" that must contain 
 		"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807\bin\Hostx64\x64". (by example)
 
 You must verify list of tools like this (in tab "Program Files") :
-	C Compiler : 				cl.exe
-	C++ Compiler :				cl.exe
-	Linker for dynamic libs :	link.exe
-	Linker for statics libs :	lib.exe 
-	Debugger :							
-	Resource compiler :			rc.exe 			(this included in SDK Windows 11)
-	Make program : 				nmake.exe 		(this included in Visual Studio Build Tools 2002)
+	- C Compiler : 				    cl.exe
+	- C++ Compiler :				cl.exe
+	- Linker for dynamic libs :	link.exe
+	- Linker for statics libs :	    lib.exe 
+	- Debugger :							
+	- Resource compiler :		rc.exe 			(this included in SDK Windows 11)
+	- Make program : 				nmake.exe 		(this included in Visual Studio Build Tools 2002)
 	
-After, you must add in tab "Additional Paths" : "C:\Program Files (x86)\Windows Kits\10\bin\10.0.22621.0\x64" (by example)
-									and : C:\Program Files (x86)\Windows Kits\10\bin\x64
-									and : C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64
+After, you must add in tab "Additional Paths" : 
+	- "C:\Program Files (x86)\Windows Kits\10\bin\10.0.22621.0\x64" (by example)
+	- and : C:\Program Files (x86)\Windows Kits\10\bin\x64
+	- and : C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64
 It's mandatory to access at "rc.exe" and "nmake".
 	
 WARNING : After update, all number included into name of directories of MSVC/SDK can change !!! 
-		To integrate these evolutions, it's seem rational to define environment variables on system like this :
-					VS_VERSION 			define to 2022				(at date)
-					VS_NUM  			define to 14.40.33807  		(at date)			and 
-					KIT_VERSION 		define to 10				(at date)
-					KIT_NUM  			define to 10.0.22621.0		(at date)
-		Then, you can use these variables into configuration of CB with use of %var% into directory name to be independant 
-		of evolutions. 
+To integrate these evolutions, it's seem rational to define environment variables on system like this :
+					- VS_VERSION 		define to 2022				(at date)
+					- VS_NUM  			define to 14.40.33807  		(at date)	and 
+					- KIT_VERSION 		define to 10				(at date)
+					- KIT_NUM  			define to 10.0.22621.0		(at date)
+Then, you can use these variables into configuration of CB with use of %var% into directory name to be independant of evolutions. 
 
-And, it's not all, you must verify in tab "Search Directories" and select "Compiler", or "Linker" or "Resource Compiler" 
-subtabs.
+And, it's not all, you must verify in tab "Search Directories" and select "Compiler", or "Linker" or "Resource Compiler" subtabs.
 
 For compiler, search directories of "include files" are (and it's the same for "Resource Compiler") :
-	C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\include
-	C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Auxiliary\VS\include
-	C:\Program Files (x86)\Windows Kits\%KIT_VERSION%\Include\%KIT_NUM%\ucrt
-	C:\Program Files (x86)\Windows Kits\%KIT_VERSION%\Include\%KIT_NUM%\um
-	C:\Program Files (x86)\Windows Kits\%KIT_VERSION%\Include\%KIT_NUM%\shared
-	C:\Program Files (x86)\Windows Kits\%KIT_VERSION%\Include\%KIT_NUM%\winrt
-	C:\Program Files (x86)\Windows Kits\%KIT_VERSION%\Include\%KIT_NUM%\cppwinrt
+	- C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\include
+	- C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Auxiliary\VS\include
+	- C:\Program Files (x86)\Windows Kits\%KIT_VERSION%\Include\%KIT_NUM%\ucrt
+	- C:\Program Files (x86)\Windows Kits\%KIT_VERSION%\Include\%KIT_NUM%\um
+	- C:\Program Files (x86)\Windows Kits\%KIT_VERSION%\Include\%KIT_NUM%\shared
+	- C:\Program Files (x86)\Windows Kits\%KIT_VERSION%\Include\%KIT_NUM%\winrt
+	- C:\Program Files (x86)\Windows Kits\%KIT_VERSION%\Include\%KIT_NUM%\cppwinrt
  
 For linker, search directories of "lib files" are :
-	C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\lib\x64
-	C:\Program Files (x86)\Windows Kits\%KIT_VERSION%\Lib\%KIT_NUM%\ucrt\x64
-	C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\lib\x64\store
-	C:\Program Files (x86)\Windows Kits\%KIT_VERSION%\Lib\%KIT_NUM%\um\x64
+	- C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\lib\x64
+	- C:\Program Files (x86)\Windows Kits\%KIT_VERSION%\Lib\%KIT_NUM%\ucrt\x64
+	- C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\lib\x64\store
+	- C:\Program Files (x86)\Windows Kits\%KIT_VERSION%\Lib\%KIT_NUM%\um\x64
 	
 Remark : If you wan't use environment variables, you can translate these by "real value" of directory into CB.
 
-To terminate with 64 bits version of MSVC, you must add in tab "Linker settings" and in zone "Other linker options" :
-"/MACHINE:X64". MSVC must position automatically this option, but it's a precaution. 
+To terminate with 64 bits version of MSVC, you must add in tab "Linker settings" and in zone "Other linker options" :"/MACHINE:X64". MSVC must position automatically this option, but it's a precaution. 
 	
 It's some tedious, but with these "full" configurations, you can build an program on Windows 11 64 bits with success.
 
-Now, you must copy "Visual Studio 2022 (64 bits)" in list of available compilers into CB (menu "Settings" submenu 
-"Compilers"), and rename it by "Visual Studio 2022 (32 bits)" by example.
+Now, you must copy "Visual Studio 2022 (64 bits)" in list of available compilers into CB (menu "Settings" submenu "Compilers"), and rename it by "Visual Studio 2022 (32 bits)" by example.
 
 New configurations for this compiler in version 32 bits are next :
 
@@ -83,29 +78,33 @@ In tab "Toolchain executable", you must change value by :
 	C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\bin\Hostx86\x86
 
 In subtab "Additional Paths" :
-	C:\Program Files (x86)\Windows Kits\%KIT_VERSION%\bin\%KIT_NUM%\x86
-	C:\Program Files (x86)\Windows Kits\%KIT_VERSION%\bin\x86
-	C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\MSBuild\Current\Bin\amd64
+	- C:\Program Files (x86)\Windows Kits\%KIT_VERSION%\bin\%KIT_NUM%\x86
+	- C:\Program Files (x86)\Windows Kits\%KIT_VERSION%\bin\x86
+	- C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\MSBuild\Current\Bin\amd64
 
 In tab "Search Paths", only changes are mandatory in subtab "Linker" ("include" directory files are same) :
-	C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\lib\x86
-	C:\Program Files (x86)\Windows Kits\%KIT_VERSION%\Lib\%KIT_NUM%\ucrt\x86
-	C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\lib\x86\store
-	C:\Program Files (x86)\Windows Kits\%KIT_VERSION%\Lib\%KIT_NUM%\um\x86
+	- C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\lib\x86
+	- C:\Program Files (x86)\Windows Kits\%KIT_VERSION%\Lib\%KIT_NUM%\ucrt\x86
+	- C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\lib\x86\store
+	- C:\Program Files (x86)\Windows Kits\%KIT_VERSION%\Lib\%KIT_NUM%\um\x86
 
 And, to terminate, you must "force" an option in tab "Linker Settings" to add in zone "Other linker options" : "/MACHINE:X86".
 MSVC must position automatically this option, but it's a precaution. 
+### Test of "simple" code with MSVC compiler C/C++ into CB
 
-And, with simply source "hellowworld.c", you can test generation of program into IDE CB, choosing "create new project" in main 
-windows of CB, and choose "console application" with no source proposed by default, because named "main.c" by default, and choose 
-compiler "Intel C/C++ compiler (64 bits)".
+With simply source "hellowworld.c", you can test generation of program into IDE CB, choosing "create new project" in main  windows of CB, and choose "console application" with no source proposed by default, because named "main.c" by default, and choose compiler "Visual Studio 2022 (64 bits)".
 You can select good directory/source with option "add file" after first creation of project into CB. 
 
-One time project created, you can generate it with selecting main menu "Build" and choose submenu "Rebuild..." (or CTRL-F11).
+One time project created, you can generate it with selecting main menu "Build" and choose submenu "Rebuild..." (or CTRL-F11), ans save project file (or "save everythings").
+
+To test 32 bits, return into main menu "Project" and in submenu "Build options" to change the
+compiler to "Visual Studio 2022 (32 bits)", and rebuild with CTRL-F11.
+
+If, you apply all of precedent instructions, compile and link of your program must be succeeded.
 
 Pleasure of programming is open for you, your imagination is illimited, at your keyboard ! Enjoy !
 
-PS : source file "hellowworld.c" :
+### PS : source file "hellowworld.c" :
 
 /*     Basic example in language C : hellowworld.c      */
 
@@ -117,7 +116,9 @@ int main(int argc, char *argv[]) {
    return 0;
 }
 
-PS2 : You can also use MSVC compiler in command console on Windows (CMD.EXE) with next instructions :
+### PS2 : Use of MSVC compiler with command line (just to illustrate)
+
+You can also use MSVC compiler in command console on Windows (CMD.EXE) with next instructions :
 
 set PATHSAV=%PATH%
 set INCSAV=%INCLUDE%
@@ -141,12 +142,13 @@ set PATH=%PATHSAV%
 set INCLUDE=%INCSAV%
 set LIB=%LIBSAV%
 
-And, with precedent example, you can also generate version 32 bits with "cl" but, you must change values of PATH, INCLUDE and LIB 
-with good directories described before (don't forgive to change "/MACHINE:X86" during call of "link" if two pass).
+And, with precedent example, you can also generate version 32 bits with "cl" but, you must change values of PATH, INCLUDE and LIB with good directories described before (don't forgive to change "/MACHINE:X86" during call of "link" if two pass).
 
-But, it's much easy to use MSVC directly into CB IDE especially with complex C program (many C sources and many subdirectories ...)    -)
+**But, it's much easy to use MSVC compiler C/C++ directly into CB IDE especially with complex C program (many C/C++ sources and many subdirectories ...) , and multiple targets by example : main DLL and console program to test this DLL, ...   -)**
  
-PS3 : Syntax of MSVC compiler "cl" on command line is next :
+### PS3 : Syntax of tools MSVC
+
+Syntax of MSVC compiler "cl" on command line is next :
 
 cl /help
 Compilateur d'optimisation Microsoft (R) C/C++ version 19.40.33813 pour x64

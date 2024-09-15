@@ -1,8 +1,9 @@
 
 	 
-Name of tutorial : How config TDM MinGW32/MinGW64 into Code::Blocks on Windows 11 64 bits.
+## Full name of tutorial : How config TDM MinGW32/MinGW64 into Code::Blocks on Windows 11 64 bits.
 
 	Code::Blocks : the best and great free IDE for Windows, Linux and ... Mac OS
+### Presentation of TDM MinGW32/MinGW64
 
 During first run of CB on Windows, this IDE detect automatically some compilers, or present one list of them pre-configured.
 It's very good functionnality, but, sometimes, you must "force" these configurations proposed by default to run correctly.
@@ -18,14 +19,13 @@ You can download last version of TDM MinGW32 and TDM MinGW64 on Internet site :
 	https://jmeubank.github.io/tdm-gcc/download/
 	
 Two files for download (if you want 32 bits and 64 bits version) :
-	tdm64-gcc-10.3.0-2.exe : 64+32-bit MinGW-w64 edition. Includes GCC C/C++, GNU binutils, mingw32-make, GDB (64-bit), the MinGW-w64 
-							runtime libraries and tools, and the windows-default-manifest package.
-	tdm-gcc-10.3.0.exe : 32-bit-only MinGW.org edition. Includes GCC C/C++, GNU binutils, mingw32-make, GDB (32-bit), the MinGW.org 
-							mingwrt and w32api packages, and the windows-default-manifest package. 
+	tdm64-gcc-10.3.0-2.exe : 64+32-bit MinGW-w64 edition. Includes GCC C/C++, GNU binutils, mingw32-make, GDB (64-bit), the MinGW-w64 runtime libraries and tools, and the windows-default-manifest package.
+	tdm-gcc-10.3.0.exe : 32-bit-only MinGW.org edition. Includes GCC C/C++, GNU binutils, mingw32-make, GDB (32-bit), the MinGW.org mingwrt and w32api packages, and the windows-default-manifest package. 
 
 Click on these executables to install two version of TDM MinGW32 and TDM MinGW64 on your Windows system :
 	tdm64-gcc-10.3.0-2.exe :     	default installed directory on C:\TDM-GCC-64
-	tdm-gcc-10.3.0.exe :     		default installed directory on C:\TDM-GCC-32
+	tdm-gcc-10.3.0.exe :     		     default installed directory on C:\TDM-GCC-32
+### Configuration of TDM MinGW32/MinGW64 into CB
 
 You must configure this new compiler into CB by selecting main menu "Settings" then submenu "Compiler..." into IDE interface,
 then, choose "GNU GCC Compiler (default)" and rename this like "TDM GNU GCC Compiler 64bit" by example, if it's not detected.
@@ -34,22 +34,22 @@ Then, you choose tab "Toolchain executable" to position good environment like th
 			
 Toolchain executable : 
 	C:\TDM-GCC-64 (subdirectory \bin will be searched automatically to access to binaries listed after)
-	compilateur C : 			gcc.exe  
-	compilateur C++ : 			g++.exe  
-	linker for dynamic lib : 	g++.exe 
-	linker for static lib : 	gcc-ar.exe
-	debugger :					GDB (default)
-	resource compiler :			windres.exe
-	make program : 				mingw32-make.exe
+	- compilateur C : 			   gcc.exe  
+	- compilateur C++ : 			g++.exe  
+	- linker for dynamic lib : 	g++.exe 
+	- linker for static lib : 	    gcc-ar.exe
+	- debugger :					    GDB (default)
+	- resource compiler :			windres.exe
+	- make program : 				mingw32-make.exe
 
 You must add another directory into tab "Toolchain executable" with subtab "Additional paths" : C:\TDM-GCC-64\gdb64\bin.
 The name of executable associated with gdb is "gdb.exe", good news (see configuration of TDM MinGW32 to understand why).
  
 Then, you choose tab" "Search directories" to position good environment like this :
 
-	to compiler : 			C:\TDM-GCC-64\include 
-	to linker : 			C:\TDM-GCC-64\lib	  
-	to resource compiler : 	C:\TDM-GCC-64\include
+	- to compiler : 			    C:\TDM-GCC-64\include 
+	- to linker : 			    C:\TDM-GCC-64\lib	  
+	- to resource compiler : 	C:\TDM-GCC-64\include
 	
 Then, you can type this into command console Windows : "C:\TDM-GCC-64\bin\g++.exe --version"; result here :
 
@@ -58,14 +58,6 @@ Copyright © 2020 Free Software Foundation, Inc.
 Ce logiciel est un logiciel libre; voir les sources pour les conditions de copie.  Il n'y a
 AUCUNE GARANTIE, pas même pour la COMMERCIALISATION ni L'ADÉQUATION À UNE TÂCHE PARTICULIÈRE.
 
-And, with simply source "hellowworld.c", you can test generation of program into IDE CB, choosing "create new project" in main 
-windows of CB, and choose "console application" with no source proposed by default, because named "main.c", and choose compiler 
-"TDM GNU GCC Compiler 64bit".
-You can select good directory/source with option "add file" after first creation of project into CB. 
-
-One time project created, you can generate it with selecting main menu "Build" and choose submenu "Rebuild..." (or CTRL-F11).
-If, you apply all of precedent instructions, compile and link of your program with this new compiler must be succeeded.
-
 For TDM MinGW32, you must return into menu "Settings" of CB and select "TDM GNU GCC Compiler 64bit" compiler for copy it first,
 and then, first copy this compiler, and, to terminate, rename to "TDM GNU GCC Compiler 32bit" by example.
 
@@ -73,30 +65,38 @@ Then, you choose tab "Toolchain executable" of this compiler to position good en
 			
 Toolchain executable : 
 	C:\TDM-GCC-32 (subdirectory \bin will be searched automatically to access to binaries listed after)
-	compilateur C : 			gcc.exe  
-	compilateur C++ : 			g++.exe  
-	linker for dynamic lib : 	g++.exe 
-	linker for static lib : 	gcc-ar.exe
-	debugger :					GDB (default)
-	resource compiler :			windres.exe
-	make program : 				mingw32-make.exe
+	- compilateur C : 			    gcc.exe  
+	- compilateur C++ : 			g++.exe  
+	- linker for dynamic lib : 	g++.exe 
+	- linker for static lib : 	    gcc-ar.exe
+	- debugger :					    GDB (default)
+	- resource compiler :			windres.exe
+	- make program : 				mingw32-make.exe
 
 You must add another directory into tab "Toolchain executable" with subtab "Additional paths" : C:\TDM-GCC-32\gdb32\bin.
 But, the name of executable associated with gdb is "gdb32.exe" not "gdb.exe" and you can't change this name into interface CB.
 But, to resolve this, you can copy, in this directory, "gdb32.exe" to "gdb.exe", and "gdb32server.exe" to "gdbserver.exe".
-Or create two links pointed on these two executables.
+Or create two symlinks pointed on these two executables.
 
 Then, you choose tab" "Search directories" to position good environment like this :
 
-	to compiler : 			C:\TDM-GCC-32\include 
-	to linker : 			C:\TDM-GCC-32\lib	  
-	to resource compiler : 	C:\TDM-GCC-32\include
-	
-You can test with precedent project C++ create into CB, after change compiler to "TDM GNU GCC Compiler 32bit" and rebuild it.
+	- to compiler : 			    C:\TDM-GCC-32\include 
+	- to linker : 			    C:\TDM-GCC-32\lib	  
+	- to resource compiler : 	C:\TDM-GCC-32\include
+### Test of "simple" code with TDM MinGW32/MinGW64 into CB
+
+With simply source "hellowworld.c", you can test generation of program into IDE CB, choosing "create new project" in main  windows of CB, and choose "console application" with no source proposed by default, because named "main.c", and choose compiler "TDM GNU GCC Compiler 64bit".
+You can select good directory/source with option "add file" after first creation of project into CB. 
+
+One time project created, you can generate it with selecting main menu "Build" and choose submenu "Rebuild..." (or CTRL-F11), and save your project (or "save everythings").
+
+You can test with precedent project console C create into CB, after change compiler to "TDM GNU GCC Compiler 32bit" and rebuild it.
+
+If, you apply all of precedent instructions, compile and link of your program with this new compiler must be succeeded.
 
 Pleasure of programming is open for you, your imagination is illimited, at your keyboard ! Enjoy !
 
-PS : source file "hellowworld.c" :
+### PS : source file "hellowworld.c" :
 
 /*     Basic example in language C : hellowworld.c      */
 
@@ -108,7 +108,9 @@ int main(int argc, char *argv[]) {
    return 0;
 }
 
-PS2 : You can also use compiler GCC of MinGW64 issued of TDM in command console on Windows (CMD.EXE) with next instructions :
+### PS2 : use of TDM MinGW32/MinGW64 directly on command line (just to illustrate) 
+
+You can also use compiler GCC of MinGW64 issued of TDM in command console on Windows (CMD.EXE) with next instructions :
 
 set PATHSAV=%PATH%
 set PATH=C:\TDM-GCC-64\bin;%PATH%
@@ -124,10 +126,11 @@ Continue with use of TDM GCC, and don't forgive, at the end of your work, to ret
 
 set PATH=%PATHSAV%
 
-But, it's much easy to use TDM GCC MinGW32 or TDM GCC MinGW64 directly into CB IDE especially with complex C program 
-(many C sources and many subdirectories ...)    -)
+**But, it's much easy to use GCC compiler of MinGW64 included in Red-Panda directly into CB IDE especially with complex C program (many C sources and many subdirectories ...) , and multiple targets by example : main DLL and console program to test this DLL, ...   -)**
 
-PS3 : Command "gcc" present a very "verbose" list of options, but to resume principal and useful options, you can use 
+### PS3 : Principal syntax of tools GCC 
+
+Command "gcc" present a very "verbose" list of options, but to resume principal and useful options, you can use 
 by example :
 	"-m16" 				Generate i386 16 bits object or executable.
 	"-m32" 				Generate i386 32 bits object or executable.

@@ -1,7 +1,8 @@
 	 
-Name of tutorial : How config Open WATCOM Compiler C/C++ (32 and 64 bits) into Code::Blocks on Windows 11 64 bits.
+## Full name of tutorial : How config Open WATCOM Compiler C/C++ (32 and 64 bits) into Code::Blocks on Windows 11 64 bits.
 
 	Code::Blocks : the best and great free IDE for Windows, Linux and ... Mac OS
+### Presentation of Open WATCOM C/C++ Compiler
 
 During first run of CB on Windows, this IDE detect automatically some compilers, or present one list of them pre-configured.
 It's very good functionnality, but, sometimes, you must "force" these configurations proposed by default to run correctly.
@@ -11,113 +12,103 @@ How to install Open WATCOM Compiler C/C++ (32 and 64 bits) ?
 
 You can download it from Internet site GITHUB :	https://github.com/open-watcom/open-watcom-v2/releases
 
-Then, you select last "pre-release" version V2.0c, and donwload file "open-watcom-2_0-c-win-x64.exe", click on these files to 
-install Open Watcom C/C++ compiler on "C:\WATCOM" directory (by default). This "pre-release" is good update of initial version
-available on SourceForge in "stable" version 1.9 very outdated, and activity on GitHub about this fork is very sustained.
+Then, you select last "pre-release" version V2.0c, and donwload file "open-watcom-2_0-c-win-x64.exe", click on these files to install Open Watcom C/C++ compiler on "C:\WATCOM" directory (by default). This "pre-release" is very good update of initial version available on SourceForge in "stable" version 1.9 very outdated, and activity on GitHub about this fork is very sustained.
 
 Big interest about Open WATCOM C\C++ compiler provide it can be run on multiple Intel x86 platforms and generate targets on multiple platforms, including 16-bits :
-    a) Host Platforms :
-            DOS (command line only)
-            32-bit OS/2 (IDE and command line)
-            Windows 3.x (IDE)
-            Windows 95/98/Me (IDE and command line)
-            Windows NT/2000/XP upto Windows 11 (IDE and command line)
-            Linux (command line only) 
-    b) 16-bits target platforms :
-            DOS
-            Windows 1 upto Windows 3.x
-            OS/2 1.x 
-    c) 32-bits target platforms
-            Extended DOS
-            Win32s
-            Windows 95/98/Me
-            Windows NT/2000/XP ... up to Windows 11
-            32-bit OS/2
-            Novell NLMs
-            Linux 32/64-bit Intel CPU 
+    - a) Host Platforms :
+            - DOS (command line only)
+            - 32-bit OS/2 (IDE and command line)
+            - Windows 3.x (IDE)
+            - Windows 95/98/Me (IDE and command line)
+            - Windows NT/2000/XP upto Windows 11 (IDE and command line)
+            - Linux (command line only) 
+    - b) 16-bits target platforms :
+            - DOS
+            - Windows 1 upto Windows 3.x
+            - OS/2 1.x 
+    - c) 32-bits target platforms
+            - Extended DOS
+            - Win32s
+            - Windows 95/98/Me
+            - Windows NT/2000/XP ... up to Windows 11
+            - 32-bit OS/2
+            - Novell NLMs
+            - Linux 32/64-bit Intel CPU 
 
-WARNING : Pre-processor test of presence of this compiler by only "#ifdef  __WATCOMC__" don't inform about platform used, only
-		  inform about type of compiler C\C++ used ... and it's normal ... (Is it not ?   -)    ) 
-		  In your code, you can find this variable equally on Win32 platforms that on Linux platforms...
-		  Good tests are :
-				"#if defined(_WIN32) && defined(__WATCOMC__) 	/* Test ok to detect OW run on Win32 platforms (x86 or x64) */
-				"#if defined(__linux__) && defined(__WATCOMC__) /* test ok to detect OW run on linux platforms (x86 or x64)	*/
+WARNING : Pre-processor test of presence of this compiler by only "#ifdef  __WATCOMC__" don't inform about platform used, only inform about type of compiler C\C++ used ... and it's normal ... (Is it not ?   -)    ) 
+ In your code, you can find this variable equally on Win32 platforms that on Linux platforms...
+Good tests are :
+	"#if defined(_WIN32) && defined(__WATCOMC__) 	/* Test ok to detect OW run on Win32 platforms (x86 or x64) */
+	"#if defined(__linux__) && defined(__WATCOMC__) /* test ok to detect OW run on linux platforms (x86 or x64)	*/
 
-Yes, today, with generalization of 64 bits platforms, it can be considered "obsolete", but it can be important to conserve 
-these "old" possibilities in specific context.
+Yes, today, with generalization of 64 bits platforms, it can be considered "obsolete", but it can be important to conserve these "old" possibilities in specific context.
 But, big restriction, same with 64 bits version of this compiler on Windows 11, you can't generate 64 bits version of targets.
+### Configuration of Open WATCOM C/C++ Compiler into CB
 
-Normally, after that, next run of CB detect presence of these compilers and proposed it in list of available compiler in main 
-menu "Settings" and after submenu "Compiler..." : "OpenWatcom Compiler" (autodetect by CB).
+Normally, after that, next run of CB detect presence of these compilers and proposed it in list of available compiler in main menu "Settings" and after submenu "Compiler..." : "OpenWatcom Compiler" (autodetect by CB).
 If you select this, verify that fields describe next are parametered into CB.
 
 In tab "Toolchain executable", you must find in field "Compiler installation directory" :
 	C:\WATCOM 		(subdirectory "\bin" automatically searched after this "top" directory),
 and in subtab "Program Files", list next :	
-	compilateur C : 			wcl386.exe
-	compilateur C++ : 			wcl386.exe	
-	linker for dynamic lib : 	wlink.exe
-	linker for static lib : 	wlib.exe
-	debugger :					
-	resource compiler :			wrc.exe
-	make program : 				wmake.exe
+	- compilateur C : 			wcl386.exe
+	- compilateur C++ : 			wcl386.exe	
+	- linker for dynamic lib : 	wlink.exe
+	- linker for static lib : 	wlib.exe
+	- debugger :					
+	- resource compiler :			wrc.exe
+	- make program : 				wmake.exe
 
-It's not enougth, because binaries of Open Watcom Compiler are not in subdirectory ".\bin" but in ".\binnt", then you must add
-in subtab "Additional Paths" and click on button "Add" to type in new subwindows : "C:\WATCOM\binnt".
+It's not enougth, because binaries of Open Watcom Compiler are not in subdirectory ".\bin" but in ".\binnt", then you must add in subtab "Additional Paths" and click on button "Add" to type in new subwindows : "C:\WATCOM\binnt".
 
 If CB propose different values of fields described below, you can change/force it.
 
 After, you select tab "Search directories", and into each subtab, you write with "add" button, if not searched by default :
-	to compiler : 			C:\WATCOM\h\nt	    and C:\WATCOM\h
-	to linker : 			C:\WATCOM\lib386\nt
-	to resource compiler : 	C:\WATCOM\h\nt		and C:\WATCOM\h
+	- to compiler : 			C:\WATCOM\h\nt	    and C:\WATCOM\h
+	- to linker : 			C:\WATCOM\lib386\nt
+	- to resource compiler : 	C:\WATCOM\h\nt		and C:\WATCOM\h
 
-It's recommended then to select an option in tab "Compiler Settings" and in subtab "Compiler Flags" to select "Compile and Link 
-for NT (includes Win32) [-bcl=nt]" if you want generate and test your target on Windows NT/7/8/10/11 operating systems.  
+It's recommended then to select an option in tab "Compiler Settings" and in subtab "Compiler Flags" to select "Compile and Link for NT (includes Win32) [-bcl=nt]" if you want generate and test your target on Windows NT/7/8/10/11 operating systems.  
 
-And, with simply source "hellowworld.c", you can test generation of program into IDE CB, choosing "create new project" in main 
-windows of CB, and choose "console application" with no source proposed by default, because named "main.c" by default, and choose 
-compiler "OpenWatcom Compiler".
-You can select good directory/source with option "add file" after first creation of project into CB. 
-
-One time project created, you can generate it with selecting main menu "Build" and choose submenu "Rebuild..." (or CTRL-F11).
-
-If, you apply all of precedent instructions, compile and link of your program must be succeeded.
-
-For fun, you can also define version 64 bits of Open WATCOM compiler, into CB. You must first return in main menu "Settings" and 
-after submenu "Compiler..." to choose "OpenWatcom Compiler", after click on button "Copy" and to terminate rename it with type 
-"OpenWatcom Compiler (64b)" by button "Rename", by example (=> force identification of "new" compiler into CB).
+For fun, you can also define version 64 bits of Open WATCOM compiler, into CB. You must first return in main menu "Settings" and after submenu "Compiler..." to choose "OpenWatcom Compiler", after click on button "Copy" and to terminate rename it with type "OpenWatcom Compiler (64b)" by button "Rename", by example (=> force identification of "new" compiler into CB).
 
 After, verify that in tab "Toolchain executable", you must find in field "Compiler installation directory" :
 	C:\WATCOM 		(subdirectory "\bin" automatically searched after this "top" directory),
 and in subtab "Program Files", list next :	
-	compilateur C : 			wcl386.exe
-	compilateur C++ : 			wcl386.exe	
-	linker for dynamic lib : 	wlink.exe
-	linker for static lib : 	wlib.exe
-	debugger :					
-	resource compiler :			wrc.exe
-	make program : 				wmake.exe
+	- compilateur C : 			    wcl386.exe
+	- compilateur C++ : 			wcl386.exe	
+	- linker for dynamic lib : 	wlink.exe
+	- linker for static lib : 	    wlib.exe
+	- debugger :					
+	- resource compiler :			wrc.exe
+	- make program : 				wmake.exe
 	
 Then you must change in subtab "Additional Paths" and click on button "Edit" to retype in new subwindows : "C:\WATCOM\binnt64".
 
 You can verify also presence in tab "Search directories", and into each subtab (same with version 32 bits) :
-	to compiler : 			C:\WATCOM\h\nt	    and C:\WATCOM\h
-	to linker : 			C:\WATCOM\lib386\nt
-	to resource compiler : 	C:\WATCOM\h\nt		and C:\WATCOM\h
+	- to compiler : 			        C:\WATCOM\h\nt	    and C:\WATCOM\h
+	- to linker : 			            C:\WATCOM\lib386\nt
+	- to resource compiler : 	C:\WATCOM\h\nt		and C:\WATCOM\h
 
-And, with simply source "hellowworld.c", you can test generation of program into IDE CB, choosing "create new project" in main 
-windows of CB, and choose "console application" with no source proposed by default, because named "main.c" by default, and choose 
-compiler "OpenWatcom Compiler (64b)".
+### Test of "simple" code with Open WATCOM C/C++ into CB
+
+With simply source "hellowworld.c", you can test generation of program into IDE CB, choosing "create new project" in main windows of CB, and choose "console application" with no source proposed by default, because named "main.c" by default, and choose compiler "OpenWatcom Compiler".
 You can select good directory/source with option "add file" after first creation of project into CB. 
 
 One time project created, you can generate it with selecting main menu "Build" and choose submenu "Rebuild..." (or CTRL-F11).
 
+To test 64 bits, return into main menu "Project" and in submenu "Build options" to change the
+compiler to "OpenWatcom Compiler (64b)".
+
+And, after you can rebuild with main menu "Build" and choose submenu "Rebuild..." (or CTRL-F11).
+
 Note that target rest in version 32 bits !!! Little interest ...
+
+If, you apply all of precedent instructions, compile and link of your program must be succeeded.
 
 Pleasure of programming is open for you, your imagination is illimited, at your keyboard ! Enjoy !
 
-PS : source file "hellowworld.c" :
+### PS : source file "hellowworld.c" :
 
 /*     Basic example in language C : hellowworld.c      */
 
@@ -129,7 +120,9 @@ int main(int argc, char *argv[]) {
    return 0;
 }
 
-PS2 : Open Watcom compiler can be used directly into command console of Windows (CMD.EXE) and next command lines configure it :
+### PS2 : Use of  Open Watcom C/C++ in command line (just to illustrate)
+
+Open Watcom compiler can be used directly into command console of Windows (CMD.EXE) and next command lines configure it :
 
 SET PATHSAV=%PATH%
 SET INCSAV=%INCLUDE%
@@ -147,13 +140,14 @@ wcl386 -c hellowworld.c -fo=hellowworld.obj
 wlink system nt file hellowworld.obj name hellowworld.exe
 
 After, work with Open Watcom compiler, but, at the end of your work, think to return in initial state ... to avoid difficulties :
-
 .....
 SET PATH=%PATHSAV%
 SET INCLUDE=%INCSAV%
 SET LIB=%LIBSAV%  
 
-PS3 : Options of command line utilities "wcl386" and "wlink" for Open Watcom compiler :
+**But, it's much easy to use Digital Mars Compiler C/C++ directly into CB IDE especially with complex C program (many C sources and many subdirectories ...) , and multiple targets by example : main DLL and console program to test this DLL, ...   -)**
+
+### PS3 : Options of command line utilities "wcl386" and "wlink" for Open Watcom compiler :
 
 Options are prefixed with a slash (/) or a dash (−) and may be specified in any order.
 
@@ -341,18 +335,18 @@ see all content in text file, and after select that you want use.
 Just to illustrate, next command is used to generated an console application after one step of compilation :
 
 "wlink debug all system nt LIBP "%LIB%" file %OBJS% objOW32\Debug\%NAME_APPLI%.obj option resource=objOW32\Debug\%NAME_APPLI%.res \
-       name binOW32\Debug\%NAME_APPLI%.exe library glu32,opengl32,advapi32,comdlg32,gdi32,winmm,user32,kernel32"
+name binOW32\Debug\%NAME_APPLI%.exe libraryglu32,opengl32,advapi32,comdlg32,gdi32,winmm,user32,kernel32"
   
 with many variables to adapt at context, where parameters are :
 
-	"debug all" 		to generate version "Debug" (suppress it to "Release" version)
-	"system nt"			to generate console application on Win32 platforms ("system nt_win" to GUI application Win32)
-	"LIBP ...." 		to list library directories (separator is ";")
-	"file ...." 		to list all object files in input (here contents first in %OBJ% variable, and close by objOW32\Debug\%NAME_APPLI%.obj)
+	"debug all" to generate version "Debug" (suppress it to "Release" version)
+	"system nt"to generate console application on Win32 platforms ("system nt_win" to GUI application Win32)
+	"LIBP ...." to list library directories (separator is ";")
+	"file ...." to list all object files in input (here contents first in %OBJ% variable, and close by objOW32\Debug\%NAME_APPLI%.obj)
 							(separator is " ")
 	"option resource=..." to provide name of resource file used by linker (many other options can be defined)
-	"name ..." 			to force name of output file (here an executable file)
-	"library ..." 		to list all libraries needed by linker (separator is ",")
+	"name ..." 	to force name of output file (here an executable file)
+	"library ..." 	to list all libraries needed by linker (separator is ",")
 
 All documentation (updated) is available on https://open-watcom.github.io/open-watcom-v2-wikidocs (files pdf or html).
 
@@ -361,9 +355,9 @@ Another example to generate an "Release"" DLL (and import library "ad hoc" in pa
 "wlink system nt_dll LIBP "%LIB%" IMPLIB binOW32\Release\%NAME_APPLI%.lib file %OBJS% objOW32\Release\%NAME_APPLI%.obj \
     option resource=objOW32\Release\%NAME_APPLI%.res name binOW32\Release\%NAME_APPLI%.dll library glu32,opengl32,advapi32,comdlg32,gdi32,winmm,user32,kernel32"
 	
-And use of OW into IDE CB is very simplified than use into command line ...     -)  
+**Recall : use of OW into IDE CB is very simplified than use into command line ...     -)**  
 
-PS4 : Open Watcom Compiler use by default a specific "calling convention" called "watcall". If you want shared
-your development beetween another compiler and Open Watcom, it's better to use another like "__cdecl" or "__stdcall"
-by positionning "-ecc" or "-ecd" flag during compilation/generation. Idem for format of debugging, by default "Open 
-Watcom", but you can select beetween "Dwarf" or "Codeview" by positionning "-hd" or "-hc" during compilation/generation.
+### PS4 : Warning about use of OW
+
+Open Watcom Compiler use by default a specific "calling convention" called "watcall". If you want shared your development beetween another compiler and Open Watcom, it's better to use another like "__cdecl" or "__stdcall"by positionning "-ecc" or "-ecd" flag during compilation/generation. 
+Idem for format of debugging, by default "Open Watcom" use specific format of debuggging, but you can select beetween "Dwarf" or "Codeview" by positionning "-hd" or "-hc" during compilation/generation.

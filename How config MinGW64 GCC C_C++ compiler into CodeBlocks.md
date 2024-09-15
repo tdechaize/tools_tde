@@ -1,22 +1,22 @@
 	 
-Name of tutorial : How config MinGW64 GCC C/C++ compiler into Code::Blocks on Windows 11 64 bits.
+## Full name of tutorial : How config MinGW64 GCC C/C++ compiler into Code::Blocks on Windows 11 64 bits.
 
 	Code::Blocks : the best and great free IDE for Windows, Linux and ... Mac OS
+### Presentation of MInGW64 and GCC compiler (if needed ...)
 
 During first run of CB on Windows, this IDE detect automatically some compilers, or present one list of them pre-configured.
 It's very good functionnality, but, sometimes, you must "force" these configurations proposed by default to run correctly.
 This tuto describe how configure compilers GCC included in MSYS2 MinGW32/MinGW64 environment on Windows. 
 
-MinGW : A native Windows port of the GNU Compiler Collection (GCC), with freely distributable import libraries and header 
-files for building native Windows applications; includes extensions to the MSVC runtime to support C99 functionality. 
+MinGW : A native Windows port of the GNU Compiler Collection (GCC), with freely distributable import libraries and header files for building native Windows applications; includes extensions to the MSVC runtime to support C99 functionality. 
 All of MinGW's software will execute on the 64bit Windows platforms.
 	 
-How to install MinGW64/MinGW32 on Windows 11 64 bits ? 
+How to install MinGW64 on Windows 11 64 bits ? 
 
-You can download last version of MinGW64/MinGW32 on Internet site :
+You can download last version of MinGW64 on Internet site :
 	https://github.com/niXman/mingw-builds-binaries/releases
 
-Warning, many versions of MinGW64/MinGW32 are available on this site, and it's important to understand differences beetween their : 
+Warning, many versions of MinGW64 are available on this site, and it's important to understand differences beetween their : 
 	one category is based on UCRT (run-time C universal),
 	another category is based on MSVCRT (run-time C owned by Microsoft Corporation)
 	and another differentiations into versions is based on "multithread" package : 
@@ -45,31 +45,29 @@ On the other hand, the pros of mcfgthread are :
 
 All versions are declined in 32 bits or 64 bits version.
 
-To focalize on 64 bits version, you can download file "x86_64-13.2.0-release-win32-seh-ucrt-rt_v11-rev1.7z" and after decompress
-it on directory C:\niXman\MinGW64, version of GCC 64 bit installed after is 13.2.0.
+To focalize on 64 bits version, you can download file "x86_64-13.2.0-release-win32-seh-ucrt-rt_v11-rev1.7z" and after decompress it on directory C:\niXman\MinGW64, version of GCC 64 bit installed after is 13.2.0.
 Why not C:\MinGW64 ? Because package "WinLibs" need to conserve C:\mingw32 and C:\mingw64 free to use (mandatory).
+### Configuration of MInGW64 and GCC compiler into CB
 
-You must configure this new compiler into CB by selecting main menu "Settings" then submenu "Compiler..." into IDE interface,
-then, choose "GNU GCC Compiler (default)", copy it by button "Copy" and rename this like "MinGW64 GCC Compiler" by example,
-with button "Rename".
+You must configure this new compiler into CB by selecting main menu "Settings" then submenu "Compiler..." into IDE interface, then, choose "GNU GCC Compiler (default)", copy it by button "Copy" and rename this like "MinGW64 GCC Compiler" by example, with button "Rename".
 
 Then, you choose tab" "Toolchain executable" to position good environment like this :
 			
 Toolchain executable : 
 	C:\niXman\MinGW64 (subdirectory \bin will be searched automatically to access to binaries listed after)
-	compilateur C : 			gcc.exe  
-	compilateur C++ : 			g++.exe  
-	linker for dynamic lib : 	g++.exe 
-	linker for static lib : 	gcc-ar.exe
-	debugger :					gdb.exe
-	resource compiler :			windres.exe
-	make program : 				mingw32-make.exe
+	- compilateur C : 			gcc.exe  
+	- compilateur C++ : 			g++.exe  
+	- linker for dynamic lib : 	g++.exe 
+	- linker for static lib : 	gcc-ar.exe
+	- debugger :					gdb.exe
+	- resource compiler :			windres.exe
+	- make program : 				mingw32-make.exe
 
 Then, you choose tab" "Search directories" to position good environment like this :
 
-	to compiler : 			C:\niXman\MinGW64\x86_64-w64-mingw32\include and C:\niXman\MinGW64\include
-	to linker : 			C:\niXman\MinGW64\x86_64-w64-mingw32\lib	 and C:\niXman\MinGW64\lib
-	to resource compiler : 	C:\niXman\MinGW64\x86_64-w64-mingw32\include and C:\niXman\MinGW64\include
+	- to compiler : 			C:\niXman\MinGW64\x86_64-w64-mingw32\include and C:\niXman\MinGW64\include
+	- to linker : 			C:\niXman\MinGW64\x86_64-w64-mingw32\lib	 and C:\niXman\MinGW64\lib
+	- to resource compiler : 	C:\niXman\MinGW64\x86_64-w64-mingw32\include and C:\niXman\MinGW64\include
 	
 Then, you can type this into command console Windows : "C:\niXman\MinGW64\bin\g++.exe" --version; result here :
 
@@ -77,18 +75,20 @@ g++.exe (x86_64-win32-seh-rev1, Built by MinGW-Builds project) 13.2.0
 Copyright (C) 2023 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+### Test of "simple" code with GCC compiler C/C++ of MinGW64 into CB
 
-And, with simply source "hellowworld.c", you can test generation of program into IDE CB, choosing "create new project" in main 
+With simply source "hellowworld.c", you can test generation of program into IDE CB, choosing "create new project" in main 
 windows of CB, and choose "console application" with no source proposed by default, because named "main.c" is proposed by default, 
 and choose compiler  "MinGW64 GCC Compiler".
 You can select good directory/source with option "add file" after first creation of project into CB. 
 
 One time project created, you can generate it with selecting main menu "Build" and choose submenu "Rebuild..." (or CTRL-F11).
+
 If, you apply all of precedent instructions, compile and link of your program with this new compiler must be succeeded.
 
 Pleasure of programming is open for you, your imagination is illimited, at your keyboard ! Enjoy !
 
-PS : source file "hellowworld.c" :
+### PS : source file "hellowworld.c" :
 
 /*     Basic example in language C : hellowworld.c      */
 
@@ -100,7 +100,9 @@ int main(int argc, char *argv[]) {
    return 0;
 }
 
-PS2 : You can also use compiler GCC in command console on Windows (CMD.EXE) with next instructions :
+### PS2 : Use of GCC compiler of MinGW64 with command line (just to illustrate) 
+
+You can also use compiler GCC in command console on Windows (CMD.EXE) with next instructions :
 
 set PATHSAV=%PATH%
 set PATH=C:\niXman\MinGW64\bin;%PATH%
@@ -121,7 +123,9 @@ set PATH=%PATHSAV%
 But, it's much easy to use GCC of MinGW64 directly into CB IDE especially with complex C program (many C sources
 and many subdirectories ...)    -)
 
-PS3 : Command "gcc" present a very "verbose" list of options, but to resume principal and useful options, you can use 
+### PS3 : Principal syntax of tools GCC
+
+Command "gcc" present a very "verbose" list of options, but to resume principal and useful options, you can use 
 by example :
 	"-m16" 				Generate i386 16 bits object or executable.
 	"-m32" 				Generate i386 32 bits object or executable.
