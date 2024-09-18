@@ -1,4 +1,4 @@
-	 
+
 ## Full name of tutorial : How config CB MinGW64 GCC C/C++ compiler into Code::Blocks on Windows 11 64 bits.
 
 	Code::Blocks : the best and great free IDE for Windows, Linux and ... Mac OS
@@ -40,11 +40,11 @@ Toolchain executable :
 Then, you choose tab" "Search directories" to position good environment like this :
 
 	- to compiler : 		C:\CodeBlocks\MinGW\x86_64-w64-mingw32\include and 
-						- C:\CodeBlocks\MinGW\include
+						    C:\CodeBlocks\MinGW\include
 	- to linker : 		C:\CodeBlocks\MinGW\x86_64-w64-mingw32\lib    and 
-						- C:\CodeBlocks\MinGW\lib
+						    C:\CodeBlocks\MinGW\lib
 	- to resource compiler : C:\CodeBlocks\MinGW\x86_64-w64-mingw32\include and 
-						- C:\CodeBlocks\MinGW\include
+						    C:\CodeBlocks\MinGW\include
 	
 Then, you can type this into command console Windows : "C:\CodeBlocks\MinGW\bin\g++.exe --version"; result here :
 

@@ -1,69 +1,62 @@
 	 
-Name of tutorial : How config CYGWIN64 (+ MinGW32/MinGW64) into Code::Blocks on Windows 11 64 bits.
+## Full name of tutorial : How config CYGWIN64 (+ MinGW32/MinGW64) into Code::Blocks on Windows 11 64 bits.
 
 	Code::Blocks : the best and great free IDE for Windows, Linux and ... Mac OS
 
+### Presentation of CYGWIN64 and his many compilers GCC ...
+
 During first run of CB on Windows, this IDE detect automatically some compilers, or present one list of them pre-configured.
 It's very good functionnality, but, sometimes, you must "force" these configurations proposed by default to run correctly.
-This tuto describe how configure compilers GCC included in package CYGWIN + MinGW32 and MinGW64 into Code::Blocks on Windows 11
-64 bits.
+This tuto describe how configure compilers GCC included in package CYGWIN + MinGW32 and MinGW64 into Code::Blocks on Windows 11 64 bits.
 
+**REMARK** : CYGWIN is not the only implementation of Linux/Unix layers on Windows systems. WSL (Windows Subsystem Linux) is the second, provided by Microsoft with agreement of Linux distributers supported (ex : Ubuntu 22.04, Ubuntu 24.04, Kali Linux, etc...).
+(I don't forget emulation/virtualization on Windows that allow also to run directly Linux/Unix into "virtual environment").
+	
 But, before describe how configure CYGWIN64 into CB, it's seems necessary to explain what is CYGWIN64, and also what sort of compilers GCC are configurable into CB.
+
+## Installation of CYGWIN64 and GCC compilers ("native" + 32 and 64 bits with MinGW)
 
 On Windows 11 systems 64 bits, you can't install 32 bits version of CYGWIN, only 64 bits version (CYGWIN64).
 The installation binary provide by CYGWIN team is available on this site https://cygwin.com/install.html, and is named :  "setup-x86_64.exe".
-By default, the install directory is "C:\cygwin64", and, since more years, you can upgrade with the same tool to integrate  MinGW32/64 directly into CYGWIN environment. 
-Think to install too "make" (GNU) tool to "cmake" generator "Unix Makefiles"
-by example, it's not installed by default ...
-
-REMARK : CYGWIN is not the only implementation of Linux/Unix layers on Windows systems. WSL (Windows Subsystem Linux) is the second,
-		provided by Microsoft with agreement of Linux distributers supported (ex : Ubuntu 22.04, Ubuntu 24.04, Kali Linux, etc...)
-		(I don't forget emulation/virtualization on Windows that allow also to run directly Linux/Unix into "virtual environment").
+By default, the install directory is "C:\cygwin64", and, since more years, you can upgrade with the same tool to integrate MinGW32/64 directly into CYGWIN environment. 
+Think to install too "make" (GNU) tool to "cmake" generator "Unix Makefiles" by example, it's not installed by default ... 
 
 It's seems also important to understand some difference beetween use of three GCC compilers available into CYGWIN64 :
-		- "native" GCC compiler 64 bits use to construct "unix" like application with POSIX layer, but also pure Windows application,
-		- GCC compiler 32 bits included in MinGW32 (version available on "official" repository of CYGWIN) to construct pure Windows 
-			application,
-		- GCC compiler 64 bits included in MinGW64 (version available on "official" repository of CYGWIN) to construct pure Windows 
-			application,
+		"native" GCC compiler 64 bits use to construct "unix" like application with POSIX layer, but also pure Windows application,
+		GCC compiler 32 bits included in MinGW32 (version available on "official" repository of CYGWIN) to construct pure Windows application,
+		GCC compiler 64 bits included in MinGW64 (version available on "official" repository of CYGWIN) to construct pure Windows application,
 
 The names of executable of these three compilers available "into" CYGWIN64 are :
-	- gcc.exe or x86_64-w64-pc-gcc.exe (version native de GCC) 12.4.0 (64 bits), InstalledDir : C:/Cygwin64/bin, ident that can be used 
-			by preprocessing :	__CYGWIN__ 
+	- gcc.exe or x86_64-w64-pc-gcc.exe (version native de GCC) 12.4.0 (64 bits), InstalledDir : C:/Cygwin64/bin, ident that can be used by preprocessing :	__CYGWIN__ 
 	- i686-w64-mingw32-gcc (GCC) 12.4.0 (32 bits), InstalledDir : C:/Cygwin64/bin, ident that can be used by preprocessing : __MINGW32__
 			(and presence of copy of this executable : i686-w64-mingw32-gcc-12)
 	- x86_64-w64-mingw32-gcc (GCC) 12.4.0 (64 bits), InstalledDir : C:/Cygwin64/bin, ident that can be used by preprocessing : __MINGW64__
 			(and presence of copy of this executable : x86_64-w64-mingw32-gcc-12)
 			
-NB : Two versions of MinGW32/64 GCC compilers define also variable _WIN32 that can be used into preprocessing, but "native" GCC not ... and it's normal !!!
+**NB : Two versions of MinGW32/64 GCC compilers define also variable _WIN32 that can be used into preprocessing, but "native" GCC not ... and it's normal !!!**
 
 Just to be precise, you can search on Internet a discution about this :
 		"Dependency of dll "cygwin1.dll" after construct program with CYGWIN environment" (here version 64 bits)
 
+### Dependency of DLL "cygwin1.dll" with DLL/executable generated by CYGWIN
+
 Internet research about dependency with dll "cygwin1.dll" indicate this first comment :
 
-"Cygwin is a Linux-like environment for Windows. It consists of a DLL ("cygwin1.dll"), which acts as an emulation layer providing 
-substantial POSIX (Portable Operating System Interface) system call functionality, and a collection of tools, which provide a Linux 
-look and feel."
+"Cygwin is a Linux-like environment for Windows. It consists of a DLL ("cygwin1.dll"), which acts as an emulation layer providing substantial POSIX (Portable Operating System Interface) system call functionality, and a collection of tools, which provide a Linux look and feel."
 
-"A basic "Hello, World" Cygwin program requires two library to run (.ie. program generated by "gcc" (same "x86_64-pc-cygwin_gcc.exe") 
-or "i686-pc-cygwin-gcc.exe" if you install 32 bits version of Cygwin on Windows 32 bits) : 
+"A basic "Hello, World" Cygwin program requires two library to run (.ie. program generated by "gcc" (same "x86_64-pc-cygwin_gcc.exe") or "i686-pc-cygwin-gcc.exe" if you install 32 bits version of Cygwin on Windows 32 bits) : 
 	a) the main Cygwin DLL "cygwin1.dll", and
 	b) cyggcc_s-1.dll (dll special GCC). 
 Into Cygwin terminal, "cygwin1.dll" is present on directory /bin. 
-MinGW program into CYGWIN will be linked to msvcrt.dll which is an internal, undocumented, unversioned library that is part of Windows, 
-and off-limits to application use. That library is essentially a fork of the redistributable run-time library from MS Visual C for use 
-by  Windows itself."
+MinGW program into CYGWIN will be linked to msvcrt.dll which is an internal, undocumented, unversioned library that is part of Windows, and off-limits to application use. That library is essentially a fork of the redistributable run-time library from MS Visual C for use by Windows itself."
 
 Invert "/" by "\" separator of directories's level, if use research of these DLL in console command Windows, instead a cygwin terminal.
 
-Before beginning, think to add C:\Cygwin64\bin at your PATH Windows, to access at the binaries of compilers and needed tools ("make", 
-"file" and "ldd" tools by example). 
+Before beginning, think to add C:\Cygwin64\bin at your PATH Windows, to access at the binaries of compilers and needed tools ("make", "file" and "ldd" tools by example). 
 
-Proof of concept : search "all" dependency of executable generated by all GCC compilers (three in all) included in CYGWIN64.  
+**Proof of concept** : search "all" dependency of executable generated by all GCC compilers (three in all) included in CYGWIN64.  
 
-One simple example to confirm that (or not !!!) (One Cygwin terminal open, and console command Windows too, positioned in same directory
-(that contains source and executables)) :
+One simple example to confirm that (or not !!!) (One Cygwin terminal open, and console command Windows too, positioned in same directory (that contains source and executables)) :
 
 Source C in file "hello_sample.c" :
 
@@ -129,50 +122,47 @@ $ ldd hello_x86_64-w64-mingw32.exe
 		ntdll.dll and kernel32.dll AND msvcrt.dll.
 		Tests OK with both cygwin terminal and console command windows)
 
-Conclusion to detect presence of DLL "cygwin1.dll" into executable, with last version of CYGWIN 64 bits 
-	(version DLL cygwin1.dll : 3.5.3) :
+**Conclusion to detect presence of DLL "cygwin1.dll" into executable**, with last version of CYGWIN 64 bits (version DLL cygwin1.dll : 3.5.3) :
 
-	a) nothing reference to DLL "cyggcc_s-1.dll" with all version of GCC compiler used ("native" or MinGW32/64) 
-		(old version of GCC ?)
-	b) with all version of GCC compiler used, always linked with "main" DLL of Windows 64 bits "ntdll.dll" present on 
-		directory C:\Windows\System32,
-	c) with version 32 bits of GCC compiler (MinGW32), linked too with DLL 32 bits of Windows "ntdll.dll" present on 
-		directory C:\Windows\SysWOW64, and DLL "wow64.dll" and it's derivative, presents on directory  C:\Windows\System32, 
-	d) with version 64 bits of two GCC compilers ("native" and MinGW64), linked with "kernel32.dll" and "kernelbase.dll"
-		presents on directory  C:\Windows\System32,
-	e) with only version MinGW64 of GCC compiler, linked with "msvcrt.dll", present on directory C:\Windows\System32,
-	f) with only version "native" of GCC compiler, linked with "cygwin1.dll", present on directory /usr/bin/ (or C:\Cygwin64\bin).
+	- a) nothing reference to DLL "cyggcc_s-1.dll" with all version of GCC compiler used ("native" or MinGW32/64) 
+		- (old version of GCC ?)
+	- b) with all version of GCC compiler used, always linked with "main" DLL of Windows 64 bits "ntdll.dll" present on 
+		- directory C:\Windows\System32,
+	- c) with version 32 bits of GCC compiler (MinGW32), linked too with DLL 32 bits of Windows "ntdll.dll" present on 
+		- directory C:\Windows\SysWOW64, and DLL "wow64.dll" and it's derivative, presents on directory  C:\Windows\System32, 
+	- d) with version 64 bits of two GCC compilers ("native" and MinGW64), linked with "kernel32.dll" and "kernelbase.dll"
+		- presents on directory  C:\Windows\System32,
+	- e) with only version MinGW64 of GCC compiler, linked with "msvcrt.dll", present on directory C:\Windows\System32,
+	- f) with only version "native" of GCC compiler, linked with "cygwin1.dll", present on directory /usr/bin/ (or C:\Cygwin64\bin).
  
-Conclusion : Dependency of dll "cygwin1.dll" is only implemented with "native" version of GCC compiler into Cygwin 64 bits on 
-Windows 64 bits, not with MinGW32/64 versions of GCC compiler. And, to assure portability on Windows, use of many "system" DLL
-present on system directory with mix beetween direct 64 bits DLL and "derivated" 32 bits DLL used by layer "WoW". 
+Dependency of dll "cygwin1.dll" is only implemented with "native" version of GCC compiler into Cygwin 64 bits on Windows 64 bits, not with MinGW32/64 versions of GCC compiler. And, to assure portability on Windows, use of many "system" DLL present on system directory with mix beetween direct 64 bits DLL and "derivated" 32 bits DLL used by layer "WoW". 
 
-Consequence : Only DLL/executable generated by "native" GCC compiler need presence of DLL "cygwin1.dll" in the PATH, or directly
-in same directory of this DLL/executable. 
+**Consequence** : Only DLL/executable generated by "native" GCC compiler need presence of DLL "cygwin1.dll" in the PATH, or directly in same directory of this DLL/executable. 
 
 After this long explanation (sorry !), return now about how configure these three compilers into CB.
 
-You must configure this new compiler into CB by selecting main menu "Settings" then submenu "Compiler..." into IDE interface,
-then, choose "GNU GCC Compiler (default)" and rename this like "CYGWIN native GCC 64 bits" by example, if it's not detected.
+### Configuration of three compilers GGC included in CYGWIN64 into Code::Blocks
+
+If, CB not autodetect CYGWIN64 on your system, you must configure this new compilers into CB by selecting main menu "Settings" then submenu "Compiler..." into IDE interface, then, choose "GNU GCC Compiler (default)" and rename this like "CYGWIN native GCC 64 bits" by example, if it's not detected.
 
 Then, you choose tab "Toolchain executable" to position good environment like this 
 			
 Toolchain executable : 
 	C:\CYGWIN64 (subdirectory \bin will be searched automatically to access to binaries listed after)
-	compilateur C : 			gcc.exe  				
+	compilateur C : 			    gcc.exe  				
 	compilateur C++ : 			g++.exe  
 	linker for dynamic lib : 	g++.exe 
-	linker for static lib : 	gcc-ar.exe
-	debugger :					GDB (default)
+	linker for static lib : 	   gcc-ar.exe
+	debugger :					    GDB (default)
 	resource compiler :			windres.exe
-	make program : 				make.exe				(remenber that, this tool is not installed by default)	
+	make program : 				make.exe			(remenber that, this tool is not installed by default)	
  
 Then, you choose tab" "Search directories" to position good environment like this :
 
-	to compiler : 			C:\CYGWIN64\usr\include   and C:\CYGWIN64\usr\include\w32api (if you want used windows API)
-	to linker : 			C:\CYGWIN64\lib	    and   C:\CYGWIN64\lib\w32api             (if you want used windows API)
-							(but you can add also C:\CYGWIN64\lib\X11 and C:\CYGWIN64\lib\xorg, if you want used X GUI API)
-	to resource compiler : 	C:\CYGWIN64\usr\include	  and C:\CYGWIN64\usr\include\w32api (if you want used windows API)
+	- to compiler : 			C:\CYGWIN64\usr\include   and C:\CYGWIN64\usr\include\w32api (if you want used windows API)
+	- to linker : 			C:\CYGWIN64\lib	    and   C:\CYGWIN64\lib\w32api             (if you want used windows API)
+							- (but you can add also C:\CYGWIN64\lib\X11 and C:\CYGWIN64\lib\xorg, if you want used X GUI API)
+	- to resource compiler : 	C:\CYGWIN64\usr\include	  and C:\CYGWIN64\usr\include\w32api (if you want used windows API)
 	
 Then, you can type this into command console Windows : "C:\CYGWIN64\bin\g++.exe --version"; result here :
 
@@ -181,44 +171,34 @@ Copyright (C) 2022 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-And, with simply source "hellowworld.c", you can test generation of program into IDE CB, choosing "create new project" in main 
-windows of CB, and choose "console application" with no source proposed by default, because named "main.c", and choose compiler 
-"CYGWIN native GCC 64 bits".
-You can select good directory/source with option "add file" after first creation of project into CB. 
-
-One time project created, you can generate it with selecting main menu "Build" and choose submenu "Rebuild..." (or CTRL-F11).
-If, you apply all of precedent instructions, compile and link of your program with this new compiler must be succeeded.
-
-For CYGWIN64 MinGW32, you must return into menu "Settings" of CB and select "CYGWIN native GCC 64 bits" compiler for copy it first,
-and, to terminate, rename to "CYGWIN MinGW32 GCC" by example.
+For CYGWIN64 MinGW32, you must return into menu "Settings" of CB and select "CYGWIN native GCC 64 bits" compiler for copy it first, and, to terminate, rename to "CYGWIN MinGW32 GCC" by example.
 
 Then, you choose tab "Toolchain executable" of this compiler to position good environment like this 
 			
 Toolchain executable : 
 	C:\CYGWIN64 (subdirectory \bin will be searched automatically to access to binaries listed after)
-	compilateur C : 			i686-w64-mingw32-gcc.exe   
+	compilateur C : 			   i686-w64-mingw32-gcc.exe   
 	compilateur C++ : 			i686-w64-mingw32-g++.exe   
 	linker for dynamic lib : 	i686-w64-mingw32-g++.exe
-	linker for static lib : 	i686-w64-mingw32-gcc-ar.exe 
-	debugger :					GDB (default)
+	linker for static lib : 	    i686-w64-mingw32-gcc-ar.exe 
+	debugger :					   GDB (default)
 	resource compiler :			i686-w64-mingw32-windres.exe
-	make program : 				make.exe						(note that mingw32-make.exe is not present with this install)
+	make program : 				make.exe			(note that mingw32-make.exe is not present with this install)
 
 You must add another directory into tab "Toolchain executable" with subtab "Additional paths" : C:\TDM-GCC-32\gdb32\bin.
 But, the name of executable associated with gdb is "gdb32.exe" not "gdb.exe" and you can't change this name into interface CB.
 But, to resolve this, you can copy, in this directory, "gdb32.exe" to "gdb.exe", and "gdb32server.exe" to "gdbserver.exe".
-Or create two links pointed on these two executables.
+Or create two links pointed on these two executables sith respectly name "gdb.exe" and "gdbserver.exe".
 
 Then, you choose tab" "Search directories" to position good environment like this :
 
-	to compiler : 			C:\CYGWIN64\usr\i686-w64-mingw32\sys-root\mingw\include
-	to linker : 			C:\cygwin64\usr\i686-w64-mingw32\sys-root\mingw\lib	  
-	to resource compiler : 	C:\CYGWIN64\usr\i686-w64-mingw32\sys-root\mingw\include
+	- to compiler : 			C:\CYGWIN64\usr\i686-w64-mingw32\sys-root\mingw\include
+	- to linker : 			C:\cygwin64\usr\i686-w64-mingw32\sys-root\mingw\lib	  
+	- to resource compiler : 	C:\CYGWIN64\usr\i686-w64-mingw32\sys-root\mingw\include
 	
 You can test with precedent project C++ create into CB, after change compiler to "CYGWIN MinGW32 GCC" and rebuild it.
 
-And finally, for CYGWIN64 MinGW64, you must return into menu "Settings" of CB and select "CYGWIN MinGW32 GCC" compiler for copy 
-it first, and, to terminate, rename to "CYGWIN MinGW64 GCC" by example.
+And finally, for CYGWIN64 MinGW64, you must return into menu "Settings" of CB and select "CYGWIN MinGW32 GCC" compiler for copy it first, and, to terminate, rename to "CYGWIN MinGW64 GCC" by example.
 
 Then, you choose tab "Toolchain executable" of this compiler to position good environment like this 
 			
@@ -237,12 +217,21 @@ Then, you choose tab" "Search directories" to position good environment like thi
 	to compiler : 			C:\CYGWIN64\usr\x86_64-w64-mingw32\sys-root\mingw\include
 	to linker : 			C:\cygwin64\usr\x86_64-w64-mingw32\sys-root\mingw\lib	  
 	to resource compiler : 	C:\CYGWIN64\usr\x86_64-w64-mingw32\sys-root\mingw\include
-	
-You can test with precedent project C++ create into CB, after change compiler to "CYGWIN MinGW64 GCC" and rebuild it.
+
+### Test of "simple" code with three GCC compilers of CYGWIN64 with Code::Blocks
+
+And, with simply source "hellowworld.c", you can test generation of program into IDE CB, choosing "create new project" in main windows of CB, and choose "console application" with no source proposed by default, because named "main.c", and choose compiler "CYGWIN native GCC 64 bits".
+You can select good directory/source with option "add file" after first creation of project into CB. 
+
+One time project created, you can generate it with selecting main menu "Build" and choose submenu "Rebuild..." (or CTRL-F11).
+
+You can test with precedent "console" project C create into CB, after change compiler to "CYGWIN MinGW64 GCC" and rebuild it or CTRL-F11).
+
+If, you apply all of precedent instructions, compile and link of your program with these new compilers must be succeeded.
 
 Pleasure of programming is open for you, your imagination is illimited, at your keyboard ! Enjoy !
 
-PS : source file "hellowworld.c" :
+### PS : source file "hellowworld.c" :
 
 /*     Basic example in language C : hellowworld.c      */
 
@@ -254,7 +243,9 @@ int main(int argc, char *argv[]) {
    return 0;
 }
 
-PS2 : You can also use three compilers GCC included in CYGWIN64 in command console on Windows (CMD.EXE) with next instructions :
+### PS2 : Use of three GCC compilers of CYGWIN64 in command line (just to illustrate)
+
+You can also use three compilers GCC included in CYGWIN64 in command console on Windows (CMD.EXE) with next instructions :
 
 set PATHSAV=%PATH%
 set PATH=C:\CYGWIN64\bin;%PATH%
@@ -289,24 +280,25 @@ Continue with use of CYGWIN64 GCC, and don't forgive, at the end of your work, t
 
 set PATH=%PATHSAV%
 
-But, it's much easy to use TDM GCC MinGW32 or TDM GCC MinGW64 directly into CB IDE especially with complex C program 
-(many C sources and many subdirectories ...)    -)
+**But, it's much easy to use one of GCC compilers of CYGWIN64 directly into CB IDE especially with complex C program (many C sources and many subdirectories ...) , and multiple targets by example : main DLL and console program to test this DLL, ...   -)**
 
-PS3 : Command "gcc" present a very "verbose" list of options, but to resume principal and useful options, you can use 
+### PS3 : Syntax of tools GCC.
+
+Command "gcc" present a very "verbose" list of options, but to resume principal and useful options, you can use 
 by example :
-	"-m16" 				Generate i386 16 bits object or executable.
-	"-m32" 				Generate i386 32 bits object or executable.
-	"-m64" 				Generate x64 64 bits object or executable.
-	"-mwindows"         Create GUI application on Win32 systems (entry point of program "WinMain", not "main")
-	"-c"                Compile and assemble, but do not link.
-	"-D var[=value]"	Define variable to be use by préprocessor, and optionnally affect an value at this variable.
-	"-o <file>"         Place the output into <file>.
-	"-I <directory>"	Add directory to search include files.
-	"-L <directory>"	Add directory to search library files.
-	"-shared"           Create a shared library.
-	"-llibrary"			Give name of library used by linker.
-	"-pthread"			Link with the POSIX threads library.
-	"-Wl,<options>"     Pass comma-separated <options> on to the linker. Example of options :
+	- "-m16" 				Generate i386 16 bits object or executable.
+	- "-m32" 				Generate i386 32 bits object or executable.
+	- "-m64" 				Generate x64 64 bits object or executable.
+	- "-mwindows"         Create GUI application on Win32 systems (entry point of program "WinMain", not "main")
+	- "-c"                Compile and assemble, but do not link.
+	- "-D var[=value]"	Define variable to be use by préprocessor, and optionnally affect an value at this variable.
+	- "-o <file>"         Place the output into <file>.
+	- "-I <directory>"	Add directory to search include files.
+	- "-L <directory>"	Add directory to search library files.
+	- "-shared"           Create a shared library.
+	- "-llibrary"			Give name of library used by linker.
+	- "-pthread"			Link with the POSIX threads library.
+	- "-Wl,<options>"     Pass comma-separated <options> on to the linker. Example of options :
 							-t 					trace all input files used by linker
 							--kill-at			not add the function name decorations at-sign and number for stdcall functions
 							--add-stdcall-alias	export functions with the stdcall decoration suffix (@nn) and also without this suffix

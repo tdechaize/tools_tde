@@ -1,4 +1,4 @@
-## Full name of tutorial : How config CLANG Compiler (32 and 64 bits) (+ package WinLibs) into Code::Blocks on Windows 11 64 bits.
+## Full name of tutorial : How config CLANG Compiler (32 and 64 bits) (into package WinLibs) into Code::Blocks on Windows 11 64 bits.
 
 	Code::Blocks : the best and great free IDE for Windows, Linux and ... Mac OS
 ### Presentation of CLANG into package Winlibs
@@ -15,11 +15,11 @@ Installation of CLANG/LLVM Compiler (32 and 64 bits) is included in package WINL
 Packages are available on site :	https://winlibs.com/  
 	
 Two files are needed to download in version 32 and 64 bits :
-	"winlibs-x86_64-posix-seh-gcc-14.1.0-llvm-18.1.8-mingw-w64ucrt-12.0.0-r3.7z" (64 bits) and 
-	"winlibs-i686-posix-dwarf-gcc-14.1.0-llvm-18.1.8-mingw-w64ucrt-12.0.0-r3.7z" (32 bits)     (last version available mid 2024)
+	"winlibs-x86_64-posix-seh-gcc-14.2.0-llvm-18.1.8-mingw-w64ucrt-12.0.0-r1.7z" (64 bits) and 
+	"winlibs-i686-posix-dwarf-gcc-14.2.0-llvm-18.1.8-mingw-w64ucrt-12.0.0-r1.7z" (32 bits)     (last version available mid 2024)
 
 After download, click on these files to install required components on your system.
-Version 32 bits is installed on directory "C:\mingw32" by default, and version 64 bits is installed on directory "C:\mingw64" by default, and it's a recommandation, and version of compiler gcc is 14.1.0 (14.2.0 not available during generation of packages).
+Version 32 bits is installed on directory "C:\mingw32" by default, and version 64 bits is installed on directory "C:\mingw64" by default, and it's a recommandation, and version of compiler GCC is 14.2.0.
 
 ### Configuration of CLANG included in package Winlibs into CB
 

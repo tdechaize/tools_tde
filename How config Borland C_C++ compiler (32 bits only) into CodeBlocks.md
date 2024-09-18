@@ -1,3 +1,4 @@
+
 ## Full name of tutorial : How config Borland C/C++ compiler (32 bits only) into Code::Blocks on Windows 11 64 bits.
 
 	Code::Blocks : the best and great free IDE for Windows, Linux and ... Mac OS
@@ -25,7 +26,7 @@ In tab "Toolchain executable", you must find in field "Compiler installation dir
 and in subtab "Program Files", list next :	
 	- compiler C : 		            bcc32.exe
 	- compiler C++ : 			    bcc32.exe	
-	- linker for dynamic lib : 	ilink32.exe
+	- linker for dynamic lib :    ilink32.exe
 	- linker for static lib : 	    tlib.exe
 	- debugger :					
 	- resource compiler :			brcc32.exe
@@ -164,7 +165,7 @@ The following table is an "full" alphabetical listing of the Borland C/C++ compi
   - -AK    		Use Kernighan and Ritchie keywords and extensions
   - -AT    		Use Borland C++ keywords and extensions (also  -A- )
   - -AU    		Use UNIX V keywords and extensions
-  - -a    		Default (-a4) data alignment; -a- is byte alignment (-a1)
+  - -a    		    Default (-a4) data alignment; -a- is byte alignment (-a1)
   - -a n    		Align data on "n" boundaries, where 1=byte, 2=word (2 bytes), 
 			- 4=double word (4  bytes), 8=quad word (8 bytes), 16=paragraph (16 bytes) 
 			- (Default: -a4)
@@ -173,14 +174,14 @@ The following table is an "full" alphabetical listing of the Borland C/C++ compi
   - -b-    		Makes enums byte-sized when possible
   - -C    		Turn nested comments on (Default: -C- turn nested comments off)
   - -CP    		Enable code paging (for MBCS)
-  - -c    		Compile to .OBJ, no link
+  - -c    		    Compile to .OBJ, no link
   - -D<name>    	Define "name" to the null string
   - -D<name=string>  Define "name" to "string"
   - -d    		Merge duplicate strings
   - -d-    		Does not merge duplicate strings (Default)
   - -E<filename>  Specify assembler
   - -e<filename>  Specify executable file name
-  - -f    		Emulate floating point
+  - -f    		    Emulate floating point
   - -f-    		No floating point
   - -ff    		Fast floating point
   - -fp    		Correct Pentium FDIV flaw
@@ -190,13 +191,13 @@ The following table is an "full" alphabetical listing of the Borland C/C++ compi
   - -H    		Generate and use precompiled headers
   - -H-    		Does not generate or use precompiled headers (Default)
   - -H=<filename>  Set the name of the file for precompiled headers
-  - -H"xxx"    	Stop precompiling after header file  xxx
+  - -H"xxx"    Stop precompiling after header file  xxx
   - -Hc    		Cache precompiled header (Must be used with  -H  or  -H"xxx"
   - -He    		Enable precompiled headers with external type files (Default)
-  - -Hh=xxx    	Stop precompiling after header file  xxx
+  - -Hh=xxx    Stop precompiling after header file  xxx
   - -Hs    		Enable smart cached precompiled headers (Default)
   - -Hu    		Use but do not generate precompiled headers
-  - -I<path>    	Include file search path
+  - -I<path>    Include file search path
   - -i n    		Make significant identifier length to be  n  (Default = 250)
   - -Ja    		Expand all template members (including unused members)
   - -jb    		Stop batch compilation after first file with errors (Default = OFF)
@@ -204,12 +205,12 @@ The following table is an "full" alphabetical listing of the Borland C/C++ compi
   - -Jgx    		Generate external references for all template instances
   - -j n    		Errors: stop after  n  messages (Default = 25)
   - -K    		Default character type unsigned (Default: -K- default character type signed)
-  - -k    		Turn on standard stack frame (Default)
-  - -L<path>    	Library file search path
+  - -k    		    Turn on standard stack frame (Default)
+  - -L<path>   Library file search path
   - -l x    		Pass option  x  to linker
   - -l-x    		Disables option  x  for the linker
   - -M    		Create a Map file
-  - -n<path>    	Sets output directory to  path
+  - -n<path>   Sets output directory to  path
   - -O    		Optimize jumps
   - -O1    		Generate smallest possible code
   - -O2    		Generate fastest possible code
@@ -237,19 +238,19 @@ The following table is an "full" alphabetical listing of the Borland C/C++ compi
   - -q    		Suppress compiler identification banner (Default = OFF)
   - -R    		Include browser information in generated .OBJ files
   - -RT    		Enable runtime type information (Default)
-  - -r    		Use register variables (Default)
+  - -r    		    Use register variables (Default)
   - -r-    		Disable the use of register variables
   - -rd    		Use register variables only when register keyword is employed
   - -S    		Compile to assembler
   - -T-    		Removes all assembler options
   - -T x    		Specify assembler option  x
   - -tW    		Target is a Windows application (same as  -W )
-  - -tWC    		Target is a console application (same as  -WC )
-  - -tWD    		Generate a .DLL executable (same as  -WD )
-  - -tWM    		Generate a 32-bit multi-threaded target (same as  -WM )
-  - -tWR    		Target uses the dynamic RTL (same as  -WR )
-  - -tWV    		Target uses the VCL
-  - -U<name>    	Undefine any previous definitions of  name
+  - -tWC    	Target is a console application (same as  -WC )
+  - -tWD    	Generate a .DLL executable (same as  -WD )
+  - -tWM    	Generate a 32-bit multi-threaded target (same as  -WM )
+  - -tWR    	Target uses the dynamic RTL (same as  -WR )
+  - -tWV    	Target uses the VCL
+  - -U<name>   Undefine any previous definitions of  name
   - -u    		Generate underscores (Default)
   - -V    		Use smart C++ virtual tables (Default)
   - -V0    		External C++ virtual tables
@@ -261,31 +262,31 @@ The following table is an "full" alphabetical listing of the Borland C/C++ compi
   - -VI-   		Use old Borland search algorithm to locate header files (look first in current working directory)
   - -Vl    		Use old-style Borland C++ structure layout (for compatibility with older versions of  BCC32.EXE)
   - -VF    		MFC compatibility
-  - -Vmd    		Use the smallest possible representation for member pointers
-  - -Vmm    		Support multiple inheritance for member pointers
-  - -Vmp    		Honor declared precision of member pointers
-  - -Vms    		Support single inheritance for member pointers
-  - -Vmv    		Place no restrictions on where member pointers can point (Default)
+  - -Vmd    	Use the smallest possible representation for member pointers
+  - -Vmm    	Support multiple inheritance for member pointers
+  - -Vmp    	Honor declared precision of member pointers
+  - -Vms    	Support single inheritance for member pointers
+  - -Vmv    	Place no restrictions on where member pointers can point (Default)
   - -Vx    		Zero-length empty class member functions
-  - -v    		Turn on source debugging
+  - -v    		    Turn on source debugging
   - -vG    		All Codeguard options on
-  - -vGc    		Inline pointer access (Codeguard)
-  - -vGd    		Global and stack data accesses (Codeguard)
+  - -vGc    	Inline pointer access (Codeguard)
+  - -vGd    	Global and stack data accesses (Codeguard)
   - -vGt    		this  pointer on member function entry (Codeguard)
   - -vi    		Control expansion of inline functions
   - -W    		Target is a Windows application (same as  -tW )
   - -WC   		Target is a console application (same as  -tWC )
-  - -WD    		Generate a .DLL executable (same as  -tWD )
-  - -WM    		Generate a 32-bit multi-threaded target (same as  -tWM )
+  - -WD    	Generate a .DLL executable (same as  -tWD )
+  - -WM    	Generate a 32-bit multi-threaded target (same as  -tWM )
   - -WR    		Target uses the dynamic RTL (same as  -tWR )
-  - -WU    		Generates Unicode application
+  - -WU    	Generates Unicode application
   - -w    		Display warnings on
   - -w!    		Returns non-zero from compiler on warnings
-  - -wxxx    		Enable xxx warning message
+  - -wxxx    	Enable xxx warning message
   - -w-xxx    	Disable xxx warning message
-  - -wmsg    		User-defined warnings
+  - -wmsg    	User-defined warnings
   - -X    		Disable compiler autodependency output (Default: -X- use compiler autodependency output)
-  - -x    		Enable exception handling (Default)
+  - -x    		    Enable exception handling (Default)
   - -xd    		Enable destructor cleanup (Default)
   - -xdg   		Use global destructor count (for compatibility with older versions of BCC32.EXE)
   - -xf    		Enable fast exception prologs
@@ -317,10 +318,10 @@ General Options:
   - -S:xxxx         Specify stack reserve size
   - -Gn              No state files               
   - -Sc:xxxx       Specify stack commit size
-  - -Gi              Generate import library      (DON'T WORK, use /Gi in replacement)
-  - -Vd.d          Specify Windows version
-  - -GD            Generate .DRC file           
-  - -Dstring     Set image description 
+  - -Gi               Generate import library      (DON'T WORK, use /Gi in replacement)
+  - -Vd.d           Specify Windows version
+  - -GD             Generate .DRC file           
+  - -Dstring      Set image description 
 Map File Control:                       
   - -Vd.d          Specify subsystem version
   - -M              Map with mangled names       
@@ -351,7 +352,7 @@ bcc32 -c -w -w-par -w-inl -W -a1 -O2 -6 -DNDEBUG -I%INCLUDE% \
 brcc32 -32 -i%INCLUDE% -foobjBC55\Release\%NAME_APPLI%.res src\%NAME_APPLI%.rc
 ilink32 -q -aa -V4.0 -c -x -Gn -L"%LIB%" c0x32w.obj objBC55\Release\%NAME_APPLI%.obj, \   binBC55\Release\%NAME_APPLI%.exe,   , import32.lib cw32.lib glu32.lib opengl32.lib gdi32.lib \ advapi32.lib comdlg32.lib winmm.lib user32.lib kernel32.lib,  ,objBC55\Release\%NAME_APPLI%.res
    
-And to terminate, an example of generation of DLL application with source file and resource file :
+And to terminate, an example of generation of DLL application, and import library associated, with source file and resource file :
 
 bcc32 -c -w -w-par -w-inl -W -a1 -O2 -6 -v -DDEBUG -D_DEBUG -I%INCLUDE% -oobjBC55\Debug\%NAME_APPLI%.obj src\%NAME_APPLI%.c
 brcc32 -32 -i%INCLUDE% -foobjBC55\Debug\%NAME_APPLI%.res src\%NAME_APPLI%.rc

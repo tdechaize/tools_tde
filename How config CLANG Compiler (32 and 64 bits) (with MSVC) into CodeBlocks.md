@@ -1,5 +1,5 @@
 	 
-## Full name of tutorial : How config CLANG Compiler (32 and 64 bits) (+ MSVC +SDK Windows) into Code::Blocks on Windows 11 64 bits.
+## Full name of tutorial : How config CLANG Compiler (32 and 64 bits) (+ MSVC + SDK Windows) into Code::Blocks on Windows 11 64 bits.
 
 	Code::Blocks : the best and great free IDE for Windows, Linux and ... Mac OS
 

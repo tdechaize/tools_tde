@@ -1,5 +1,4 @@
-
-	 
+ 
 ## Full name of tutorial : How config TDM MinGW32/MinGW64 into Code::Blocks on Windows 11 64 bits.
 
 	Code::Blocks : the best and great free IDE for Windows, Linux and ... Mac OS
@@ -80,7 +79,7 @@ Or create two symlinks pointed on these two executables.
 
 Then, you choose tab" "Search directories" to position good environment like this :
 
-	- to compiler : 			    C:\TDM-GCC-32\include 
+	- to compiler : 		    C:\TDM-GCC-32\include 
 	- to linker : 			    C:\TDM-GCC-32\lib	  
 	- to resource compiler : 	C:\TDM-GCC-32\include
 ### Test of "simple" code with TDM MinGW32/MinGW64 into CB

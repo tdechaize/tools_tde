@@ -17,31 +17,26 @@ You can download last version of MinGW64 on Internet site :
 	https://github.com/niXman/mingw-builds-binaries/releases
 
 Warning, many versions of MinGW64 are available on this site, and it's important to understand differences beetween their : 
-	one category is based on UCRT (run-time C universal),
-	another category is based on MSVCRT (run-time C owned by Microsoft Corporation)
-	and another differentiations into versions is based on "multithread" package : 
-		"posix" ("native POSIX" : pthread) 
-		"win32" (portage of Posix thread on Win32 : winpthread)
-		"MCF"	(new MCF thread model : mcfgthread)
+	- one category is based on UCRT (run-time C universal),
+	- another category is based on MSVCRT (run-time C owned by Microsoft Corporation)
+	- and another differentiations into versions is based on "multithread" package : 
+		- "posix" ("native POSIX" : pthread) 
+		- "win32" (portage of Posix thread on Win32 : winpthread)
+		- "MCF"	(new MCF thread model : mcfgthread)
 
 To understand theses differences, it's important to note that :
-    "posix" : enable C++11/C11 multithreading features. Makes libgcc depend on libwinpthreads, so that even if you don't directly 
-			 call pthreads API, you'll be distributing the winpthreads DLL. There's nothing wrong with distributing one more DLL 
-			 with your application.
-    "win32" : No C++11 multithreading features.
-	"MCF" 	: new threading included in MinGW by Brecht Sanders during october 2022
+    - "posix" : enable C++11/C11 multithreading features. Makes libgcc depend on libwinpthreads, so that even if you don't directly call pthreads API, you'll be distributing the winpthreads DLL. There's nothing wrong with distributing one more DLL with your application.
+    - "win32" : No C++11 multithreading features.
+	- "MCF" 	: new threading included in MinGW by Brecht Sanders during october 2022
 
 The pros of winpthreads are :
-    winpthreads supports Windows XP; mcfgthread only supports Vista,
-    winpthreads provides more complete POSIX APIs, such scheduler and RW locks; mcfgthread only provides those required by libgcc 
-			and libstdc++.
+    - winpthreads supports Windows XP; mcfgthread only supports Vista,
+    - winpthreads provides more complete POSIX APIs, such scheduler and RW locks; mcfgthread only provides those required by libgcc and libstdc++.
 
 On the other hand, the pros of mcfgthread are :
-    mcfgthread is generally more efficient, outperforming native SRWLOCKs; winpthreads' condition variable and thread-specific 
-	     storage access is slow,
-    mcfgthread provides slim mutex and condvar, which take up storage as pointers, consume no additional resource, and require 
-	     no cleanup,
-    mcfgthread provides __cxa_finalize() as per Itanium ABI.
+    - mcfgthread is generally more efficient, outperforming native SRWLOCKs; winpthreads' condition variable and thread-specific  storage access is slow,
+    - mcfgthread provides slim mutex and condvar, which take up storage as pointers, consume no additional resource, and require  no cleanup,
+    - mcfgthread provides __cxa_finalize() as per Itanium ABI.
 
 All versions are declined in 32 bits or 64 bits version.
 

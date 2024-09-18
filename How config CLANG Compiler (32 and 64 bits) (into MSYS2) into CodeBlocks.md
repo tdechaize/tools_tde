@@ -12,7 +12,7 @@ This tuto describe how configure one major compiler C\C++ on Windows : CLANG/LLV
 CLANG is rigourously a C/C++ (very good) compiler without libraries or "include files" needed to success generation.
 On Windows systems, it's mandatory to associate CLANG with another development environment like MSVC + SDK Windows, or MinGW32/64 (most possibilities).
 	 
-Installation of CLANG/LLVM Compiler (32 and 64 bits) is available directly in package MSYS2 (if you want choose it).
+CLANG/LLVM Compiler (32 and 64 bits) is available directly in package MSYS2 (if you want choose it).
 Open an "MSYS2 MSYS" console in the list of installed applications on your system and type :
 	"pacman -S mingw32/mingw-w64-i686-llvm mingw-w64-x86_64-llvm"
 

@@ -32,7 +32,7 @@ pacman -S mingw-w64-x86_64-doxygen, grep, sed, bash,  mingw-w64-x86_64-ninja, ms
 
 So, with MSYS2, you can use multiple development environment, 32 or 64 bits (ARM64 not mandatory on X32/X64 architecture) :
 
-Name		Directory		Compiler	Architecture	RT C base	Default lib C++
+  Name		           Directory		Compiler	        Architecture	RT C base	   Default lib C++
 
 - MSYS 		 /usr 	        gcc 		       x86_64 			cygwin 		libstdc++
 - UCRT64 		/ucrt64 		gcc 		        x86_64 			ucrt 		         libstdc++

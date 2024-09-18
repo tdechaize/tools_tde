@@ -120,55 +120,55 @@ Copyright (c) Pelle Orinius 1999-2023
 Syntax:
 POCC [options] srcfile{.c|.asm}
 
-Options:
-/arch:<id>         Select X64 architecture AVX, AVX2, or SSE2
-/D<name>[=<text>]  Define a preprocessor symbol
-/diag:<kind>       Select diagnostic kind CLASSIC or CARET
-/E                 Preprocess only (to stdout)
-/Fo<outfile>       Name the output file
-/fp:<model>        Set floating-point model PRECISE or FAST
-/Gh                Enable hook function call
-/Gi                Enable trap for signed integer overflow
-/Go                Define compatibility names and use OLDNAMES.LIB
-/GA                Assume _tls_index is zero for thread local storage
-/GT                Generate fiber-safe access for thread local storage
-/GX                Enable 64-bit time_t for X64
-/hotpatch[:<n>]    Enable Microsoft hotpatching
-/I<path>           Add a search path for #include files
-/J                 Default char type is unsigned
-/M                 Preprocess only; write MAKE dependencies to stdout
-/MD                Enable dynamic C runtime library (POCRT*.DLL)
-/MT                Enable multi-threading support (CRTMT*.LIB)
-/openmp            Enable OpenMP 3.1 extensions
-/O1                Same as /Os
-/O2                Same as /Ot
-/Ob<n>             Set inline expansion model 0, 1 or 2
-/Os                Optimize, favor code space
-/Ot                Optimize, favor code speed
-/Ox                Perform maximum optimizations
-/P                 Preprocess only (to srcfile.i)
-/std:<mode>        Select language mode C17, C11 or C99
-/std:C2X           Select experimental/unfinished language mode C2X
-/T<target>         Select output target (/T? displays a list), list of possible targets (* = current):
-							/Tx86-coff
-							/Tx86-asm
-						  * /Tx64-coff
-							/Tx64-asm
-						  * /Tamd64-coff
-							/Tamd64-asm
-/U<name>           Undefine a preprocessor symbol
-/utf-8             Set source and execution character set to UTF-8
-/V<n>              Set verbosity level 0, 1 or 2
-/W<n>              Set warning level 0, 1 or 2
-/Wd<n>             Disable warning #n
-/X                 Don't search standard places for #include files
-/Zd                Enable line number debugging information
-/Ze                Enable Microsoft extensions
-/Zg                Write function prototypes to stdout
-/Zi                Enable full debugging information
-/Zl                Omit default library name in object file
-/Zs                Syntax check only
-/Zx                Enable Pelle's C extensions
+Options :
+- /arch:<id>         Select X64 architecture AVX, AVX2, or SSE2
+- /D<name>[=<text>]  Define a preprocessor symbol
+- /diag:<kind>       Select diagnostic kind CLASSIC or CARET
+- /E                 Preprocess only (to stdout)
+- /Fo<outfile>       Name the output file
+- /fp:<model>        Set floating-point model PRECISE or FAST
+- /Gh                Enable hook function call
+- /Gi                Enable trap for signed integer overflow
+- /Go                Define compatibility names and use OLDNAMES.LIB
+- /GA                Assume _tls_index is zero for thread local storage
+- /GT                Generate fiber-safe access for thread local storage
+- /GX                Enable 64-bit time_t for X64
+- /hotpatch[:<n>]    Enable Microsoft hotpatching
+- /I<path>           Add a search path for #include files
+- /J                 Default char type is unsigned
+- /M                 Preprocess only; write MAKE dependencies to stdout
+- /MD                Enable dynamic C runtime library (POCRT*.DLL)
+- /MT                Enable multi-threading support (CRTMT*.LIB)
+- /openmp            Enable OpenMP 3.1 extensions
+- /O1                Same as /Os
+- /O2                Same as /Ot
+- /Ob<n>             Set inline expansion model 0, 1 or 2
+- /Os                Optimize, favor code space
+- /Ot                Optimize, favor code speed
+- /Ox                Perform maximum optimizations
+- /P                 Preprocess only (to srcfile.i)
+- /std:<mode>        Select language mode C17, C11 or C99
+- /std:C2X           Select experimental/unfinished language mode C2X
+- /T<target>         Select output target (/T? displays a list), list of possible targets (* = current):
+							- /Tx86-coff
+							- /Tx86-asm
+						  - /Tx64-coff
+							- /Tx64-asm
+						  - /Tamd64-coff
+							- /Tamd64-asm
+- /U<name>           Undefine a preprocessor symbol
+- /utf-8             Set source and execution character set to UTF-8
+- /V<n>              Set verbosity level 0, 1 or 2
+- /W<n>              Set warning level 0, 1 or 2
+- /Wd<n>             Disable warning #n
+- /X                 Don't search standard places for #include files
+- /Zd                Enable line number debugging information
+- /Ze                Enable Microsoft extensions
+- /Zg                Write function prototypes to stdout
+- /Zi                Enable full debugging information
+- /Zl                Omit default library name in object file
+- /Zs                Syntax check only
+- /Zx                Enable Pelle's C extensions
 	
 Options of command line "polink"
 Pelles Linker, Version 12.00.0
@@ -178,57 +178,57 @@ Syntax:
 POLINK [ { option | file | @commandfile } ... ]
 
 Options:
-/ALIGN:#
-/ALLOWBIND[:NO]
-/ALLOWISOLATION[:NO]
-/ALTERNATENAME:symbol=symbol
-/BASE:address
-/DBG:filename
-/DEBUG[:NO]
-/DEBUGTYPE:{PO|COFF|BOTH}
-/DEF:filename
-/DEFAULTLIB:filename
-/DELAY:{NOBIND|UNLOAD}
-/DELAYLOAD:filename
-/DEPENDENTLOADFLAG:flag
-/DLL
-/DRIVER[:{UPONLY|WDM}]
-/DYNAMICBASE[:NO]
-/ENTRY:symbol
-/EXPORT:symbol[=[module.]symbol][,@ordinal[,NONAME]][,DATA]
-/FIXED[:NO]
-/FORCE:MULTIPLE
-/HEAP:reserve[,commit]
-/HIGHENTROPYVA[:NO]
-/IMPLIB:filename
-/INCLUDE:symbol
-/INTEGRITYCHECK[:NO]
-/LARGEADDRESSAWARE[:NO]
-/LIBPATH:path
-/MACHINE:{X64|X86}
-/MANIFEST[:{NO|EMBED[,ID=#]}]
-/MANIFESTDEPENDENCY:dependency
-/MANIFESTFILE:filename
-/MANIFESTUAC[:{NO|fragment}]
-/MAP[:filename]
-/MAPINFO:{EXPORTS|FIXUPS|LINES|PATHS}
-/MERGE:from=to
-/NODEFAULTLIB
-/NOENTRY
-/NOIMPLIB
-/NXCOMPAT[:NO]
-/OPT:{REF|NOREF}
-/OSVERSION:#[.##]
-/OUT:filename
-/RELEASE
-/SAFESEH[:NO]
-/SECTION:name,[!][E][R][W][S][D][K][P][,ALIGN=#]
-/STACK:reserve[,commit]
-/STUB:filename
-/SUBSYSTEM:{CONSOLE|NATIVE|WINDOWS}[,#[.##]]
-/SWAPRUN:{CD|NET}
-/TSAWARE[:NO]
-/VERBOSE
-/VERSION:#[.##]
+- /ALIGN:#
+- /ALLOWBIND[:NO]
+- /ALLOWISOLATION[:NO]
+- /ALTERNATENAME:symbol=symbol
+- /BASE:address
+- /DBG:filename
+- /DEBUG[:NO]
+- /DEBUGTYPE:{PO|COFF|BOTH}
+- /DEF:filename
+- /DEFAULTLIB:filename
+- /DELAY:{NOBIND|UNLOAD}
+- /DELAYLOAD:filename
+- /DEPENDENTLOADFLAG:flag
+- /DLL
+- /DRIVER[:{UPONLY|WDM}]
+- /DYNAMICBASE[:NO]
+- /ENTRY:symbol
+- /EXPORT:symbol[=[module.]symbol][,@ordinal[,NONAME]][,DATA]
+- /FIXED[:NO]
+- /FORCE:MULTIPLE
+- /HEAP:reserve[,commit]
+- /HIGHENTROPYVA[:NO]
+- /IMPLIB:filename
+- /INCLUDE:symbol
+- /INTEGRITYCHECK[:NO]
+- /LARGEADDRESSAWARE[:NO]
+- /LIBPATH:path
+- /MACHINE:{X64|X86}
+- /MANIFEST[:{NO|EMBED[,ID=#]}]
+- /MANIFESTDEPENDENCY:dependency
+- /MANIFESTFILE:filename
+- /MANIFESTUAC[:{NO|fragment}]
+- /MAP[:filename]
+- /MAPINFO:{EXPORTS|FIXUPS|LINES|PATHS}
+- /MERGE:from=to
+- /NODEFAULTLIB
+- /NOENTRY
+- /NOIMPLIB
+- /NXCOMPAT[:NO]
+- /OPT:{REF|NOREF}
+- /OSVERSION:#[.##]
+- /OUT:filename
+- /RELEASE
+- /SAFESEH[:NO]
+- /SECTION:name,[!][E][R][W][S][D][K][P][,ALIGN=#]
+- /STACK:reserve[,commit]
+- /STUB:filename
+- /SUBSYSTEM:{CONSOLE|NATIVE|WINDOWS}[,#[.##]]
+- /SWAPRUN:{CD|NET}
+- /TSAWARE[:NO]
+- /VERBOSE
+- /VERSION:#[.##]
 
 Pelles C is very good C compiler on Windows systems, it "make the job", it support "openmp" and recent standards of C language, and generate very small executable with option "/Os". But it's only C compiler, not C++ ...
