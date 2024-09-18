@@ -66,15 +66,16 @@ Pleasure of programming is open for you, your imagination is illimited, at your 
 
 ### PS : source file "hellowworld.c" :
 
-/*     Basic example in language C : hellowworld.c      */
 
-#include <stdio.h>
+`/*     Basic example in language C : hellowworld.c      */`
 
-int main(int argc, char *argv[]) {
-/* printf() displays the string inside quotation  */
-   printf("Hello, World!");
-   return 0;
-}
+`#include <stdio.h>`
+
+`int main(int argc, char *argv[]) {`
+`/* printf() displays the string inside quotation  */`
+   `printf("Hello, World!");`
+   `return 0;`
+`}`
 
 ### PS2 : Use of Borland C/C++ in command line (just to illustrate)
 

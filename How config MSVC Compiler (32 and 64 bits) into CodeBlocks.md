@@ -106,15 +106,15 @@ Pleasure of programming is open for you, your imagination is illimited, at your 
 
 ### PS : source file "hellowworld.c" :
 
-/*     Basic example in language C : hellowworld.c      */
+`/*     Basic example in language C : hellowworld.c      */`
 
-#include <stdio.h>
+`#include <stdio.h>`
 
-int main(int argc, char *argv[]) {
-/* printf() displays the string inside quotation  */
-   printf("Hello, World!");
-   return 0;
-}
+`int main(int argc, char *argv[]) {`
+`/* printf() displays the string inside quotation  */`
+   `printf("Hello, World!");`
+   `return 0;`
+`}`
 
 ### PS2 : Use of MSVC compiler with command line (just to illustrate)
 
