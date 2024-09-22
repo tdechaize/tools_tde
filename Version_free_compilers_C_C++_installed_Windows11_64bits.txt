@@ -1,0 +1,3013 @@
+
+		Status and versions of "free" compilers C/C++ installed on Windows 11 64 bits
+
+Prerequisite : To test and generate executable or DLL on Windows 11 64 bits with one of "free" compilers C/C++, you 
+must installed all "last" versions of different tools : 
+	- all "free" (or assimiled) compilers C/C++, versions 32 bit, but also 64 bit in much case, to your choice,
+	- many useful tools like generator CMAKE, SCM GIT, and some IDE like Code::Blocks (version 20.03 dated 2020 and
+	  the last recent packaged evolution with "nigthly build" version 13538 june 2023 that provided MinGW64 package) 
+	  or Red-Panda Cpp version 3.1 2024 with MinGW64 too,
+	- and also, useful tools of GNU ported on Windows (file, ldd, make, ...) issued of Sourceforge, project "ezwinport", 
+	 or much old, project "UnxUtils", or after install of CYGWIN64.
+
+NB : InstalledDir is the full name of directory to access at all executables or tools included in "free" compilers.
+	By example, if you want to use these compilers in "command line" (into console CMD or PowerShell) or with CMAKE, 
+	you must add one of this "binary" directory on your variable PATH, with command :
+			"set PATH=bin_directory_choosen;%PATH%". 
+
+Next listing establish this declination of all "free" compilers C/C++ installed on my environment (at date) :
+
+******************			Begin of listing of all "free" compilers C/C++ installed 			*****************
+
+Borland C/C++ compiler (32 bit only) :
+	- Ident of compiler : bcc32, version 5.5.1 for Win32 Copyright (c) 1993, 2000 Borland, 
+	- InstalledDir: 			C:\BCC55\bin 			(Not ... C:\Borland\BCC55\bin)
+	- Identification of this compiler by preprocessor : __BORLANDC__     (or __TURBOC__ much old ident)
+	
+Two CLANG compilers leaned at MinGW32 or MinGW64 of package MSYS2 
+	- Ident of compiler : clang (32 bit) version 18.1.8, Target: i686-w64-windows-gnu, Thread model: posix, 
+	- InstalledDir : 			C:/msys64/mingw32/bin
+	- Identification of this compiler by preprocessor : __clang__ and __MINGW32__
+	
+	- Ident of compiler : clang (64 bit) version 18.1.8, Target: x86_64-w64-windows-gnu, Thread model: posix, 
+	- InstalledDir : 			C:/msys64/mingw64/bin
+	- Identification of this compiler by preprocessor : __clang__ and __MINGW64__
+
+Two CLANG compilers leaned at MinGW32/ucrt or MinGW64/ucrt of package WinLibs
+	- Ident of compiler : clang (32 bit), version 18.1.8 (built by Brecht Sanders, r4), Target: i686-w64-windows-gnu, 
+		Thread model: posix,
+	- InstalledDir : 			C:/mingw32/bin
+	- Identification of this compiler by preprocessor : __clang__ and __MINGW32__
+	
+	- Ident of compiler : clang (64 bit), version 18.1.8 (built by Brecht Sanders, r4), Target: x86_64-w64-windows-gnu, 
+		Thread model: posix,
+	- InstalledDir : 			C:/mingw64/bin
+	- Identification of this compiler by preprocessor : __clang__ and __MINGW64__
+
+Two CLANG compilers leaned at MS Visual C/C++ (installed with Visual Studio Community 2022 + SDK Windows in versions 
+	32 and 64 bit):
+	- Ident of compiler : clang (32 bit),version 19.1.0, Target: i686-pc-windows-msvc, Thread model: posix, 
+	- InstalledDir : 			C:\Program Files (x86)\LLVM\bin
+	- Identification of this compiler by preprocessor : __clang__ and _MSC_VER
+	
+	- Ident of compiler : clang (64 bit),version 19.1.0, Target: x86_64-pc-windows-msvc, Thread model: posix, 
+	- InstalledDir : 			C:\Program Files\LLVM\bin	
+	- Identification of this compiler by preprocessor : __clang__ and _MSC_VER
+	
+Digital Mars Compiler C\C++ (32 bit only, version of installation package : 8.57c) 
+	- Ident of compiler : dmc, Digital Mars Compiler Version 8.42n. Copyright (C) Digital Mars 2000-2004, 
+	- InstalledDir : 			C:\dm\bin
+	- Identification of this compiler by preprocessor : __DMC__
+	
+Three GCC compilers into CYGWIN64 version 64 bits, with additionals installations of MinGW32 and MinGW64 package, 
+	and also tool "make" : 
+	- Ident of compiler : x86_64-w64-pc-gcc ou gcc ("native" version of GCC on Cygwin) 12.4.0 (64 bit), 
+	- InstalledDir : 			C:/Cygwin64/bin
+	- Identification of this compiler by preprocessor : __GNUC__ and __CYGWIN__ 
+	
+	- Ident of compiler : i686-w64-mingw32-gcc (GCC of MinGW32) 12.4.0 (32 bit), 
+	- InstalledDir : 			C:/Cygwin64/bin,
+	- Identification of this compiler by preprocessor : __GNUC__ 
+	
+	- Ident of compiler : x86_64-w64-mingw32-gcc (GCC of MinGW64) 12.4.0 (64 bit),
+	- InstalledDir : 			C:/Cygwin64/bin
+	- Identification of this compiler by preprocessor : __GNUC__ and __MINGW64__ 
+
+GCC compiler included in development package MinGW64/ucrt provided with improved version CodeBlocks (IDE),
+	 nigthly build june 2023 :
+	- Ident of compiler : gcc (MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders) 13.1.0 (64 bits),
+	- InstalledDir : 			C:/CodeBlocks/MinGW/bin
+	- Identification of this compiler by preprocessor : __GNUC__ and __MINGW64__
+	
+GCC included in "official" development package MinGW (32 bits) (MinGW want not migrate to 64 bit !!!)
+	- Ident of compiler : gcc (MinGW.org GCC Build-2) 9.2.0, 
+	- InstalledDir: 			C:/MinGW/bin
+	- Identification of this compiler by preprocessor : __GNUC__  
+
+GCC included in "official" development package MinGW64 (64 bits) (fork 64 bit of "official" version MinGW)
+	- Ident of compiler : gcc (x86_64-win32-seh-rev1, Built by MinGW-Builds project) 13.2.0, 
+	- InstalledDir: 			C:/niXman/mingw64/bin
+	- Identification of this compiler by preprocessor : __GNUC__ and __MINGW64__
+
+Three GCC compilers included in development package MinGW32/mscrt, MinGW64/mscrt and MinGW64/ucrt into 
+	"global" package MSYS2 :
+	- Ident of compiler : gcc (32 bit) (Rev1, Built by MSYS2 project) 14.2.0, 
+	- InstalledDir : 			C:/msys64/mingw32/bin
+	- Identification of this compiler by preprocessor : __GNUC__ 
+	
+	- Ident of compiler : gcc (64 bit) (Rev1, Built by MSYS2 project) 14.2.0, 
+	- InstalledDir : 			C:/msys64/mingw64/bin
+	- Identification of this compiler by preprocessor : __GNUC__ and __MINGW64__
+	
+	- Ident of compiler : gcc (64 bit) (Rev1, Built by MSYS2 project) 14.2.0, 
+	- InstalledDir : 			C:/msys64/ucrt64/bin
+	- Identification of this compiler by preprocessor : __GNUC__ and __MINGW64__
+
+Two GCC compilers included in development package MinGW32/ucrt and MinGW64/ucrt into "global" package 
+	Winlibs :
+	- Ident of compiler : gcc (MinGW-W64 i686-ucrt-posix-dwarf, built by Brecht Sanders, r1) 14.2.0, 
+	- InstalledDir : 			C:/mingw32/bin
+	- Identification of this compiler by preprocessor : __GNUC__ 
+	
+	- Ident of compiler : gcc (MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders, r1) 14.2.0, 
+	- InstalledDir : 			C:/mingw64/bin
+	- Identification of this compiler by preprocessor : __GNUC__ and __MINGW64__
+
+GCC included in development package MinGW64 provided with Red-Panda Cpp (IDE) (64 bits), fork of Dev-Cpp 
+	unmaintained since 2016 :
+	- Ident of compiler : gcc (x86_64-posix-seh, Built by MinGW-Builds project) 11.4.0, 
+	- InstalledDir : 			C:\RedPanda-Cpp\MinGW64\bin  (not C:\Program File\RedPanda-Cpp\MinGW64\bin)
+	- Identification of this compiler by preprocessor : __GNUC__ and __MINGW64__  
+
+Two GCC compilers include in development package TDM/MinGW32 and TDM/MinGW64 (32 and 64 bit) :
+	- Ident of compiler : gcc (tdm-1) 10.3.0, 
+	- InstalledDir : 			C:/TDM-GCC-32/bin
+	- Identification of this compiler by preprocessor : __GNUC__ 
+	
+	- Ident of compiler : gcc (tdm64-1) 10.3.0, 
+	- InstalledDir : 			C:/TDM-GCC-64/bin
+	- Identification of this compiler by preprocessor : __GNUC__ and __MINGW64__
+	
+Two compilers LCC (versions 32 and 64 bit, only C compilers)
+	- Ident of compiler : lcc, Logiciels/Informatique lcc-win32 version 3.8. Compilation date: Mar 29 2013 13:11:27, 
+	- InstalledDir : 			C:\lcc\bin
+	- Identification of this compiler by preprocessor : __LCC__ 
+			
+	- Ident of compiler : lcc64, Logiciels/Informatique lcc-win (64 bits) version 4.1. Compilation date: Oct 27 2016 16:34:50,
+	- InstalledDir : 			C:\lcc64\bin
+	- Identification of this compiler by preprocessor : __LCC__ 
+
+Two OpenAPI Intel C/C++ compilers (32 and 64 bit)
+	- Ident of compiler : icx.exe + icpx.exe : Intel(R) oneAPI DPC++/C++ Compiler 2024.2.0 (2024.2.0.20240602), 
+		Target: x86_64-pc-windows-msvc,
+	- InstalledDir : 			C:\Program Files (X86)\Intel\oneAPI\compiler\latest\bin 
+			(warning, and also, ..\bin32 if you select 32 bit version with "-m32" flag during compilation)
+	- Identification of this compiler by preprocessor : __INTEL_LLVM_COMPILER
+	
+		(NB : Previous identification of classic Intel compiler by preprocessor : __INTEL_COMPILER or __ILC)
+		(NB2 : Unlike the icc driver, icx does not use the file extension to determine whether to compile as 
+		 C or C+. Users must invoke icpx to compile C++ files.) 
+		(Here, it's the same executable that manage version 32 or 64 bit with two different options, and with 
+		differentiation of directories beetween "include" files and librairies files, 32 or 64 bit)
+
+Pelles C compiler (32 and 64 bit, only C compiler) :
+	- Ident of compiler : pocc.exe, Pelles ISO C Compiler, Version 12.00.1, Copyright (c) Pelle Orinius 1999-2023, 
+	- InstalledDir : 			C:\PellesC\bin
+	- Identification of this compiler by preprocessor : __POCC__ 
+	
+		(Here, it's the same executable that manage version 32 or 64 bit with two different options, and with 
+		differentiation of directories beetween "include" files and librairies files, 32 or 64 bit)
+
+Two compilers MS Visual C/C++ issued of installation of Visual Studio 2022 Community, version 17.11.4 and SDK
+ Windows version 10.0.22621.0 (32 and 64 bit, updated "many times" with tool "Visual Studio Installer") :
+	- Ident of compiler : cl, Compilateur d'optimisation Microsoft (R) C/C++ version 19.41.34120 pour x86, (32 bits)
+	- InstalledDir : 			C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\bin\HostX86\x86
+	- Identification of this compiler by preprocessor :  _MSC_VER 
+	
+	- Ident of compiler : cl, Compilateur d'optimisation Microsoft (R) C/C++ version 19.41.34120 pour x64, (64 bits)
+	- InstalledDir : 			C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\bin\HostX64\x64
+	- Identification of this compiler by preprocessor :  _MSC_VER 
+
+Two compilers Open Watcom C/C++ (celle disponible sur GitHub, pas celle de Sourceforge) (32 ou 64 bits)
+	- Ident of compiler : wcl386, Open Watcom C/C++ x86 32-bit Compile and Link Utility, Version 2.0 beta Nov  8 2023 02:00:11 
+	- InstalledDir : 			C:\WATCOM\binnt  		(32-bit)
+	- Identification of this compiler by preprocessor :  __WATCOMC__ 
+	
+	- Ident of compiler : wcl386, Open Watcom C/C++ x86 32-bit Compile and Link Utility, Version 2.0 beta Nov  8 2023 02:45:53 
+	- InstalledDir : 			C:\WATCOM\binnt64		(not really 64-bit ...)
+	- Identification of this compiler by preprocessor :  __WATCOMC__ 
+	
+WARNING : Same with compiler Open Watcom version in directory "64 bit", you can't generate an target (exe or dll) in version 64 
+  bit on Windows (or on Linux). All tools generate 32 bit version only ...  Then, why distinguish 32 or 64 bit version ???
+
+GENERAL REMARK : With compilers that support "real" 64 bit version (exclude Borland C/C++, DMC and Open WATCOM), if you 
+ want distinguish in your code if you construct targets 32 bit or 64 bit, you can test variable "#ifdef _WIN64". If test
+ is positive, you build targets to 64 bit version.
+ In all case, if you want test if you build targets on Windows system, only test like "#ifdef _WIN32" be enougth.
+ The logic is next : always define _WIN32 for all compilers (32 or 64 bit), and only if 64 bit, define _WIN64.
+ With GCC/MinGW, same principle : always define __MINGW32__ for 32 or 64 bit, and only if 64 bit, define __MINGW64__.
+ Only "native" GCC compiler of CYGWIN64 define __CYGWIN__. 
+	
+******************			End of listing of all "free" compilers C/C++ installed 			*****************
+
+And for memory, cmake version 3.30.3 (version "native" Windows), cmake is also installed with package CYGWIN64, MSYS2 
+	and WinLibs.
+
+And to terminate, notepad++ version 8.7.0 64 bits, my prefered text editor ... otherwise Obsidian to MarkDown file.
+
+******************	  Proof of concept about presence of variables positioned by preprocessor	*****************
+
+Source code tested : 
+
+********************             Begin of file : test_preprocessor.c      		*******************
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[])
+
+{
+
+#ifdef _WIN32
+    printf("_WIN32 is defined with this compiler %s.\n", argv[1]);
+#endif
+#ifdef _WIN64
+    printf("_WIN64 is defined with this compiler %s.\n", argv[1]);
+#endif
+#ifdef __NT__
+    printf("__NT__ is defined with this compiler %s.\n", argv[1]);
+#endif
+#ifdef WIN32
+    printf("WIN32 is defined with this compiler %s.\n", argv[1]);
+#endif
+#ifdef __WIN32__
+    printf("__WIN32__ is defined with this compiler %s.\n", argv[1]);
+#endif
+#ifdef __MINGW32__
+    printf("__MINGW32__ is defined with this compiler %s.\n", argv[1]);
+#endif
+#ifdef __CYGWIN__
+    printf("__CYGWIN__ is defined with this compiler %s.\n", argv[1]);
+#endif
+#if defined(_MSC_VER)
+    printf("_MSC_VER is defined with this compiler %s.\n", argv[1]);
+#endif
+#if defined(__MINGW64__)
+    printf("__MINGW64__ is defined with this compiler %s.\n", argv[1]);
+#endif
+#if defined(__GNUC__)
+    printf("__GNUC__ is defined with this compiler %s.\n", argv[1]);
+#endif
+#if defined(__BORLANDC__)
+    printf("__BORLANDC__ is defined with this compiler %s.\n", argv[1]);
+#endif
+#if defined(__TURBOC__)
+    printf("__TURBOC__ is defined with this compiler %s.\n", argv[1]);
+#endif
+#if defined(__WATCOMC__)
+    printf("__WATCOMC__ is defined with this compiler %s.\n", argv[1]);
+#endif
+#if defined(__LCC__)
+    printf("__LCC__ is defined with this compiler %s.\n", argv[1]);
+#endif
+#if defined(__DMC__)
+    printf("__DMC__ is defined with this compiler %s.\n", argv[1]);
+#endif
+#if defined(__POCC__)
+    printf("__POCC__ is defined with this compiler %s.\n", argv[1]);
+#endif
+#if defined(__INTEL_LLVM_COMPILER)
+    printf("__INTEL_LLVM_COMPILER is defined with this compiler %s.\n", argv[1]);
+#endif
+#if defined(__clang__)
+    printf("__clang__ is defined with this compiler %s.\n", argv[1]);
+#endif
+
+    return 0;
+}
+
+********************             End of file : test_preprocessor.c      		*******************
+
+Source of project CB tested : 
+
+********************           Begin of file : test_preprocessor.cbp     		*******************
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="test_preprocessor" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug Mingw32 official">
+				<Option output="binMingW32of/Debug/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objMingW32of/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="-D_DEBUG" />
+					<Add option="-DDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add library="libkernel32" />
+					<Add library="libuser32" />
+				</Linker>
+				<ExtraCommands>
+					<Add before="gcc --version" />
+					<Add after="file binMingW32of\Debug\test_preprocessor.exe" />
+					<Add after="binMingW32of\Debug\test_preprocessor.exe MinGW32_Official" />
+					<Add after="C:\cygwin64\bin\ldd binMingW32of\Debug\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Release Mingw32 official">
+				<Option output="binMingW32of/Release/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objMingW32of/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-DNDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="libkernel32" />
+					<Add library="libuser32" />
+				</Linker>
+				<ExtraCommands>
+					<Add before="gcc --version" />
+					<Add after="file binMingW32of\Release\test_preprocessor.exe" />
+					<Add after="binMingW32of\Release\test_preprocessor.exe MinGW32_Official" />
+					<Add after="C:\cygwin64\bin\ldd binMingW32of\Release\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Debug Mingw64 CB">
+				<Option platforms="Windows;" />
+				<Option output="binMingw64CB/Debug/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objMingw64CB/Debug/" />
+				<Option type="1" />
+				<Option compiler="gnu_gcc_compiler_cb" />
+				<Compiler>
+					<Add option="-march=core2" />
+					<Add option="-g" />
+					<Add option="-D_DEBUG" />
+					<Add option="-DDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add library="libkernel32" />
+					<Add library="libuser32" />
+				</Linker>
+				<ExtraCommands>
+					<Add before="gcc --version" />
+					<Add after="file binMingw64CB\Debug\test_preprocessor.exe" />
+					<Add after="binMingw64CB\Debug\test_preprocessor.exe MinGW64_CB" />
+					<Add after="C:\cygwin64\bin\ldd binMingW64CB\Debug\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Release Mingw64 CB">
+				<Option platforms="Windows;" />
+				<Option output="binMingw64CB/Release/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objMingw64CB/Release/" />
+				<Option type="1" />
+				<Option compiler="gnu_gcc_compiler_cb" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-DNDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="libkernel32" />
+					<Add library="libuser32" />
+				</Linker>
+				<ExtraCommands>
+					<Add before="gcc --version" />
+					<Add after="file binMingw64CB\Release\test_preprocessor.exe" />
+					<Add after="binMingw64CB\Release\test_preprocessor.exe MinGW64_CB" />
+					<Add after="C:\cygwin64\bin\ldd binMingW64CB\Release\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Debug Mingw64 Dev-Cpp">
+				<Option platforms="Windows;" />
+				<Option output="binDevCpp/Debug/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objDevCpp/Debug/" />
+				<Option type="1" />
+				<Option compiler="gnu_gcc_compiler_dev" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="-D_DEBUG" />
+					<Add option="-DDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add library="libkernel32" />
+					<Add library="libuser32" />
+				</Linker>
+				<ExtraCommands>
+					<Add before="gcc --version" />
+					<Add after="file binDevCpp\Debug\test_preprocessor.exe" />
+					<Add after="binDevCpp\Debug\test_preprocessor.exe MinGW64_RedPanda" />
+					<Add after="C:\cygwin64\bin\ldd binDevCpp\Debug\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Release Mingw64 Dev-Cpp">
+				<Option platforms="Windows;" />
+				<Option output="binDevCpp/Release/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objDevCpp/Release/" />
+				<Option type="1" />
+				<Option compiler="gnu_gcc_compiler_dev" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-DNDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="libkernel32" />
+					<Add library="libuser32" />
+				</Linker>
+				<ExtraCommands>
+					<Add before="gcc --version" />
+					<Add after="file binDevCpp\Release\test_preprocessor.exe" />
+					<Add after="binDevCpp\Release\test_preprocessor.exe MinGW64_RedPanda" />
+					<Add after="C:\cygwin64\bin\ldd binDevCpp\Release\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Debug CYGWIN 32">
+				<Option platforms="Windows;" />
+				<Option output="binCYGWIN32/Debug/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objCYGWIN32/Debug" />
+				<Option type="1" />
+				<Option compiler="cygwin_gcc_32" />
+				<Compiler>
+					<Add option="-march=core2" />
+					<Add option="-g" />
+					<Add option="-D_DEBUG" />
+					<Add option="-DDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add library="kernel32" />
+					<Add library="user32" />
+				</Linker>
+				<ExtraCommands>
+					<Add before="i686-w64-mingw32-gcc.exe --version" />
+					<Add after="file binCYGWIN32\Debug\test_preprocessor.exe" />
+					<Add after="binCYGWIN32\Debug\test_preprocessor.exe CYGWIN_MinGW32" />
+					<Add after="C:\cygwin64\bin\ldd binCYGWIN32\Debug\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Release CYGWIN 32">
+				<Option platforms="Windows;" />
+				<Option output="binCYGWIN32/Release/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objCYGWIN32/Release/" />
+				<Option type="1" />
+				<Option compiler="cygwin_gcc_32" />
+				<Compiler>
+					<Add option="-march=core2" />
+					<Add option="-DNDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add library="kernel32" />
+					<Add library="user32" />
+				</Linker>
+				<ExtraCommands>
+					<Add before="i686-w64-mingw32-gcc.exe --version" />
+					<Add after="file binCYGWIN32\Release\test_preprocessor.exe" />
+					<Add after="binCYGWIN32\Release\test_preprocessor.exe CYGWIN_MinGW32" />
+					<Add after="C:\cygwin64\bin\ldd binCYGWIN32\Release\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Debug CYGWIN 64">
+				<Option platforms="Windows;" />
+				<Option output="binCYGWIN64/Debug/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objCYGWIN64/Debug" />
+				<Option type="1" />
+				<Option compiler="cygwin" />
+				<Compiler>
+					<Add option="-march=core2" />
+					<Add option="-g" />
+					<Add option="-D_DEBUG" />
+					<Add option="-DDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add library="kernel32" />
+					<Add library="user32" />
+				</Linker>
+				<ExtraCommands>
+					<Add before="x86_64-w64-mingw32-gcc.exe --version" />
+					<Add after="file binCYGWIN64\Debug\test_preprocessor.exe" />
+					<Add after="binCYGWIN64\Debug\test_preprocessor.exe CYGWIN_MinGW64" />
+					<Add after="C:\cygwin64\bin\ldd binCYGWIN64\Debug\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Release CYGWIN 64">
+				<Option platforms="Windows;" />
+				<Option output="binCYGWIN64/Release/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objCYGWIN64/Release/" />
+				<Option type="1" />
+				<Option compiler="cygwin" />
+				<Compiler>
+					<Add option="-march=core2" />
+					<Add option="-DNDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add library="kernel32" />
+					<Add library="user32" />
+				</Linker>
+				<ExtraCommands>
+					<Add before="x86_64-w64-mingw32-gcc.exe --version" />
+					<Add after="file binCYGWIN64\Release\test_preprocessor.exe" />
+					<Add after="binCYGWIN64\Release\test_preprocessor.exe CYGWIN_MinGW64" />
+					<Add after="C:\cygwin64\bin\ldd binCYGWIN64\Release\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Debug CYGWIN natif 64">
+				<Option platforms="Windows;" />
+				<Option output="binCYGWINN64/Debug/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objCYGWINN64/Debug" />
+				<Option type="1" />
+				<Option compiler="cygwin_natif_gcc_64" />
+				<Compiler>
+					<Add option="-march=corei7" />
+					<Add option="-g" />
+					<Add option="-D_DEBUG" />
+					<Add option="-DDEBUG" />
+				</Compiler>
+				<ExtraCommands>
+					<Add before="gcc --version" />
+					<Add after="file binCYGWINN64\Debug\test_preprocessor.exe" />
+					<Add after="binCYGWINN64\Debug\test_preprocessor.exe CYGWIN_GCC_natif" />
+					<Add after="C:\cygwin64\bin\ldd binCYGWINN64\Debug\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Release CYGWIN natif 64">
+				<Option platforms="Windows;" />
+				<Option output="binCYGWINN64/Release/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objCYGWINN64/Release" />
+				<Option type="1" />
+				<Option compiler="cygwin_natif_gcc_64" />
+				<Compiler>
+					<Add option="-march=core2" />
+					<Add option="-DNDEBUG" />
+				</Compiler>
+				<ExtraCommands>
+					<Add before="gcc --version" />
+					<Add after="file binCYGWINN64\Debug\test_preprocessor.exe" />
+					<Add after="binCYGWINN64\Debug\test_preprocessor.exe CYGWIN_GCC_natif" />
+					<Add after="C:\cygwin64\bin\ldd binCYGWINN64\Release\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Debug Mingw32 wl">
+				<Option platforms="Windows;" />
+				<Option output="binMingw32wl/Debug/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objMingw32wl/Debug/" />
+				<Option type="1" />
+				<Option compiler="gnu_gcc_mingw32_compiler" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="-D_DEBUG" />
+					<Add option="-DDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add library="libkernel32" />
+					<Add library="libuser32" />
+				</Linker>
+				<ExtraCommands>
+					<Add before="gcc --version" />
+					<Add after="file binMingw32wl\Debug\test_preprocessor.exe" />
+					<Add after="binMingw32wl\Debug\test_preprocessor.exe MinGW32_Winlibs" />
+					<Add after="C:\cygwin64\bin\ldd binMingw32wl\Debug\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Release Mingw32 wl">
+				<Option platforms="Windows;" />
+				<Option output="binMingw32wl/Release/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objMingw32wl/Release/" />
+				<Option type="1" />
+				<Option compiler="gnu_gcc_mingw32_compiler" />
+				<Compiler>
+					<Add option="-DNDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add library="libkernel32" />
+					<Add library="libuser32" />
+				</Linker>
+				<ExtraCommands>
+					<Add before="gcc --version" />
+					<Add after="file binMingw32wl\Release\test_preprocessor.exe" />
+					<Add after="binMingw32wl\Release\test_preprocessor.exe MinGW32_Winlibs" />
+					<Add after="C:\cygwin64\bin\ldd binMingw32wl\Release\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Debug Mingw64 wl">
+				<Option platforms="Windows;" />
+				<Option output="binMingw64wl/Debug/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objMingw64wl/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc-mingw64" />
+				<Compiler>
+					<Add option="-march=core2" />
+					<Add option="-g" />
+					<Add option="-D_DEBUG" />
+					<Add option="-DDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add library="libkernel32" />
+					<Add library="libuser32" />
+				</Linker>
+				<ExtraCommands>
+					<Add before="gcc --version" />
+					<Add after="file binMingw64wl\Debug\test_preprocessor.exe" />
+					<Add after="binMingw64wl\Debug\test_preprocessor.exe MinGW64_Winlibs" />
+					<Add after="C:\cygwin64\bin\ldd binMingw64wl\Debug\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Release Mingw64 wl">
+				<Option platforms="Windows;" />
+				<Option output="binMingw64wl/Release/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objMingw64wl/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc-mingw64" />
+				<Compiler>
+					<Add option="-march=core2" />
+					<Add option="-O2" />
+					<Add option="-DNDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="libkernel32" />
+					<Add library="libuser32" />
+				</Linker>
+				<ExtraCommands>
+					<Add before="gcc --version" />
+					<Add after="binMingw64wl\Release\test_preprocessor.exe MinGW64_Winlibs" />
+					<Add after="C:\cygwin64\bin\ldd binMingw64wl\Release\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Debug TDM MinGW32">
+				<Option platforms="Windows;" />
+				<Option output="binTDMW32/Debug/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objTDMW32/Debug" />
+				<Option type="1" />
+				<Option compiler="tdm_gcc_compiler" />
+				<Compiler>
+					<Add option="-march=core2" />
+					<Add option="-std=c99" />
+					<Add option="-g" />
+					<Add option="-D_DEBUG" />
+					<Add option="-DDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add library="libkernel32" />
+					<Add library="libuser32" />
+				</Linker>
+				<ExtraCommands>
+					<Add before="gcc --version" />
+					<Add after="file binTDMW32\Debug\test_preprocessor.exe" />
+					<Add after="binTDMW32\Debug\test_preprocessor.exe TDM32" />
+					<Add after="C:\cygwin64\bin\ldd binTDMW32\Debug\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Release TDM MinGW32">
+				<Option platforms="Windows;" />
+				<Option output="binTDMW32/Release/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objTDMW32/Release" />
+				<Option type="1" />
+				<Option compiler="tdm_gcc_compiler" />
+				<Compiler>
+					<Add option="-march=core2" />
+					<Add option="-O2" />
+					<Add option="-std=c99" />
+					<Add option="-DNDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="libkernel32" />
+					<Add library="libuser32" />
+				</Linker>
+				<ExtraCommands>
+					<Add before="gcc --version" />
+					<Add after="file binTDMW32\Release\test_preprocessor.exe" />
+					<Add after="binTDMW32\Release\test_preprocessor.exe TDM32" />
+					<Add after="C:\cygwin64\bin\ldd binTDMW32\Release\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Debug TDM MinGW64">
+				<Option platforms="Windows;" />
+				<Option output="binTDMW64/Debug/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objTDMW64/Debug" />
+				<Option type="1" />
+				<Option compiler="tdm_gcc_x64_compiler" />
+				<Compiler>
+					<Add option="-march=core2" />
+					<Add option="-std=c99" />
+					<Add option="-g" />
+					<Add option="-D_DEBUG" />
+					<Add option="-DDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add library="libkernel32" />
+					<Add library="libuser32" />
+				</Linker>
+				<ExtraCommands>
+					<Add before="gcc --version" />
+					<Add after="file binTDMW64\Debug\test_preprocessor.exe" />
+					<Add after="binTDMW64\Debug\test_preprocessor.exe TDM64" />
+					<Add after="C:\cygwin64\bin\ldd binTDMW64\Debug\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Release TDM MinGW64">
+				<Option platforms="Windows;" />
+				<Option output="binTDMW64/Release/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objTDMW64/Release" />
+				<Option type="1" />
+				<Option compiler="tdm_gcc_x64_compiler" />
+				<Compiler>
+					<Add option="-march=core2" />
+					<Add option="-O2" />
+					<Add option="-std=c99" />
+					<Add option="-DNDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="libkernel32" />
+					<Add library="libuser32" />
+				</Linker>
+				<ExtraCommands>
+					<Add before="gcc --version" />
+					<Add after="file binTDMW64\Release\test_preprocessor.exe" />
+					<Add after="binTDMW64\Release\test_preprocessor.exe TDM64" />
+					<Add after="C:\cygwin64\bin\ldd binTDMW64\Release\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Debug MSYS2W32">
+				<Option platforms="Windows;" />
+				<Option output="binMSYS2W32/Debug/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objMSYS2W32/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc-msys2-mingw32" />
+				<Compiler>
+					<Add option="-march=core2" />
+					<Add option="-g" />
+					<Add option="-D_DEBUG" />
+					<Add option="-DDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add library="libkernel32" />
+					<Add library="libuser32" />
+				</Linker>
+				<ExtraCommands>
+					<Add before="gcc --version" />
+					<Add after="file binMSYS2W32\Debug\test_preprocessor.exe" />
+					<Add after="binMSYS2W32\Debug\test_preprocessor.exe MSYS2_MinGW32" />
+					<Add after="C:\cygwin64\bin\ldd binMSYS2W32\Debug\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Release MSYS2W32">
+				<Option platforms="Windows;" />
+				<Option output="binMSYS2W32/Release/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objMSYS2W32/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc-msys2-mingw32" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-DNDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="libkernel32" />
+					<Add library="libuser32" />
+				</Linker>
+				<ExtraCommands>
+					<Add before="gcc --version" />
+					<Add after="file binMSYS2W32\Release\test_preprocessor.exe" />
+					<Add after="binMSYS2W32\Release\test_preprocessor.exe MSYS2_MinGW32" />
+					<Add after="C:\cygwin64\bin\ldd binMSYS2W32\Release\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Debug MSYS2W64">
+				<Option platforms="Windows;" />
+				<Option output="binMSYS2W64/Debug/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objMSYS2W64/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc-msys2-mingw64" />
+				<Compiler>
+					<Add option="-march=core2" />
+					<Add option="-g" />
+					<Add option="-D_DEBUG" />
+					<Add option="-DDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add library="libkernel32" />
+					<Add library="libuser32" />
+				</Linker>
+				<ExtraCommands>
+					<Add before="gcc --version" />
+					<Add after="file binMSYS2W64\Debug\test_preprocessor.exe" />
+					<Add after="binMSYS2W64\Debug\test_preprocessor.exe MSYS2_MinGW64" />
+					<Add after="C:\cygwin64\bin\ldd binMSYS2W64\Debug\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Release MSYS2W64">
+				<Option platforms="Windows;" />
+				<Option output="binMSYS2W64/Release/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objMSYS2W64/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc-msys2-mingw64" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-DNDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="libkernel32" />
+					<Add library="libuser32" />
+				</Linker>
+				<ExtraCommands>
+					<Add before="gcc --version" />
+					<Add after="file binMSYS2W64\Release\test_preprocessor.exe" />
+					<Add after="binMSYS2W64\Release\test_preprocessor.exe MSYS2_MinGW64" />
+					<Add after="C:\cygwin64\bin\ldd binMSYS2W64\Release\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Debug MSYS2 UCRT64">
+				<Option platforms="Windows;" />
+				<Option output="binMSYS2U64/Debug/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objMSYS2U64/Debug/" />
+				<Option type="1" />
+				<Option compiler="gnu_gcc_msys_ucrt64_compiler" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="-D_DEBUG" />
+					<Add option="-DDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add library="libkernel32" />
+					<Add library="libuser32" />
+				</Linker>
+				<ExtraCommands>
+					<Add before="gcc --version" />
+					<Add after="file binMSYS2U64\Debug\test_preprocessor.exe" />
+					<Add after="binMSYS2U64\Debug\test_preprocessor.exe MSYS2_UCRT64" />
+					<Add after="C:\cygwin64\bin\ldd binMSYS2U64\Debug\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Release MSYS2 UCRT64">
+				<Option platforms="Windows;" />
+				<Option output="binMSYS2U64/Release/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objMSYS2U64/Release/" />
+				<Option type="1" />
+				<Option compiler="gnu_gcc_msys_ucrt64_compiler" />
+				<Compiler>
+					<Add option="-DNDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add library="libkernel32" />
+					<Add library="libuser32" />
+				</Linker>
+				<ExtraCommands>
+					<Add before="gcc --version" />
+					<Add after="file binMSYS2U64\Release\test_preprocessor.exe" />
+					<Add after="binMSYS2U64\Release\test_preprocessor.exe MSYS2_UCRT64" />
+					<Add after="C:\cygwin64\bin\ldd binMSYS2U64\Release\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Debug VS2022 X32">
+				<Option platforms="Windows;" />
+				<Option output="binVS2022X32/Debug/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objVS2022X32/Debug" />
+				<Option type="1" />
+				<Option compiler="microsoft_visual_c_2022" />
+				<Compiler>
+					<Add option="/ZI" />
+					<Add option="/Zi" />
+					<Add option="-D" />
+					<Add option="-g" />
+					<Add option="/D_DEBUG" />
+					<Add option="/DDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add option="/debug" />
+					<Add library="kernel32" />
+					<Add library="user32" />
+				</Linker>
+				<ExtraCommands>
+					<Add before="cl" />
+					<Add after="file binVS2022X32\Debug\test_preprocessor.exe" />
+					<Add after="binVS2022X32\Debug\test_preprocessor.exe MSVC32" />
+					<Add after="C:\cygwin64\bin\ldd binVS2022X32\Debug\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Release VS2022 X32">
+				<Option platforms="Windows;" />
+				<Option output="binVS2022X32/Release/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objVS2022X32/Release/" />
+				<Option type="1" />
+				<Option compiler="microsoft_visual_c_2022" />
+				<Compiler>
+					<Add option="/TC" />
+					<Add option="-DNDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add library="kernel32" />
+					<Add library="user32" />
+				</Linker>
+				<ExtraCommands>
+					<Add before="cl" />
+					<Add after="file binVS2022X32\Release\test_preprocessor.exe" />
+					<Add after="binVS2022X32\Release\test_preprocessor.exe MSVC32" />
+					<Add after="C:\cygwin64\bin\ldd binVS2022X32\Release\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Debug VS2022 X64">
+				<Option output="binVS2022X64/Debug/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objVS2022X64/Debug/" />
+				<Option type="1" />
+				<Option compiler="microsoft_visual_c_2022_x64" />
+				<Compiler>
+					<Add option="/TC" />
+					<Add option="/Zi" />
+					<Add option="/D_DEBUG" />
+					<Add option="/DDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add option="/debug" />
+					<Add library="kernel32" />
+					<Add library="user32" />
+				</Linker>
+				<ExtraCommands>
+					<Add before="cl" />
+					<Add after="file binVS2022X64\Debug\test_preprocessor.exe" />
+					<Add after="binVS2022X64\Debug\test_preprocessor.exe MSVC64" />
+					<Add after="C:\cygwin64\bin\ldd binVS2022X64\Debug\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Release VS2022 X64">
+				<Option output="binVS2022X64/Release/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objVS2022X64/Release/" />
+				<Option type="1" />
+				<Option compiler="microsoft_visual_c_2022_x64" />
+				<Compiler>
+					<Add option="/TC" />
+					<Add option="-DNDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add library="kernel32" />
+					<Add library="user32" />
+				</Linker>
+				<ExtraCommands>
+					<Add before="cl" />
+					<Add after="file binVS2022X64\Release\test_preprocessor.exe" />
+					<Add after="binVS2022X64\Release\test_preprocessor.exe MSVC64" />
+					<Add after="C:\cygwin64\bin\ldd binVS2022X32\Release\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Debug BorlandC">
+				<Option output="binBC55/Debug/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objBC55/Debug/" />
+				<Option type="1" />
+				<Option compiler="bcc" />
+				<Compiler>
+					<Add option="-tWC" />
+					<Add option="-6" />
+					<Add option="-y" />
+					<Add option="-v" />
+				</Compiler>
+				<Linker>
+					<Add library="kernel32" />
+					<Add library="cw32" />
+					<Add library="user32" />
+					<Add library="import32" />
+				</Linker>
+				<ExtraCommands>
+					<Add after="file binBC55\Debug\test_preprocessor.exe" />
+					<Add after="binBC55\Debug\test_preprocessor.exe BorlandC" />
+					<Add after="C:\cygwin64\bin\ldd binBC55\Debug\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Release BorlandC">
+				<Option output="binBC55/Release/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objBC55/Release/" />
+				<Option type="1" />
+				<Option compiler="bcc" />
+				<Compiler>
+					<Add option="-tWC" />
+					<Add option="-6" />
+					<Add option="-v-" />
+				</Compiler>
+				<Linker>
+					<Add library="kernel32" />
+					<Add library="cw32" />
+					<Add library="user32" />
+					<Add library="import32" />
+				</Linker>
+				<ExtraCommands>
+					<Add after="file binBC55\Release\test_preprocessor.exe" />
+					<Add after="binBC55\Release\test_preprocessor.exe BorlandC" />
+					<Add after="C:\cygwin64\bin\ldd binBC55\Release\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Debug DMC">
+				<Option platforms="Windows;" />
+				<Option output="binDMC/Debug/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objDMC/Debug/" />
+				<Option type="1" />
+				<Option compiler="dmc" />
+				<Compiler>
+					<Add option="-H" />
+					<Add option="-g" />
+					<Add option="-D_DEBUG" />
+					<Add option="-DDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add library="user32" />
+					<Add library="kernel32" />
+				</Linker>
+				<ExtraCommands>
+					<Add after="file binDMC\Debug\test_preprocessor.exe" />
+					<Add after="binDMC\Debug\test_preprocessor.exe DMC" />
+					<Add after="C:\cygwin64\bin\ldd binDMC\Debug\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Release DMC">
+				<Option platforms="Windows;" />
+				<Option output="binDMC/Release/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objDMC/Release/" />
+				<Option type="1" />
+				<Option compiler="dmc" />
+				<Compiler>
+					<Add option="-H" />
+					<Add option="-DNEBUG" />
+				</Compiler>
+				<Linker>
+					<Add library="user32" />
+					<Add library="kernel32" />
+				</Linker>
+				<ExtraCommands>
+					<Add after="file binDMC\Release\test_preprocessor.exe" />
+					<Add after="binDMC\Release\test_preprocessor.exe DMC" />
+					<Add after="C:\cygwin64\bin\ldd binDMC\Release\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Debug lcc">
+				<Option platforms="Windows;" />
+				<Option output="binlcc32/Debug/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objlcc32/Debug/" />
+				<Option type="1" />
+				<Option compiler="lcc" />
+				<Compiler>
+					<Add option="-g2" />
+					<Add option="-D_DEBUG" />
+					<Add option="-DDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="kernel32" />
+					<Add library="user32" />
+				</Linker>
+				<ExtraCommands>
+					<Add before="lcc -v" />
+					<Add after="file binlcc32\Debug\test_preprocessor.exe" />
+					<Add after="binlcc32\Debug\test_preprocessor.exe LCC32" />
+					<Add after="C:\cygwin64\bin\ldd binlcc32\Debug\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Release lcc">
+				<Option platforms="Windows;" />
+				<Option output="binlcc32/Release/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objlcc32/Release/" />
+				<Option type="1" />
+				<Option compiler="lcc" />
+				<Compiler>
+					<Add option="-DNDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add library="kernel32" />
+					<Add library="user32" />
+				</Linker>
+				<ExtraCommands>
+					<Add before="lcc -v" />
+					<Add after="file binlcc32\Release\test_preprocessor.exe" />
+					<Add after="binlcc32\Release\test_preprocessor.exe LCC32" />
+					<Add after="C:\cygwin64\bin\ldd binlcc32\Release\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Debug lcc64">
+				<Option platforms="Windows;" />
+				<Option output="binlcc64/Debug/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objlcc64/Debug/" />
+				<Option type="1" />
+				<Option compiler="lcc_compiler_64" />
+				<Compiler>
+					<Add option="-g2" />
+					<Add option="-D_DEBUG" />
+					<Add option="-DDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add library="kernel32" />
+					<Add library="user32" />
+				</Linker>
+				<ExtraCommands>
+					<Add before="lcc64 -v" />
+					<Add after="file binlcc64\Debug\test_preprocessor.exe" />
+					<Add after="binlcc64\Debug\test_preprocessor.exe LCC64" />
+					<Add after="C:\cygwin64\bin\ldd binlcc64\Debug\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Release lcc64">
+				<Option platforms="Windows;" />
+				<Option output="binlcc64/Release/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objlcc64/Release/" />
+				<Option type="1" />
+				<Option compiler="lcc_compiler_64" />
+				<Compiler>
+					<Add option="-DNDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add library="kernel32" />
+					<Add library="user32" />
+				</Linker>
+				<ExtraCommands>
+					<Add before="lcc64 -v" />
+					<Add after="file binlcc64\Release\test_preprocessor.exe" />
+					<Add after="binlcc64\Release\test_preprocessor.exe LCC64" />
+					<Add after="C:\cygwin64\bin\ldd binlcc64\Release\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Debug OW 32">
+				<Option platforms="Windows;" />
+				<Option output="binOW32/Debug/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objOW32/Debug" />
+				<Option type="1" />
+				<Option compiler="ow" />
+				<Compiler>
+					<Add option="-d2" />
+					<Add option="-ecc" />
+					<Add option="-d_DEBUG" />
+					<Add option="-dDEBUG" />
+				</Compiler>
+				<ExtraCommands>
+					<Add after="file binOW32\Debug\test_preprocessor.exe" />
+					<Add after="binOW32\Debug\test_preprocessor.exe OW32" />
+					<Add after="C:\cygwin64\bin\ldd binOW32\Debug\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Release OW 32">
+				<Option platforms="Windows;" />
+				<Option output="binOW32/Release/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objOW32/Release/" />
+				<Option type="1" />
+				<Option compiler="ow" />
+				<Compiler>
+					<Add option="-d0" />
+					<Add option="-ecc" />
+					<Add option="-dNDEBUG" />
+				</Compiler>
+				<ExtraCommands>
+					<Add after="file binOW32\Release\test_preprocessor.exe" />
+					<Add after="binOW32\Release\test_preprocessor.exe OW32" />
+					<Add after="C:\cygwin64\bin\ldd binOW32\Release\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Debug OW 64">
+				<Option platforms="Windows;" />
+				<Option output="binOW64/Debug/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objOW64/Debug" />
+				<Option type="1" />
+				<Option compiler="openwatcom_w64_compiler" />
+				<Compiler>
+					<Add option="-d2" />
+					<Add option="-ecc" />
+					<Add option="-d_DEBUG" />
+					<Add option="-dDEBUG" />
+				</Compiler>
+				<ExtraCommands>
+					<Add after="file binOW64\Debug\test_preprocessor.exe" />
+					<Add after="binOW64\Debug\test_preprocessor.exe OW64" />
+					<Add after="C:\cygwin64\bin\ldd binOW64\Debug\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Release OW 64">
+				<Option platforms="Windows;" />
+				<Option output="binOW64/Release/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objOW64/Release/" />
+				<Option type="1" />
+				<Option compiler="openwatcom_w64_compiler" />
+				<Compiler>
+					<Add option="-d0" />
+					<Add option="-ecc" />
+					<Add option="-dNDEBUG" />
+				</Compiler>
+				<ExtraCommands>
+					<Add after="file binOW64\Release\test_preprocessor.exe" />
+					<Add after="binOW64\Release\test_preprocessor.exe OW64" />
+					<Add after="C:\cygwin64\bin\ldd binOW64\Release\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Debug PELLES C">
+				<Option platforms="Windows;" />
+				<Option output="binPELLESC32/Debug/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objPELLESC32/Debug" />
+				<Option type="1" />
+				<Option compiler="pelles_c_2021" />
+				<Compiler>
+					<Add option="/Zi" />
+					<Add option="/Ze" />
+					<Add option="/c" />
+					<Add option="/D_DEBUG" />
+					<Add option="/DDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add option="/debug" />
+					<Add option="/SUBSYSTEM:CONSOLE" />
+					<Add library="user32" />
+					<Add library="kernel32" />
+				</Linker>
+				<ExtraCommands>
+					<Add after="file binPELLESC32\Debug\test_preprocessor.exe" />
+					<Add after="binPELLESC32\Debug\test_preprocessor.exe Pelles_C32" />
+					<Add after="C:\cygwin64\bin\ldd binPELLESC32\Debug\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Release PELLES C">
+				<Option platforms="Windows;" />
+				<Option output="binPELLESC32/Release/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objPELLESC32/Release/" />
+				<Option type="1" />
+				<Option compiler="pelles_c_2021" />
+				<Compiler>
+					<Add option="/Gd" />
+					<Add option="/Ze" />
+					<Add option="/c" />
+					<Add option="/DNDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add option="/SUBSYSTEM:CONSOLE" />
+					<Add library="shell32" />
+					<Add library="user32" />
+					<Add library="kernel32" />
+				</Linker>
+				<ExtraCommands>
+					<Add after="file binPELLESC32\Release\test_preprocessor.exe" />
+					<Add after="binPELLESC32\Release\test_preprocessor.exe Pelles_C32" />
+					<Add after="C:\cygwin64\bin\ldd binPELLESC32\Release\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Debug PELLES C 64">
+				<Option platforms="Windows;" />
+				<Option output="binPELLESC64/Debug/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objPELLESC64/Debug" />
+				<Option type="1" />
+				<Option compiler="pelles_c_2021_64b" />
+				<Compiler>
+					<Add option="/Zi" />
+					<Add option="/Ze" />
+					<Add option="/c" />
+					<Add option="/D_DEBUG" />
+					<Add option="/DDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add option="/debug" />
+					<Add option="/SUBSYSTEM:CONSOLE" />
+					<Add library="shell32" />
+					<Add library="user32" />
+					<Add library="kernel32" />
+				</Linker>
+				<ExtraCommands>
+					<Add after="file binPELLESC64\Debug\test_preprocessor.exe" />
+					<Add after="binPELLESC64\Debug\test_preprocessor.exe Pelles_C64" />
+					<Add after="C:\cygwin64\bin\ldd binPELLESC64\Debug\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Release PELLES C 64">
+				<Option platforms="Windows;" />
+				<Option output="binPELLESC64/Release/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objPELLESC64/Release/" />
+				<Option type="1" />
+				<Option compiler="pelles_c_2021_64b" />
+				<Compiler>
+					<Add option="/Ze" />
+					<Add option="/c" />
+					<Add option="/DNDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add option="/SUBSYSTEM:CONSOLE" />
+					<Add library="user32" />
+					<Add library="kernel32" />
+				</Linker>
+				<ExtraCommands>
+					<Add after="file binPELLESC64\Release\test_preprocessor.exe" />
+					<Add after="binPELLESC64\Release\test_preprocessor.exe Pelles_C64" />
+					<Add after="C:\cygwin64\bin\ldd binPELLESC64\Release\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Debug CLANG Mingw32">
+				<Option output="binCLANGW32/Debug/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objCLANGW32/Debug/" />
+				<Option type="1" />
+				<Option compiler="llvm_clang_compiler_w32" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="-D_DEBUG" />
+					<Add option="-DDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add library="libkernel32" />
+					<Add library="libuser32" />
+				</Linker>
+				<ExtraCommands>
+					<Add before="clang --version" />
+					<Add after="file binCLANGW32\Debug\test_preprocessor.exe" />
+					<Add after="binCLANGW32\Debug\test_preprocessor.exe CLANG_MinGW32" />
+					<Add after="C:\cygwin64\bin\ldd binCLANGW32\Debug\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Release CLANG Mingw32">
+				<Option output="binCLANGW32/Release/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objCLANGW32/release/" />
+				<Option type="1" />
+				<Option compiler="llvm_clang_compiler_w32" />
+				<Compiler>
+					<Add option="-DNDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add library="libkernel32" />
+					<Add library="libuser32" />
+				</Linker>
+				<ExtraCommands>
+					<Add before="clang --version" />
+					<Add after="file binCLANGW32\Release\test_preprocessor.exe" />
+					<Add after="binCLANGW32\Release\test_preprocessor.exe CLANG_MinGW32" />
+					<Add after="C:\cygwin64\bin\ldd binCLANGW32\Release\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Debug CLANG Mingw64">
+				<Option platforms="Windows;" />
+				<Option output="binCLANGW64/Debug/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objCLANGW64/Debug/" />
+				<Option type="1" />
+				<Option compiler="clang" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="-D_DEBUG" />
+					<Add option="-DDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add library="libkernel32" />
+					<Add library="libuser32" />
+				</Linker>
+				<ExtraCommands>
+					<Add before="clang --version" />
+					<Add after="file binCLANGW64\Debug\test_preprocessor.exe" />
+					<Add after="binCLANGW64\Debug\test_preprocessor.exe CLANG_MinGW64" />
+					<Add after="C:\cygwin64\bin\ldd binCLANGW64\Debug\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Release CLANG Mingw64">
+				<Option platforms="Windows;" />
+				<Option output="binCLANGW64/Release/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objCLANGW64/Release/" />
+				<Option type="1" />
+				<Option compiler="clang" />
+				<Compiler>
+					<Add option="-DNDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add library="libkernel32" />
+					<Add library="libuser32" />
+				</Linker>
+				<ExtraCommands>
+					<Add before="clang --version" />
+					<Add after="file binCLANGW64\Release\test_preprocessor.exe" />
+					<Add after="binCLANGW64\Release\test_preprocessor.exe CLANG_MinGW64" />
+					<Add after="C:\cygwin64\bin\ldd binCLANGW64\Release\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Debug CLANG MSX32">
+				<Option platforms="Windows;" />
+				<Option output="binCLANGX32/Debug/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objCLANGX32/Debug/" />
+				<Option type="1" />
+				<Option compiler="llvm_clang_compiler_x32" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="-D_DEBUG" />
+					<Add option="-DDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add library="user32" />
+					<Add library="kernel32" />
+				</Linker>
+				<ExtraCommands>
+					<Add before="clang --version" />
+					<Add after="file binCLANGX32\Debug\test_preprocessor.exe" />
+					<Add after="binCLANGX32\Debug\test_preprocessor.exe CLANG_MSVC32" />
+					<Add after="C:\cygwin64\bin\ldd binCLANGX32\Debug\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Release CLANG MSX32">
+				<Option platforms="Windows;" />
+				<Option output="binCLANGX32/Release/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objCLANGX32/Release/" />
+				<Option type="1" />
+				<Option compiler="llvm_clang_compiler_x32" />
+				<Compiler>
+					<Add option="-DNDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add library="user32" />
+					<Add library="kernel32" />
+				</Linker>
+				<ExtraCommands>
+					<Add before="clang --version" />
+					<Add after="file binCLANGX32\Release\test_preprocessor.exe" />
+					<Add after="binCLANGX32\Release\test_preprocessor.exe CLANG_MSVC32" />
+					<Add after="C:\cygwin64\bin\ldd binCLANGX32\Release\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Debug CLANG MSX64">
+				<Option platforms="Windows;" />
+				<Option output="binCLANGX64/Debug/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objCLANGX64/Debug/" />
+				<Option type="1" />
+				<Option compiler="llvm_clang_compiler_x64" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="-D_DEBUG" />
+					<Add option="-DDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add library="user32" />
+					<Add library="kernel32" />
+				</Linker>
+				<ExtraCommands>
+					<Add before="clang --version" />
+					<Add after="file binCLANGX64\Debug\test_preprocessor.exe" />
+					<Add after="binCLANGX64\Debug\test_preprocessor.exe CLANG_MSVC64" />
+					<Add after="C:\cygwin64\bin\ldd binCLANGX64\Debug\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Release CLANG MSX64">
+				<Option platforms="Windows;" />
+				<Option output="binCLANGX64/Release/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objCLANGX64/Release/" />
+				<Option type="1" />
+				<Option compiler="llvm_clang_compiler_x64" />
+				<Compiler>
+					<Add option="-DNDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add library="user32" />
+					<Add library="kernel32" />
+				</Linker>
+				<ExtraCommands>
+					<Add before="clang --version" />
+					<Add after="file binCLANGX64\Release\test_preprocessor.exe" />
+					<Add after="binCLANGX64\Release\test_preprocessor.exe CLANG_MSVC64" />
+					<Add after="C:\cygwin64\bin\ldd binCLANGX64\Release\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Debug CLANG MSYS W32">
+				<Option output="binCLANGMW32/Debug/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objCLANGMW32/Debug/" />
+				<Option type="1" />
+				<Option compiler="clang_msys_w32_compiler" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="-D_DEBUG" />
+					<Add option="-DDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add library="libkernel32" />
+					<Add library="libuser32" />
+				</Linker>
+				<ExtraCommands>
+					<Add before="clang --version" />
+					<Add after="file binCLANGMW32\Debug\test_preprocessor.exe" />
+					<Add after="binCLANGMW32\Debug\test_preprocessor.exe CLANG_MSYS32" />
+					<Add after="C:\cygwin64\bin\ldd binCLANGMW32\Debug\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Release CLANG MSYS W32">
+				<Option output="binCLANGMW32/Release/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objCLANGMW32/release/" />
+				<Option type="1" />
+				<Option compiler="clang_msys_w32_compiler" />
+				<Compiler>
+					<Add option="-DNDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add library="libkernel32" />
+					<Add library="libuser32" />
+				</Linker>
+				<ExtraCommands>
+					<Add before="clang --version" />
+					<Add after="file binCLANGMW32\Release\test_preprocessor.exe" />
+					<Add after="binCLANGMW32\Release\test_preprocessor.exe CLANG_MSYS32" />
+					<Add after="C:\cygwin64\bin\ldd binCLANGMW32\Release\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Debug CLANG MSYS W64">
+				<Option output="binCLANGMW64/Debug/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objCLANGMW64/Debug/" />
+				<Option type="1" />
+				<Option compiler="clang_msys_w64_compiler" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="-D_DEBUG" />
+					<Add option="-DDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add library="libkernel32" />
+					<Add library="libuser32" />
+				</Linker>
+				<ExtraCommands>
+					<Add before="clang --version" />
+					<Add after="file binCLANGMW64\Debug\test_preprocessor.exe" />
+					<Add after="binCLANGMW64\Debug\test_preprocessor.exe CLANG_MSYS64" />
+					<Add after="C:\cygwin64\bin\ldd binCLANGMW64\Debug\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Release CLANG MSYS W64">
+				<Option output="binCLANGMW64/Release/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objCLANGMW64/release/" />
+				<Option type="1" />
+				<Option compiler="clang_msys_w64_compiler" />
+				<Compiler>
+					<Add option="-DNDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add library="libkernel32" />
+					<Add library="libuser32" />
+				</Linker>
+				<ExtraCommands>
+					<Add before="clang --version" />
+					<Add after="file binCLANGMW64\Release\test_preprocessor.exe" />
+					<Add after="binCLANGMW64\Release\test_preprocessor.exe CLANG_MSYS64" />
+					<Add after="C:\cygwin64\bin\ldd binCLANGMW64\Release\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Debug Intel X32">
+				<Option output="binINTELX32/Debug/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objINTELX32/Debug" />
+				<Option type="1" />
+				<Option compiler="icc" />
+				<Option use_console_runner="0" />
+				<Compiler>
+					<Add option="-Wall" />
+					<Add option="/Zi" />
+					<Add option="/DDEBUG" />
+					<Add option="/D_DEBUG" />
+				</Compiler>
+				<ExtraCommands>
+					<Add before="icx --version" />
+					<Add after="file binINTELX32\Debug\test_preprocessor.exe" />
+					<Add after="binINTELX32\Debug\test_preprocessor.exe INTEL32" />
+					<Add after="C:\cygwin64\bin\ldd binINTELX32\Debug\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Release Intel X32">
+				<Option output="binINTELX32/Release/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objINTELX32/Release" />
+				<Option type="1" />
+				<Option compiler="icc" />
+				<Option use_console_runner="0" />
+				<Compiler>
+					<Add option="-Wall" />
+					<Add option="/DNDEBUG" />
+				</Compiler>
+				<ExtraCommands>
+					<Add before="icx --version" />
+					<Add after="file binINTELX32\Release\test_preprocessor.exe" />
+					<Add after="binINTELX32\Release\test_preprocessor.exe INTEL32" />
+					<Add after="C:\cygwin64\bin\ldd binINTELX32\Release\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Debug Intel X64">
+				<Option output="binINTELX64/Debug/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objINTELX64/Debug" />
+				<Option type="1" />
+				<Option compiler="intel_cc_compiler_64_bits" />
+				<Option use_console_runner="0" />
+				<Compiler>
+					<Add option="-Wall" />
+					<Add option="/Zi" />
+					<Add option="/DDEBUG" />
+					<Add option="/D_DEBUG" />
+				</Compiler>
+				<ExtraCommands>
+					<Add before="icx --version" />
+					<Add after="file binINTELX64\Debug\test_preprocessor.exe" />
+					<Add after="binINTELX64\Debug\test_preprocessor.exe INTEL64" />
+					<Add after="C:\cygwin64\bin\ldd binINTELX64\Debug\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Release Intel X64">
+				<Option output="binINTELX64/Release/test_preprocessor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objINTELX64/Release" />
+				<Option type="1" />
+				<Option compiler="intel_cc_compiler_64_bits" />
+				<Option use_console_runner="0" />
+				<Compiler>
+					<Add option="-Wall" />
+					<Add option="/DNDEBUG" />
+				</Compiler>
+				<ExtraCommands>
+					<Add before="icx --version" />
+					<Add after="file binINTELX64\Release\test_preprocessor.exe" />
+					<Add after="binINTELX64\Release\test_preprocessor.exe INTEL64" />
+					<Add after="C:\cygwin64\bin\ldd binINTELX64\Release\test_preprocessor.exe" />
+				</ExtraCommands>
+			</Target>
+		</Build>
+		<VirtualTargets>
+			<Add alias="Test preprocessor All build" targets="Debug Mingw32 official;Release Mingw32 official;Debug Mingw64 CB;Release Mingw64 CB;Debug Mingw64 Dev-Cpp;Release Mingw64 Dev-Cpp;Debug CYGWIN 32;Release CYGWIN 32;Debug CYGWIN 64;Release CYGWIN 64;Debug CYGWIN natif 64;Release CYGWIN natif 64;Debug Mingw32 wl;Release Mingw32 wl;Debug Mingw64 wl;Release Mingw64 wl;Debug TDM MinGW32;Release TDM MinGW32;Debug TDM MinGW64;Release TDM MinGW64;Debug MSYS2W32;Release MSYS2W32;Debug MSYS2W64;Release MSYS2W64;Debug MSYS2 UCRT64;Release MSYS2 UCRT64;Debug VS2022 X32;Release VS2022 X32;Debug VS2022 X64;Release VS2022 X64;Debug BorlandC;Release BorlandC;Debug DMC;Release DMC;Debug lcc;Release lcc;Debug lcc64;Release lcc64;Debug OW 32;Release OW 32;Debug OW 64;Release OW 64;Debug PELLES C;Release PELLES C;Debug PELLES C 64;Release PELLES C 64;Debug CLANG Mingw32;Release CLANG Mingw32;Debug CLANG Mingw64;Release CLANG Mingw64;Debug CLANG MSX32;Release CLANG MSX32;Debug CLANG MSX64;Release CLANG MSX64;Debug CLANG MSYS W32;Release CLANG MSYS W32;Debug CLANG MSYS W64;Release CLANG MSYS W64;Debug Intel X32;Release Intel X32;Debug Intel X64;Release Intel X64;" />
+		</VirtualTargets>
+		<Unit filename="test_preprocessor.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Extensions>
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
+
+********************           End of file : test_preprocessor.cbp     		*******************
+
+REMARK : In precedent CB project, an example of "virtual target" that allow to build all "real" targets, one target
+by differents free compilers C/C++, but also for each category of compilers, one target to "Debug" and one target to
+"Release". With this sample, nothing interest to distinguish Debug versus Release version, but the frame of my CB 
+project is based on this structuration (in general).
+
+REMARK2 : And also, you can see very great interest of use IDE like CB to generate multiple targets rather than to use
+ "command line" very long. With simple project CB, you can generate so much targets that you wish it ..., and with use 
+ of workspace, you can also regroup several projects CB binded among these.
+ And, with use of pre and post-steps, you can also verify many options, pre-requisites, controls, etc... "externals" of CB.
+ Easy, is't it ?  
+
+And finally, result of "rebuild" (or CTRL-F11) of this project : file "test_preprocessor_build_log.html"
+
+Build started on: 22-09-2024 at 16:01.51
+Build ended on: 22-09-2024 at 16:02.40
+
+-------------- Build: Debug Mingw32 official in test_preprocessor (compiler: GNU GCC Compiler)---------------
+gcc --version
+gcc (MinGW.org GCC Build-2) 9.2.0
+Copyright (C) 2019 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions. There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+gcc.exe -g -D_DEBUG -DDEBUG -m32 -IC:\MingW\include -c C:\src\C\prepocessor\test_preprocessor.c -o objMingW32of\Debug\test_preprocessor.o
+gcc.exe -LC:\MingW\lib -o binMingW32of\Debug\test_preprocessor.exe objMingW32of\Debug\test_preprocessor.o -m32 -lkernel32 -luser32
+Output file is binMingW32of\Debug\test_preprocessor.exe with size 47.21 KB
+file binMingW32of\Debug\test_preprocessor.exe
+binMingW32of\Debug\test_preprocessor.exe: PE32 executable (console) Intel 80386, for MS Windows, 14 sections
+binMingW32of\Debug\test_preprocessor.exe MinGW32_Official
+_WIN32 is defined with this compiler MinGW32_Official.
+WIN32 is defined with this compiler MinGW32_Official.
+__WIN32__ is defined with this compiler MinGW32_Official.
+__MINGW32__ is defined with this compiler MinGW32_Official.
+__GNUC__ is defined with this compiler MinGW32_Official.
+C:\cygwin64\bin\ldd binMingW32of\Debug\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+ntdll.dll => /cygdrive/c/Windows/SysWOW64/ntdll.dll (0x77e10000)
+wow64.dll => /cygdrive/c/WINDOWS/System32/wow64.dll (0x7ff90fac0000)
+wow64base.dll => /cygdrive/c/WINDOWS/System32/wow64base.dll (0x7ff90f700000)
+wow64win.dll => /cygdrive/c/WINDOWS/System32/wow64win.dll (0x7ff9107c0000)
+wow64con.dll => /cygdrive/c/WINDOWS/System32/wow64con.dll (0x7ff9115e0000)
+-------------- Build: Release Mingw32 official in test_preprocessor (compiler: GNU GCC Compiler)---------------
+gcc --version
+gcc (MinGW.org GCC Build-2) 9.2.0
+Copyright (C) 2019 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions. There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+gcc.exe -O2 -DNDEBUG -m32 -IC:\MingW\include -c C:\src\C\prepocessor\test_preprocessor.c -o objMingW32of\Release\test_preprocessor.o
+gcc.exe -LC:\MingW\lib -o binMingW32of\Release\test_preprocessor.exe objMingW32of\Release\test_preprocessor.o -s -m32 -lkernel32 -luser32
+Output file is binMingW32of\Release\test_preprocessor.exe with size 22.50 KB
+file binMingW32of\Release\test_preprocessor.exe
+binMingW32of\Release\test_preprocessor.exe: PE32 executable (console) Intel 80386 (stripped to external PDB), for MS Windows, 8 sections
+binMingW32of\Release\test_preprocessor.exe MinGW32_Official
+_WIN32 is defined with this compiler MinGW32_Official.
+WIN32 is defined with this compiler MinGW32_Official.
+__WIN32__ is defined with this compiler MinGW32_Official.
+__MINGW32__ is defined with this compiler MinGW32_Official.
+__GNUC__ is defined with this compiler MinGW32_Official.
+C:\cygwin64\bin\ldd binMingW32of\Release\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+ntdll.dll => /cygdrive/c/Windows/SysWOW64/ntdll.dll (0x77e10000)
+wow64.dll => /cygdrive/c/WINDOWS/System32/wow64.dll (0x7ff90fac0000)
+wow64base.dll => /cygdrive/c/WINDOWS/System32/wow64base.dll (0x7ff90f700000)
+wow64win.dll => /cygdrive/c/WINDOWS/System32/wow64win.dll (0x7ff9107c0000)
+wow64con.dll => /cygdrive/c/WINDOWS/System32/wow64con.dll (0x7ff9115e0000)
+-------------- Build: Debug Mingw64 CB in test_preprocessor (compiler: GNU GCC Compiler CB)---------------
+gcc --version
+gcc (MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders) 13.1.0
+Copyright (C) 2023 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions. There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+gcc.exe -march=core2 -g -D_DEBUG -DDEBUG -m64 -IC:\CodeBlocks\MinGW\x86_64-w64-mingw32\include -c C:\src\C\prepocessor\test_preprocessor.c -o objMingw64CB\Debug\test_preprocessor.o
+gcc.exe -LC:\CodeBlocks\MinGW\x86_64-w64-mingw32\lib -o binMingw64CB\Debug\test_preprocessor.exe objMingw64CB\Debug\test_preprocessor.o -m64 -lkernel32 -luser32
+Output file is binMingw64CB\Debug\test_preprocessor.exe with size 59.22 KB
+file binMingw64CB\Debug\test_preprocessor.exe
+binMingw64CB\Debug\test_preprocessor.exe: PE32+ executable (console) x86-64, for MS Windows, 18 sections
+binMingw64CB\Debug\test_preprocessor.exe MinGW64_CB
+_WIN32 is defined with this compiler MinGW64_CB.
+_WIN64 is defined with this compiler MinGW64_CB.
+WIN32 is defined with this compiler MinGW64_CB.
+__WIN32__ is defined with this compiler MinGW64_CB.
+__MINGW32__ is defined with this compiler MinGW64_CB.
+__MINGW64__ is defined with this compiler MinGW64_CB.
+__GNUC__ is defined with this compiler MinGW64_CB.
+C:\cygwin64\bin\ldd binMingW64CB\Debug\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+KERNEL32.DLL => /cygdrive/c/WINDOWS/System32/KERNEL32.DLL (0x7ff9102d0000)
+KERNELBASE.dll => /cygdrive/c/WINDOWS/System32/KERNELBASE.dll (0x7ff90ebe0000)
+ucrtbase.dll => /cygdrive/c/WINDOWS/System32/ucrtbase.dll (0x7ff90f380000)
+-------------- Build: Release Mingw64 CB in test_preprocessor (compiler: GNU GCC Compiler CB)---------------
+gcc --version
+gcc (MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders) 13.1.0
+Copyright (C) 2023 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions. There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+gcc.exe -O2 -DNDEBUG -m64 -IC:\CodeBlocks\MinGW\x86_64-w64-mingw32\include -c C:\src\C\prepocessor\test_preprocessor.c -o objMingw64CB\Release\test_preprocessor.o
+gcc.exe -LC:\CodeBlocks\MinGW\x86_64-w64-mingw32\lib -o binMingw64CB\Release\test_preprocessor.exe objMingw64CB\Release\test_preprocessor.o -s -m64 -lkernel32 -luser32
+Output file is binMingw64CB\Release\test_preprocessor.exe with size 21.50 KB
+file binMingw64CB\Release\test_preprocessor.exe
+binMingw64CB\Release\test_preprocessor.exe: PE32+ executable (console) x86-64 (stripped to external PDB), for MS Windows, 11 sections
+binMingw64CB\Release\test_preprocessor.exe MinGW64_CB
+_WIN32 is defined with this compiler MinGW64_CB.
+_WIN64 is defined with this compiler MinGW64_CB.
+WIN32 is defined with this compiler MinGW64_CB.
+__WIN32__ is defined with this compiler MinGW64_CB.
+__MINGW32__ is defined with this compiler MinGW64_CB.
+__MINGW64__ is defined with this compiler MinGW64_CB.
+__GNUC__ is defined with this compiler MinGW64_CB.
+C:\cygwin64\bin\ldd binMingW64CB\Release\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+KERNEL32.DLL => /cygdrive/c/WINDOWS/System32/KERNEL32.DLL (0x7ff9102d0000)
+KERNELBASE.dll => /cygdrive/c/WINDOWS/System32/KERNELBASE.dll (0x7ff90ebe0000)
+ucrtbase.dll => /cygdrive/c/WINDOWS/System32/ucrtbase.dll (0x7ff90f380000)
+-------------- Build: Debug Mingw64 Dev-Cpp in test_preprocessor (compiler: GNU GCC Compiler DEV)---------------
+gcc --version
+gcc (x86_64-posix-seh, Built by MinGW-Builds project) 11.4.0
+Copyright (C) 2021 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions. There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+gcc.exe -g -D_DEBUG -DDEBUG -m64 -IC:\RedPanda-Cpp\MinGW64\x86_64-w64-mingw32\include -c C:\src\C\prepocessor\test_preprocessor.c -o objDevCpp\Debug\test_preprocessor.o
+gcc.exe -LC:\RedPanda-Cpp\MinGW64\x86_64-w64-mingw32\lib -LC:\RedPanda-Cpp\MinGW64\lib -o binDevCpp\Debug\test_preprocessor.exe objDevCpp\Debug\test_preprocessor.o -m64 -lkernel32 -luser32
+Output file is binDevCpp\Debug\test_preprocessor.exe with size 76.84 KB
+file binDevCpp\Debug\test_preprocessor.exe
+binDevCpp\Debug\test_preprocessor.exe: PE32+ executable (console) x86-64, for MS Windows, 17 sections
+binDevCpp\Debug\test_preprocessor.exe MinGW64_RedPanda
+_WIN32 is defined with this compiler MinGW64_RedPanda.
+_WIN64 is defined with this compiler MinGW64_RedPanda.
+WIN32 is defined with this compiler MinGW64_RedPanda.
+__WIN32__ is defined with this compiler MinGW64_RedPanda.
+__MINGW32__ is defined with this compiler MinGW64_RedPanda.
+__MINGW64__ is defined with this compiler MinGW64_RedPanda.
+__GNUC__ is defined with this compiler MinGW64_RedPanda.
+C:\cygwin64\bin\ldd binDevCpp\Debug\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+KERNEL32.DLL => /cygdrive/c/WINDOWS/System32/KERNEL32.DLL (0x7ff9102d0000)
+KERNELBASE.dll => /cygdrive/c/WINDOWS/System32/KERNELBASE.dll (0x7ff90ebe0000)
+msvcrt.dll => /cygdrive/c/WINDOWS/System32/msvcrt.dll (0x7ff911600000)
+-------------- Build: Release Mingw64 Dev-Cpp in test_preprocessor (compiler: GNU GCC Compiler DEV)---------------
+gcc --version
+gcc (x86_64-posix-seh, Built by MinGW-Builds project) 11.4.0
+Copyright (C) 2021 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions. There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+gcc.exe -O2 -DNDEBUG -m64 -IC:\RedPanda-Cpp\MinGW64\x86_64-w64-mingw32\include -c C:\src\C\prepocessor\test_preprocessor.c -o objDevCpp\Release\test_preprocessor.o
+gcc.exe -LC:\RedPanda-Cpp\MinGW64\x86_64-w64-mingw32\lib -LC:\RedPanda-Cpp\MinGW64\lib -o binDevCpp\Release\test_preprocessor.exe objDevCpp\Release\test_preprocessor.o -s -m64 -lkernel32 -luser32
+Output file is binDevCpp\Release\test_preprocessor.exe with size 38.50 KB
+file binDevCpp\Release\test_preprocessor.exe
+binDevCpp\Release\test_preprocessor.exe: PE32+ executable (console) x86-64 (stripped to external PDB), for MS Windows, 10 sections
+binDevCpp\Release\test_preprocessor.exe MinGW64_RedPanda
+_WIN32 is defined with this compiler MinGW64_RedPanda.
+_WIN64 is defined with this compiler MinGW64_RedPanda.
+WIN32 is defined with this compiler MinGW64_RedPanda.
+__WIN32__ is defined with this compiler MinGW64_RedPanda.
+__MINGW32__ is defined with this compiler MinGW64_RedPanda.
+__MINGW64__ is defined with this compiler MinGW64_RedPanda.
+__GNUC__ is defined with this compiler MinGW64_RedPanda.
+C:\cygwin64\bin\ldd binDevCpp\Release\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+KERNEL32.DLL => /cygdrive/c/WINDOWS/System32/KERNEL32.DLL (0x7ff9102d0000)
+KERNELBASE.dll => /cygdrive/c/WINDOWS/System32/KERNELBASE.dll (0x7ff90ebe0000)
+msvcrt.dll => /cygdrive/c/WINDOWS/System32/msvcrt.dll (0x7ff911600000)
+-------------- Build: Debug CYGWIN 32 in test_preprocessor (compiler: Cygwin GCC 32)---------------
+i686-w64-mingw32-gcc.exe --version
+i686-w64-mingw32-gcc (GCC) 12.4.0
+Copyright (C) 2022 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions. There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+i686-w64-mingw32-gcc.exe -march=core2 -g -D_DEBUG -DDEBUG -m32 -IC:/cygwin64/usr/i686-w64-mingw32/sys-root/mingw/include -c C:/src/C/prepocessor/test_preprocessor.c -o objCYGWIN32/Debug/test_preprocessor.o
+i686-w64-mingw32-gcc.exe -LC:/cygwin64/usr/i686-w64-mingw32/sys-root/mingw/lib -o binCYGWIN32/Debug/test_preprocessor.exe objCYGWIN32/Debug/test_preprocessor.o -m32 -lkernel32 -luser32
+Output file is binCYGWIN32\Debug\test_preprocessor.exe with size 237.70 KB
+file binCYGWIN32\Debug\test_preprocessor.exe
+binCYGWIN32\Debug\test_preprocessor.exe: PE32 executable (console) Intel 80386, for MS Windows, 18 sections
+binCYGWIN32\Debug\test_preprocessor.exe CYGWIN_MinGW32
+_WIN32 is defined with this compiler CYGWIN_MinGW32.
+WIN32 is defined with this compiler CYGWIN_MinGW32.
+__WIN32__ is defined with this compiler CYGWIN_MinGW32.
+__MINGW32__ is defined with this compiler CYGWIN_MinGW32.
+__GNUC__ is defined with this compiler CYGWIN_MinGW32.
+C:\cygwin64\bin\ldd binCYGWIN32\Debug\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+ntdll.dll => /cygdrive/c/Windows/SysWOW64/ntdll.dll (0x77e10000)
+wow64.dll => /cygdrive/c/WINDOWS/System32/wow64.dll (0x7ff90fac0000)
+wow64base.dll => /cygdrive/c/WINDOWS/System32/wow64base.dll (0x7ff90f700000)
+wow64win.dll => /cygdrive/c/WINDOWS/System32/wow64win.dll (0x7ff9107c0000)
+wow64con.dll => /cygdrive/c/WINDOWS/System32/wow64con.dll (0x7ff9115e0000)
+-------------- Build: Release CYGWIN 32 in test_preprocessor (compiler: Cygwin GCC 32)---------------
+i686-w64-mingw32-gcc.exe --version
+i686-w64-mingw32-gcc (GCC) 12.4.0
+Copyright (C) 2022 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions. There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+i686-w64-mingw32-gcc.exe -march=core2 -DNDEBUG -m32 -IC:/cygwin64/usr/i686-w64-mingw32/sys-root/mingw/include -c C:/src/C/prepocessor/test_preprocessor.c -o objCYGWIN32/Release/test_preprocessor.o
+i686-w64-mingw32-gcc.exe -LC:/cygwin64/usr/i686-w64-mingw32/sys-root/mingw/lib -o binCYGWIN32/Release/test_preprocessor.exe objCYGWIN32/Release/test_preprocessor.o -m32 -lkernel32 -luser32
+Output file is binCYGWIN32\Release\test_preprocessor.exe with size 236.49 KB
+file binCYGWIN32\Release\test_preprocessor.exe
+binCYGWIN32\Release\test_preprocessor.exe: PE32 executable (console) Intel 80386, for MS Windows, 18 sections
+binCYGWIN32\Release\test_preprocessor.exe CYGWIN_MinGW32
+_WIN32 is defined with this compiler CYGWIN_MinGW32.
+WIN32 is defined with this compiler CYGWIN_MinGW32.
+__WIN32__ is defined with this compiler CYGWIN_MinGW32.
+__MINGW32__ is defined with this compiler CYGWIN_MinGW32.
+__GNUC__ is defined with this compiler CYGWIN_MinGW32.
+C:\cygwin64\bin\ldd binCYGWIN32\Release\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+ntdll.dll => /cygdrive/c/Windows/SysWOW64/ntdll.dll (0x77e10000)
+wow64.dll => /cygdrive/c/WINDOWS/System32/wow64.dll (0x7ff90fac0000)
+wow64base.dll => /cygdrive/c/WINDOWS/System32/wow64base.dll (0x7ff90f700000)
+wow64win.dll => /cygdrive/c/WINDOWS/System32/wow64win.dll (0x7ff9107c0000)
+wow64con.dll => /cygdrive/c/WINDOWS/System32/wow64con.dll (0x7ff9115e0000)
+-------------- Build: Debug CYGWIN 64 in test_preprocessor (compiler: Cygwin GCC 64)---------------
+x86_64-w64-mingw32-gcc.exe --version
+x86_64-w64-mingw32-gcc (GCC) 12.4.0
+Copyright (C) 2022 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions. There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+x86_64-w64-mingw32-gcc.exe -march=core2 -g -D_DEBUG -DDEBUG -m64 -IC:/cygwin64/usr/x86_64-w64-mingw32/sys-root/mingw/include -c C:/src/C/prepocessor/test_preprocessor.c -o objCYGWIN64/Debug/test_preprocessor.o
+x86_64-w64-mingw32-gcc.exe -LC:/cygwin64/usr/x86_64-w64-mingw32/sys-root/mingw/lib -o binCYGWIN64/Debug/test_preprocessor.exe objCYGWIN64/Debug/test_preprocessor.o -m64 -lkernel32 -luser32
+Output file is binCYGWIN64\Debug\test_preprocessor.exe with size 254.64 KB
+file binCYGWIN64\Debug\test_preprocessor.exe
+binCYGWIN64\Debug\test_preprocessor.exe: PE32+ executable (console) x86-64, for MS Windows, 20 sections
+binCYGWIN64\Debug\test_preprocessor.exe CYGWIN_MinGW64
+_WIN32 is defined with this compiler CYGWIN_MinGW64.
+_WIN64 is defined with this compiler CYGWIN_MinGW64.
+WIN32 is defined with this compiler CYGWIN_MinGW64.
+__WIN32__ is defined with this compiler CYGWIN_MinGW64.
+__MINGW32__ is defined with this compiler CYGWIN_MinGW64.
+__MINGW64__ is defined with this compiler CYGWIN_MinGW64.
+__GNUC__ is defined with this compiler CYGWIN_MinGW64.
+C:\cygwin64\bin\ldd binCYGWIN64\Debug\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+KERNEL32.DLL => /cygdrive/c/WINDOWS/System32/KERNEL32.DLL (0x7ff9102d0000)
+KERNELBASE.dll => /cygdrive/c/WINDOWS/System32/KERNELBASE.dll (0x7ff90ebe0000)
+msvcrt.dll => /cygdrive/c/WINDOWS/System32/msvcrt.dll (0x7ff911600000)
+-------------- Build: Release CYGWIN 64 in test_preprocessor (compiler: Cygwin GCC 64)---------------
+x86_64-w64-mingw32-gcc.exe --version
+x86_64-w64-mingw32-gcc (GCC) 12.4.0
+Copyright (C) 2022 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions. There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+x86_64-w64-mingw32-gcc.exe -march=core2 -DNDEBUG -m64 -IC:/cygwin64/usr/x86_64-w64-mingw32/sys-root/mingw/include -c C:/src/C/prepocessor/test_preprocessor.c -o objCYGWIN64/Release/test_preprocessor.o
+x86_64-w64-mingw32-gcc.exe -LC:/cygwin64/usr/x86_64-w64-mingw32/sys-root/mingw/lib -o binCYGWIN64/Release/test_preprocessor.exe objCYGWIN64/Release/test_preprocessor.o -m64 -lkernel32 -luser32
+Output file is binCYGWIN64\Release\test_preprocessor.exe with size 252.93 KB
+file binCYGWIN64\Release\test_preprocessor.exe
+binCYGWIN64\Release\test_preprocessor.exe: PE32+ executable (console) x86-64, for MS Windows, 20 sections
+binCYGWIN64\Release\test_preprocessor.exe CYGWIN_MinGW64
+_WIN32 is defined with this compiler CYGWIN_MinGW64.
+_WIN64 is defined with this compiler CYGWIN_MinGW64.
+WIN32 is defined with this compiler CYGWIN_MinGW64.
+__WIN32__ is defined with this compiler CYGWIN_MinGW64.
+__MINGW32__ is defined with this compiler CYGWIN_MinGW64.
+__MINGW64__ is defined with this compiler CYGWIN_MinGW64.
+__GNUC__ is defined with this compiler CYGWIN_MinGW64.
+C:\cygwin64\bin\ldd binCYGWIN64\Release\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+KERNEL32.DLL => /cygdrive/c/WINDOWS/System32/KERNEL32.DLL (0x7ff9102d0000)
+KERNELBASE.dll => /cygdrive/c/WINDOWS/System32/KERNELBASE.dll (0x7ff90ebe0000)
+msvcrt.dll => /cygdrive/c/WINDOWS/System32/msvcrt.dll (0x7ff911600000)
+-------------- Build: Debug CYGWIN natif 64 in test_preprocessor (compiler: Cygwin natif GCC 64)---------------
+gcc --version
+gcc (GCC) 12.4.0
+Copyright (C) 2022 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions. There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+gcc.exe -march=corei7 -g -D_DEBUG -DDEBUG -c C:/src/C/prepocessor/test_preprocessor.c -o objCYGWINN64/Debug/test_preprocessor.o
+gcc.exe -o binCYGWINN64/Debug/test_preprocessor.exe objCYGWINN64/Debug/test_preprocessor.o
+Output file is binCYGWINN64\Debug\test_preprocessor.exe with size 66.00 KB
+file binCYGWINN64\Debug\test_preprocessor.exe
+binCYGWINN64\Debug\test_preprocessor.exe: PE32+ executable (console) x86-64, for MS Windows, 18 sections
+binCYGWINN64\Debug\test_preprocessor.exe CYGWIN_GCC_natif
+__CYGWIN__ is defined with this compiler CYGWIN_GCC_natif.
+__GNUC__ is defined with this compiler CYGWIN_GCC_natif.
+C:\cygwin64\bin\ldd binCYGWINN64\Debug\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+KERNEL32.DLL => /cygdrive/c/WINDOWS/System32/KERNEL32.DLL (0x7ff9102d0000)
+KERNELBASE.dll => /cygdrive/c/WINDOWS/System32/KERNELBASE.dll (0x7ff90ebe0000)
+cygwin1.dll => /usr/bin/cygwin1.dll (0x7ff839f40000)
+-------------- Build: Release CYGWIN natif 64 in test_preprocessor (compiler: Cygwin natif GCC 64)---------------
+gcc --version
+gcc (GCC) 12.4.0
+Copyright (C) 2022 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions. There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+gcc.exe -march=core2 -DNDEBUG -c C:/src/C/prepocessor/test_preprocessor.c -o objCYGWINN64/Release/test_preprocessor.o
+gcc.exe -o binCYGWINN64/Release/test_preprocessor.exe objCYGWINN64/Release/test_preprocessor.o
+Output file is binCYGWINN64\Release\test_preprocessor.exe with size 65.29 KB
+file binCYGWINN64\Debug\test_preprocessor.exe
+binCYGWINN64\Debug\test_preprocessor.exe: PE32+ executable (console) x86-64, for MS Windows, 18 sections
+binCYGWINN64\Debug\test_preprocessor.exe CYGWIN_GCC_natif
+__CYGWIN__ is defined with this compiler CYGWIN_GCC_natif.
+__GNUC__ is defined with this compiler CYGWIN_GCC_natif.
+C:\cygwin64\bin\ldd binCYGWINN64\Release\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+KERNEL32.DLL => /cygdrive/c/WINDOWS/System32/KERNEL32.DLL (0x7ff9102d0000)
+KERNELBASE.dll => /cygdrive/c/WINDOWS/System32/KERNELBASE.dll (0x7ff90ebe0000)
+cygwin1.dll => /usr/bin/cygwin1.dll (0x7ff839f40000)
+-------------- Build: Debug Mingw32 wl in test_preprocessor (compiler: GNU GCC MinGW32 Compiler)---------------
+gcc --version
+gcc (MinGW-W64 i686-ucrt-posix-dwarf, built by Brecht Sanders, r1) 14.2.0
+Copyright (C) 2024 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions. There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+gcc.exe -g -D_DEBUG -DDEBUG -IC:\mingw32\i686-w64-mingw32\include -c C:\src\C\prepocessor\test_preprocessor.c -o objMingw32wl\Debug\test_preprocessor.o
+gcc.exe -LC:\mingw32\i686-w64-mingw32\lib -o binMingw32wl\Debug\test_preprocessor.exe objMingw32wl\Debug\test_preprocessor.o -lkernel32 -luser32
+Output file is binMingw32wl\Debug\test_preprocessor.exe with size 56.66 KB
+file binMingw32wl\Debug\test_preprocessor.exe
+binMingw32wl\Debug\test_preprocessor.exe: PE32 executable (console) Intel 80386, for MS Windows, 16 sections
+binMingw32wl\Debug\test_preprocessor.exe MinGW32_Winlibs
+_WIN32 is defined with this compiler MinGW32_Winlibs.
+WIN32 is defined with this compiler MinGW32_Winlibs.
+__WIN32__ is defined with this compiler MinGW32_Winlibs.
+__MINGW32__ is defined with this compiler MinGW32_Winlibs.
+__GNUC__ is defined with this compiler MinGW32_Winlibs.
+C:\cygwin64\bin\ldd binMingw32wl\Debug\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+ntdll.dll => /cygdrive/c/Windows/SysWOW64/ntdll.dll (0x77e10000)
+wow64.dll => /cygdrive/c/WINDOWS/System32/wow64.dll (0x7ff90fac0000)
+wow64base.dll => /cygdrive/c/WINDOWS/System32/wow64base.dll (0x7ff90f700000)
+wow64win.dll => /cygdrive/c/WINDOWS/System32/wow64win.dll (0x7ff9107c0000)
+wow64con.dll => /cygdrive/c/WINDOWS/System32/wow64con.dll (0x7ff9115e0000)
+-------------- Build: Release Mingw32 wl in test_preprocessor (compiler: GNU GCC MinGW32 Compiler)---------------
+gcc --version
+gcc (MinGW-W64 i686-ucrt-posix-dwarf, built by Brecht Sanders, r1) 14.2.0
+Copyright (C) 2024 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions. There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+gcc.exe -DNDEBUG -IC:\mingw32\i686-w64-mingw32\include -c C:\src\C\prepocessor\test_preprocessor.c -o objMingw32wl\Release\test_preprocessor.o
+gcc.exe -LC:\mingw32\i686-w64-mingw32\lib -o binMingw32wl\Release\test_preprocessor.exe objMingw32wl\Release\test_preprocessor.o -lkernel32 -luser32
+Output file is binMingw32wl\Release\test_preprocessor.exe with size 55.99 KB
+file binMingw32wl\Release\test_preprocessor.exe
+binMingw32wl\Release\test_preprocessor.exe: PE32 executable (console) Intel 80386, for MS Windows, 16 sections
+binMingw32wl\Release\test_preprocessor.exe MinGW32_Winlibs
+_WIN32 is defined with this compiler MinGW32_Winlibs.
+WIN32 is defined with this compiler MinGW32_Winlibs.
+__WIN32__ is defined with this compiler MinGW32_Winlibs.
+__MINGW32__ is defined with this compiler MinGW32_Winlibs.
+__GNUC__ is defined with this compiler MinGW32_Winlibs.
+C:\cygwin64\bin\ldd binMingw32wl\Release\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+ntdll.dll => /cygdrive/c/Windows/SysWOW64/ntdll.dll (0x77e10000)
+wow64.dll => /cygdrive/c/WINDOWS/System32/wow64.dll (0x7ff90fac0000)
+wow64base.dll => /cygdrive/c/WINDOWS/System32/wow64base.dll (0x7ff90f700000)
+wow64win.dll => /cygdrive/c/WINDOWS/System32/wow64win.dll (0x7ff9107c0000)
+wow64con.dll => /cygdrive/c/WINDOWS/System32/wow64con.dll (0x7ff9115e0000)
+-------------- Build: Debug Mingw64 wl in test_preprocessor (compiler: GNU GCC MinGW64 Compiler)---------------
+gcc --version
+gcc (MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders) 13.1.0
+Copyright (C) 2023 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions. There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+gcc.exe -march=core2 -g -D_DEBUG -DDEBUG -IC:\mingw64\x86_64-w64-mingw32\include -IC:\mingw-w64\mingw64\include -IC:\CodeBlocks.new\MinGW\include -IC:\CodeBlocks\MinGW\include -c C:\src\C\prepocessor\test_preprocessor.c -o objMingw64wl\Debug\test_preprocessor.o
+gcc.exe -LC:\mingw64\x86_64-w64-mingw32\lib -LC:\mingw-w64\mingw64\lib -LC:\CodeBlocks.new\MinGW\lib -LC:\CodeBlocks\MinGW\lib -o binMingw64wl\Debug\test_preprocessor.exe objMingw64wl\Debug\test_preprocessor.o -lkernel32 -luser32
+Output file is binMingw64wl\Debug\test_preprocessor.exe with size 63.69 KB
+file binMingw64wl\Debug\test_preprocessor.exe
+binMingw64wl\Debug\test_preprocessor.exe: PE32+ executable (console) x86-64, for MS Windows, 18 sections
+binMingw64wl\Debug\test_preprocessor.exe MinGW64_Winlibs
+_WIN32 is defined with this compiler MinGW64_Winlibs.
+_WIN64 is defined with this compiler MinGW64_Winlibs.
+WIN32 is defined with this compiler MinGW64_Winlibs.
+__WIN32__ is defined with this compiler MinGW64_Winlibs.
+__MINGW32__ is defined with this compiler MinGW64_Winlibs.
+__MINGW64__ is defined with this compiler MinGW64_Winlibs.
+__GNUC__ is defined with this compiler MinGW64_Winlibs.
+C:\cygwin64\bin\ldd binMingw64wl\Debug\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+KERNEL32.DLL => /cygdrive/c/WINDOWS/System32/KERNEL32.DLL (0x7ff9102d0000)
+KERNELBASE.dll => /cygdrive/c/WINDOWS/System32/KERNELBASE.dll (0x7ff90ebe0000)
+ucrtbase.dll => /cygdrive/c/WINDOWS/System32/ucrtbase.dll (0x7ff90f380000)
+-------------- Build: Release Mingw64 wl in test_preprocessor (compiler: GNU GCC MinGW64 Compiler)---------------
+gcc --version
+gcc (MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders) 13.1.0
+Copyright (C) 2023 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions. There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+gcc.exe -march=core2 -O2 -DNDEBUG -IC:\mingw64\x86_64-w64-mingw32\include -IC:\mingw-w64\mingw64\include -IC:\CodeBlocks.new\MinGW\include -IC:\CodeBlocks\MinGW\include -c C:\src\C\prepocessor\test_preprocessor.c -o objMingw64wl\Release\test_preprocessor.o
+gcc.exe -LC:\mingw64\x86_64-w64-mingw32\lib -LC:\mingw-w64\mingw64\lib -LC:\CodeBlocks.new\MinGW\lib -LC:\CodeBlocks\MinGW\lib -o binMingw64wl\Release\test_preprocessor.exe objMingw64wl\Release\test_preprocessor.o -s -lkernel32 -luser32
+Output file is binMingw64wl\Release\test_preprocessor.exe with size 21.50 KB
+binMingw64wl\Release\test_preprocessor.exe MinGW64_Winlibs
+_WIN32 is defined with this compiler MinGW64_Winlibs.
+_WIN64 is defined with this compiler MinGW64_Winlibs.
+WIN32 is defined with this compiler MinGW64_Winlibs.
+__WIN32__ is defined with this compiler MinGW64_Winlibs.
+__MINGW32__ is defined with this compiler MinGW64_Winlibs.
+__MINGW64__ is defined with this compiler MinGW64_Winlibs.
+__GNUC__ is defined with this compiler MinGW64_Winlibs.
+C:\cygwin64\bin\ldd binMingw64wl\Release\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+KERNEL32.DLL => /cygdrive/c/WINDOWS/System32/KERNEL32.DLL (0x7ff9102d0000)
+KERNELBASE.dll => /cygdrive/c/WINDOWS/System32/KERNELBASE.dll (0x7ff90ebe0000)
+ucrtbase.dll => /cygdrive/c/WINDOWS/System32/ucrtbase.dll (0x7ff90f380000)
+-------------- Build: Debug TDM MinGW32 in test_preprocessor (compiler: TDM GCC Compiler)---------------
+gcc --version
+gcc (tdm-1) 10.3.0
+Copyright © 2020 Free Software Foundation, Inc.
+Ce logiciel est un logiciel libre; voir les sources pour les conditions de copie. Il n'y a
+AUCUNE GARANTIE, pas même pour la COMMERCIALISATION ni L'ADÉQUATION À UNE TÂCHE PARTICULIÈRE.
+gcc.exe -march=core2 -std=c99 -g -D_DEBUG -DDEBUG -m32 -IC:\TDM-GCC-32\include -c C:\src\C\prepocessor\test_preprocessor.c -o objTDMW32\Debug\test_preprocessor.o
+gcc.exe -LC:\TDM-GCC-32\lib -o binTDMW32\Debug\test_preprocessor.exe objTDMW32\Debug\test_preprocessor.o -m32 -lkernel32 -luser32
+Output file is binTDMW32\Debug\test_preprocessor.exe with size 167.92 KB
+file binTDMW32\Debug\test_preprocessor.exe
+binTDMW32\Debug\test_preprocessor.exe: PE32 executable (console) Intel 80386, for MS Windows, 17 sections
+binTDMW32\Debug\test_preprocessor.exe TDM32
+_WIN32 is defined with this compiler TDM32.
+__WIN32__ is defined with this compiler TDM32.
+__MINGW32__ is defined with this compiler TDM32.
+__GNUC__ is defined with this compiler TDM32.
+C:\cygwin64\bin\ldd binTDMW32\Debug\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+ntdll.dll => /cygdrive/c/Windows/SysWOW64/ntdll.dll (0x77e10000)
+wow64.dll => /cygdrive/c/WINDOWS/System32/wow64.dll (0x7ff90fac0000)
+wow64base.dll => /cygdrive/c/WINDOWS/System32/wow64base.dll (0x7ff90f700000)
+wow64win.dll => /cygdrive/c/WINDOWS/System32/wow64win.dll (0x7ff9107c0000)
+wow64con.dll => /cygdrive/c/WINDOWS/System32/wow64con.dll (0x7ff9115e0000)
+-------------- Build: Release TDM MinGW32 in test_preprocessor (compiler: TDM GCC Compiler)---------------
+gcc --version
+gcc (tdm-1) 10.3.0
+Copyright © 2020 Free Software Foundation, Inc.
+Ce logiciel est un logiciel libre; voir les sources pour les conditions de copie. Il n'y a
+AUCUNE GARANTIE, pas même pour la COMMERCIALISATION ni L'ADÉQUATION À UNE TÂCHE PARTICULIÈRE.
+gcc.exe -march=core2 -O2 -std=c99 -DNDEBUG -m32 -IC:\TDM-GCC-32\include -c C:\src\C\prepocessor\test_preprocessor.c -o objTDMW32\Release\test_preprocessor.o
+gcc.exe -LC:\TDM-GCC-32\lib -o binTDMW32\Release\test_preprocessor.exe objTDMW32\Release\test_preprocessor.o -s -m32 -lkernel32 -luser32
+Output file is binTDMW32\Release\test_preprocessor.exe with size 104.50 KB
+file binTDMW32\Release\test_preprocessor.exe
+binTDMW32\Release\test_preprocessor.exe: PE32 executable (console) Intel 80386 (stripped to external PDB), for MS Windows, 9 sections
+binTDMW32\Release\test_preprocessor.exe TDM32
+_WIN32 is defined with this compiler TDM32.
+__WIN32__ is defined with this compiler TDM32.
+__MINGW32__ is defined with this compiler TDM32.
+__GNUC__ is defined with this compiler TDM32.
+C:\cygwin64\bin\ldd binTDMW32\Release\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+ntdll.dll => /cygdrive/c/Windows/SysWOW64/ntdll.dll (0x77e10000)
+wow64.dll => /cygdrive/c/WINDOWS/System32/wow64.dll (0x7ff90fac0000)
+wow64base.dll => /cygdrive/c/WINDOWS/System32/wow64base.dll (0x7ff90f700000)
+wow64win.dll => /cygdrive/c/WINDOWS/System32/wow64win.dll (0x7ff9107c0000)
+wow64con.dll => /cygdrive/c/WINDOWS/System32/wow64con.dll (0x7ff9115e0000)
+-------------- Build: Debug TDM MinGW64 in test_preprocessor (compiler: TDM GCC X64 Compiler)---------------
+gcc --version
+gcc (tdm64-1) 10.3.0
+Copyright © 2020 Free Software Foundation, Inc.
+Ce logiciel est un logiciel libre; voir les sources pour les conditions de copie. Il n'y a
+AUCUNE GARANTIE, pas même pour la COMMERCIALISATION ni L'ADÉQUATION À UNE TÂCHE PARTICULIÈRE.
+gcc.exe -march=core2 -std=c99 -g -D_DEBUG -DDEBUG -m64 -IC:\TDM-GCC-64\include -c C:\src\C\prepocessor\test_preprocessor.c -o objTDMW64\Debug\test_preprocessor.o
+gcc.exe -LC:\TDM-GCC-64\lib -o binTDMW64\Debug\test_preprocessor.exe objTDMW64\Debug\test_preprocessor.o -m64 -lkernel32 -luser32
+Output file is binTDMW64\Debug\test_preprocessor.exe with size 360.47 KB
+file binTDMW64\Debug\test_preprocessor.exe
+binTDMW64\Debug\test_preprocessor.exe: PE32+ executable (console) x86-64, for MS Windows, 19 sections
+binTDMW64\Debug\test_preprocessor.exe TDM64
+_WIN32 is defined with this compiler TDM64.
+_WIN64 is defined with this compiler TDM64.
+__WIN32__ is defined with this compiler TDM64.
+__MINGW32__ is defined with this compiler TDM64.
+__MINGW64__ is defined with this compiler TDM64.
+__GNUC__ is defined with this compiler TDM64.
+C:\cygwin64\bin\ldd binTDMW64\Debug\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+KERNEL32.DLL => /cygdrive/c/WINDOWS/System32/KERNEL32.DLL (0x7ff9102d0000)
+KERNELBASE.dll => /cygdrive/c/WINDOWS/System32/KERNELBASE.dll (0x7ff90ebe0000)
+msvcrt.dll => /cygdrive/c/WINDOWS/System32/msvcrt.dll (0x7ff911600000)
+-------------- Build: Release TDM MinGW64 in test_preprocessor (compiler: TDM GCC X64 Compiler)---------------
+gcc --version
+gcc (tdm64-1) 10.3.0
+Copyright © 2020 Free Software Foundation, Inc.
+Ce logiciel est un logiciel libre; voir les sources pour les conditions de copie. Il n'y a
+AUCUNE GARANTIE, pas même pour la COMMERCIALISATION ni L'ADÉQUATION À UNE TÂCHE PARTICULIÈRE.
+gcc.exe -march=core2 -O2 -std=c99 -DNDEBUG -m64 -IC:\TDM-GCC-64\include -c C:\src\C\prepocessor\test_preprocessor.c -o objTDMW64\Release\test_preprocessor.o
+gcc.exe -LC:\TDM-GCC-64\lib -o binTDMW64\Release\test_preprocessor.exe objTDMW64\Release\test_preprocessor.o -s -m64 -lkernel32 -luser32
+Output file is binTDMW64\Release\test_preprocessor.exe with size 86.50 KB
+file binTDMW64\Release\test_preprocessor.exe
+binTDMW64\Release\test_preprocessor.exe: PE32+ executable (console) x86-64 (stripped to external PDB), for MS Windows, 11 sections
+binTDMW64\Release\test_preprocessor.exe TDM64
+_WIN32 is defined with this compiler TDM64.
+_WIN64 is defined with this compiler TDM64.
+__WIN32__ is defined with this compiler TDM64.
+__MINGW32__ is defined with this compiler TDM64.
+__MINGW64__ is defined with this compiler TDM64.
+__GNUC__ is defined with this compiler TDM64.
+C:\cygwin64\bin\ldd binTDMW64\Release\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+KERNEL32.DLL => /cygdrive/c/WINDOWS/System32/KERNEL32.DLL (0x7ff9102d0000)
+KERNELBASE.dll => /cygdrive/c/WINDOWS/System32/KERNELBASE.dll (0x7ff90ebe0000)
+msvcrt.dll => /cygdrive/c/WINDOWS/System32/msvcrt.dll (0x7ff911600000)
+-------------- Build: Debug MSYS2W32 in test_preprocessor (compiler: GNU GCC MSYS MinGW32 Compiler)---------------
+gcc --version
+gcc (Rev1, Built by MSYS2 project) 14.2.0
+Copyright (C) 2024 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions. There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+gcc.exe -march=core2 -g -D_DEBUG -DDEBUG -m32 -IC:\msys64\mingw32\i686-w64-mingw32\include -IC:\msys64\mingw32\include -c C:\src\C\prepocessor\test_preprocessor.c -o objMSYS2W32\Debug\test_preprocessor.o
+gcc.exe -LC:\msys64\mingw32\i686-w64-mingw32\lib -LC:\msys64\mingw32\lib -o binMSYS2W32\Debug\test_preprocessor.exe objMSYS2W32\Debug\test_preprocessor.o -m32 -lkernel32 -luser32
+Output file is binMSYS2W32\Debug\test_preprocessor.exe with size 238.93 KB
+file binMSYS2W32\Debug\test_preprocessor.exe
+binMSYS2W32\Debug\test_preprocessor.exe: PE32 executable (console) Intel 80386, for MS Windows, 18 sections
+binMSYS2W32\Debug\test_preprocessor.exe MSYS2_MinGW32
+_WIN32 is defined with this compiler MSYS2_MinGW32.
+WIN32 is defined with this compiler MSYS2_MinGW32.
+__WIN32__ is defined with this compiler MSYS2_MinGW32.
+__MINGW32__ is defined with this compiler MSYS2_MinGW32.
+__GNUC__ is defined with this compiler MSYS2_MinGW32.
+C:\cygwin64\bin\ldd binMSYS2W32\Debug\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+ntdll.dll => /cygdrive/c/Windows/SysWOW64/ntdll.dll (0x77e10000)
+wow64.dll => /cygdrive/c/WINDOWS/System32/wow64.dll (0x7ff90fac0000)
+wow64base.dll => /cygdrive/c/WINDOWS/System32/wow64base.dll (0x7ff90f700000)
+wow64win.dll => /cygdrive/c/WINDOWS/System32/wow64win.dll (0x7ff9107c0000)
+wow64con.dll => /cygdrive/c/WINDOWS/System32/wow64con.dll (0x7ff9115e0000)
+-------------- Build: Release MSYS2W32 in test_preprocessor (compiler: GNU GCC MSYS MinGW32 Compiler)---------------
+gcc --version
+gcc (Rev1, Built by MSYS2 project) 14.2.0
+Copyright (C) 2024 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions. There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+gcc.exe -O2 -DNDEBUG -m32 -IC:\msys64\mingw32\i686-w64-mingw32\include -IC:\msys64\mingw32\include -c C:\src\C\prepocessor\test_preprocessor.c -o objMSYS2W32\Release\test_preprocessor.o
+gcc.exe -LC:\msys64\mingw32\i686-w64-mingw32\lib -LC:\msys64\mingw32\lib -o binMSYS2W32\Release\test_preprocessor.exe objMSYS2W32\Release\test_preprocessor.o -s -m32 -lkernel32 -luser32
+Output file is binMSYS2W32\Release\test_preprocessor.exe with size 47.00 KB
+file binMSYS2W32\Release\test_preprocessor.exe
+binMSYS2W32\Release\test_preprocessor.exe: PE32 executable (console) Intel 80386 (stripped to external PDB), for MS Windows, 10 sections
+binMSYS2W32\Release\test_preprocessor.exe MSYS2_MinGW32
+_WIN32 is defined with this compiler MSYS2_MinGW32.
+WIN32 is defined with this compiler MSYS2_MinGW32.
+__WIN32__ is defined with this compiler MSYS2_MinGW32.
+__MINGW32__ is defined with this compiler MSYS2_MinGW32.
+__GNUC__ is defined with this compiler MSYS2_MinGW32.
+C:\cygwin64\bin\ldd binMSYS2W32\Release\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+ntdll.dll => /cygdrive/c/Windows/SysWOW64/ntdll.dll (0x77e10000)
+wow64.dll => /cygdrive/c/WINDOWS/System32/wow64.dll (0x7ff90fac0000)
+wow64base.dll => /cygdrive/c/WINDOWS/System32/wow64base.dll (0x7ff90f700000)
+wow64win.dll => /cygdrive/c/WINDOWS/System32/wow64win.dll (0x7ff9107c0000)
+wow64con.dll => /cygdrive/c/WINDOWS/System32/wow64con.dll (0x7ff9115e0000)
+-------------- Build: Debug MSYS2W64 in test_preprocessor (compiler: GNU GCC MSYS MinGW64 Compiler)---------------
+gcc --version
+gcc (Rev1, Built by MSYS2 project) 14.2.0
+Copyright (C) 2024 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions. There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+gcc.exe -march=core2 -g -D_DEBUG -DDEBUG -m64 -IC:\msys64\mingw64\x86_64-w64-mingw32\include -IC:\msys64\mingw64\include -c C:\src\C\prepocessor\test_preprocessor.c -o objMSYS2W64\Debug\test_preprocessor.o
+gcc.exe -LC:\msys64\mingw64\x86_64-w64-mingw32\lib -LC:\msys64\mingw64\lib -o binMSYS2W64\Debug\test_preprocessor.exe objMSYS2W64\Debug\test_preprocessor.o -m64 -lkernel32 -luser32
+Output file is binMSYS2W64\Debug\test_preprocessor.exe with size 250.74 KB
+file binMSYS2W64\Debug\test_preprocessor.exe
+binMSYS2W64\Debug\test_preprocessor.exe: PE32+ executable (console) x86-64, for MS Windows, 20 sections
+binMSYS2W64\Debug\test_preprocessor.exe MSYS2_MinGW64
+_WIN32 is defined with this compiler MSYS2_MinGW64.
+_WIN64 is defined with this compiler MSYS2_MinGW64.
+WIN32 is defined with this compiler MSYS2_MinGW64.
+__WIN32__ is defined with this compiler MSYS2_MinGW64.
+__MINGW32__ is defined with this compiler MSYS2_MinGW64.
+__MINGW64__ is defined with this compiler MSYS2_MinGW64.
+__GNUC__ is defined with this compiler MSYS2_MinGW64.
+C:\cygwin64\bin\ldd binMSYS2W64\Debug\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+KERNEL32.DLL => /cygdrive/c/WINDOWS/System32/KERNEL32.DLL (0x7ff9102d0000)
+KERNELBASE.dll => /cygdrive/c/WINDOWS/System32/KERNELBASE.dll (0x7ff90ebe0000)
+msvcrt.dll => /cygdrive/c/WINDOWS/System32/msvcrt.dll (0x7ff911600000)
+-------------- Build: Release MSYS2W64 in test_preprocessor (compiler: GNU GCC MSYS MinGW64 Compiler)---------------
+gcc --version
+gcc (Rev1, Built by MSYS2 project) 14.2.0
+Copyright (C) 2024 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions. There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+gcc.exe -O2 -DNDEBUG -m64 -IC:\msys64\mingw64\x86_64-w64-mingw32\include -IC:\msys64\mingw64\include -c C:\src\C\prepocessor\test_preprocessor.c -o objMSYS2W64\Release\test_preprocessor.o
+gcc.exe -LC:\msys64\mingw64\x86_64-w64-mingw32\lib -LC:\msys64\mingw64\lib -o binMSYS2W64\Release\test_preprocessor.exe objMSYS2W64\Release\test_preprocessor.o -s -m64 -lkernel32 -luser32
+Output file is binMSYS2W64\Release\test_preprocessor.exe with size 43.00 KB
+file binMSYS2W64\Release\test_preprocessor.exe
+binMSYS2W64\Release\test_preprocessor.exe: PE32+ executable (console) x86-64 (stripped to external PDB), for MS Windows, 11 sections
+binMSYS2W64\Release\test_preprocessor.exe MSYS2_MinGW64
+_WIN32 is defined with this compiler MSYS2_MinGW64.
+_WIN64 is defined with this compiler MSYS2_MinGW64.
+WIN32 is defined with this compiler MSYS2_MinGW64.
+__WIN32__ is defined with this compiler MSYS2_MinGW64.
+__MINGW32__ is defined with this compiler MSYS2_MinGW64.
+__MINGW64__ is defined with this compiler MSYS2_MinGW64.
+__GNUC__ is defined with this compiler MSYS2_MinGW64.
+C:\cygwin64\bin\ldd binMSYS2W64\Release\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+KERNEL32.DLL => /cygdrive/c/WINDOWS/System32/KERNEL32.DLL (0x7ff9102d0000)
+KERNELBASE.dll => /cygdrive/c/WINDOWS/System32/KERNELBASE.dll (0x7ff90ebe0000)
+msvcrt.dll => /cygdrive/c/WINDOWS/System32/msvcrt.dll (0x7ff911600000)
+-------------- Build: Debug MSYS2 UCRT64 in test_preprocessor (compiler: GNU GCC MSYS UCRT64 Compiler)---------------
+gcc --version
+gcc (Rev1, Built by MSYS2 project) 14.2.0
+Copyright (C) 2024 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions. There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+gcc.exe -g -D_DEBUG -DDEBUG -IC:\msys64\ucrt64\include -c C:\src\C\prepocessor\test_preprocessor.c -o objMSYS2U64\Debug\test_preprocessor.o
+gcc.exe -LC:\msys64\ucrt64\lib -o binMSYS2U64\Debug\test_preprocessor.exe objMSYS2U64\Debug\test_preprocessor.o -lkernel32 -luser32
+Output file is binMSYS2U64\Debug\test_preprocessor.exe with size 135.03 KB
+file binMSYS2U64\Debug\test_preprocessor.exe
+binMSYS2U64\Debug\test_preprocessor.exe: PE32+ executable (console) x86-64, for MS Windows, 20 sections
+binMSYS2U64\Debug\test_preprocessor.exe MSYS2_UCRT64
+_WIN32 is defined with this compiler MSYS2_UCRT64.
+_WIN64 is defined with this compiler MSYS2_UCRT64.
+WIN32 is defined with this compiler MSYS2_UCRT64.
+__WIN32__ is defined with this compiler MSYS2_UCRT64.
+__MINGW32__ is defined with this compiler MSYS2_UCRT64.
+__MINGW64__ is defined with this compiler MSYS2_UCRT64.
+__GNUC__ is defined with this compiler MSYS2_UCRT64.
+C:\cygwin64\bin\ldd binMSYS2U64\Debug\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+KERNEL32.DLL => /cygdrive/c/WINDOWS/System32/KERNEL32.DLL (0x7ff9102d0000)
+KERNELBASE.dll => /cygdrive/c/WINDOWS/System32/KERNELBASE.dll (0x7ff90ebe0000)
+ucrtbase.dll => /cygdrive/c/WINDOWS/System32/ucrtbase.dll (0x7ff90f380000)
+-------------- Build: Release MSYS2 UCRT64 in test_preprocessor (compiler: GNU GCC MSYS UCRT64 Compiler)---------------
+gcc --version
+gcc (Rev1, Built by MSYS2 project) 14.2.0
+Copyright (C) 2024 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions. There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+gcc.exe -DNDEBUG -IC:\msys64\ucrt64\include -c C:\src\C\prepocessor\test_preprocessor.c -o objMSYS2U64\Release\test_preprocessor.o
+gcc.exe -LC:\msys64\ucrt64\lib -o binMSYS2U64\Release\test_preprocessor.exe objMSYS2U64\Release\test_preprocessor.o -lkernel32 -luser32
+Output file is binMSYS2U64\Release\test_preprocessor.exe with size 134.32 KB
+file binMSYS2U64\Release\test_preprocessor.exe
+binMSYS2U64\Release\test_preprocessor.exe: PE32+ executable (console) x86-64, for MS Windows, 20 sections
+binMSYS2U64\Release\test_preprocessor.exe MSYS2_UCRT64
+_WIN32 is defined with this compiler MSYS2_UCRT64.
+_WIN64 is defined with this compiler MSYS2_UCRT64.
+WIN32 is defined with this compiler MSYS2_UCRT64.
+__WIN32__ is defined with this compiler MSYS2_UCRT64.
+__MINGW32__ is defined with this compiler MSYS2_UCRT64.
+__MINGW64__ is defined with this compiler MSYS2_UCRT64.
+__GNUC__ is defined with this compiler MSYS2_UCRT64.
+C:\cygwin64\bin\ldd binMSYS2U64\Release\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+KERNEL32.DLL => /cygdrive/c/WINDOWS/System32/KERNEL32.DLL (0x7ff9102d0000)
+KERNELBASE.dll => /cygdrive/c/WINDOWS/System32/KERNELBASE.dll (0x7ff90ebe0000)
+ucrtbase.dll => /cygdrive/c/WINDOWS/System32/ucrtbase.dll (0x7ff90f380000)
+-------------- Build: Debug VS2022 X32 in test_preprocessor (compiler: Microsoft Visual C++ 2022)---------------
+cl
+Compilateur d'optimisation Microsoft (R) C/C++ versionÿ19.41.34120 pour x86
+Copyright (C) Microsoft Corporation. Tous droits r‚serv‚s.
+utilisationÿ: cl [ option... ] nom de fichier... [ /link linkoption... ]
+cl.exe /nologo /ZI /Zi -D -g /D_DEBUG /DDEBUG /I"C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared" /I"C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt" /I"C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um" /I"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include" /c test_preprocessor.c /FoobjVS2022X32\Debug\test_preprocessor.obj
+clÿ: Ligne de commande warning D9025ÿ: substitution de '/ZI' par '/Zi'
+test_preprocessor.c
+link.exe /nologo /LIBPATH:"C:\Program Files (x86)\Windows Kits\10\Lib\10.0.22621.0\ucrt\x86" /LIBPATH:"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\lib\x86" /LIBPATH:"C:\Program Files (x86)\Windows Kits\10\Lib\10.0.22621.0\um\x86" /LIBPATH:"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\lib\x86\store" /out:binVS2022X32\Debug\test_preprocessor.exe kernel32.lib user32.lib objVS2022X32\Debug\test_preprocessor.obj /debug
+LINK : binVS2022X32\Debug\test_preprocessor.exe introuvable ou non g‚n‚r‚ par la derniŠre ‚dition de liens incr‚mentielleÿ; ‚dition de liens complŠte en cours
+Output file is binVS2022X32\Debug\test_preprocessor.exe with size 473.50 KB
+file binVS2022X32\Debug\test_preprocessor.exe
+binVS2022X32\Debug\test_preprocessor.exe: PE32 executable (console) Intel 80386, for MS Windows, 6 sections
+binVS2022X32\Debug\test_preprocessor.exe MSVC32
+_WIN32 is defined with this compiler MSVC32.
+_MSC_VER is defined with this compiler MSVC32.
+C:\cygwin64\bin\ldd binVS2022X32\Debug\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+ntdll.dll => /cygdrive/c/Windows/SysWOW64/ntdll.dll (0x77e10000)
+wow64.dll => /cygdrive/c/WINDOWS/System32/wow64.dll (0x7ff90fac0000)
+wow64base.dll => /cygdrive/c/WINDOWS/System32/wow64base.dll (0x7ff90f700000)
+wow64win.dll => /cygdrive/c/WINDOWS/System32/wow64win.dll (0x7ff9107c0000)
+wow64con.dll => /cygdrive/c/WINDOWS/System32/wow64con.dll (0x7ff9115e0000)
+-------------- Build: Release VS2022 X32 in test_preprocessor (compiler: Microsoft Visual C++ 2022)---------------
+cl
+Compilateur d'optimisation Microsoft (R) C/C++ versionÿ19.41.34120 pour x86
+Copyright (C) Microsoft Corporation. Tous droits r‚serv‚s.
+utilisationÿ: cl [ option... ] nom de fichier... [ /link linkoption... ]
+cl.exe /nologo /TC -DNDEBUG /I"C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared" /I"C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt" /I"C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um" /I"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include" /c test_preprocessor.c /FoobjVS2022X32\Release\test_preprocessor.obj
+test_preprocessor.c
+link.exe /nologo /LIBPATH:"C:\Program Files (x86)\Windows Kits\10\Lib\10.0.22621.0\ucrt\x86" /LIBPATH:"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\lib\x86" /LIBPATH:"C:\Program Files (x86)\Windows Kits\10\Lib\10.0.22621.0\um\x86" /LIBPATH:"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\lib\x86\store" /out:binVS2022X32\Release\test_preprocessor.exe kernel32.lib user32.lib objVS2022X32\Release\test_preprocessor.obj
+Output file is binVS2022X32\Release\test_preprocessor.exe with size 109.50 KB
+file binVS2022X32\Release\test_preprocessor.exe
+binVS2022X32\Release\test_preprocessor.exe: PE32 executable (console) Intel 80386, for MS Windows, 4 sections
+binVS2022X32\Release\test_preprocessor.exe MSVC32
+_WIN32 is defined with this compiler MSVC32.
+_MSC_VER is defined with this compiler MSVC32.
+C:\cygwin64\bin\ldd binVS2022X32\Release\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+ntdll.dll => /cygdrive/c/Windows/SysWOW64/ntdll.dll (0x77e10000)
+wow64.dll => /cygdrive/c/WINDOWS/System32/wow64.dll (0x7ff90fac0000)
+wow64base.dll => /cygdrive/c/WINDOWS/System32/wow64base.dll (0x7ff90f700000)
+wow64win.dll => /cygdrive/c/WINDOWS/System32/wow64win.dll (0x7ff9107c0000)
+wow64con.dll => /cygdrive/c/WINDOWS/System32/wow64con.dll (0x7ff9115e0000)
+-------------- Build: Debug VS2022 X64 in test_preprocessor (compiler: Microsoft Visual C++ 2022 X64)---------------
+cl
+Compilateur d'optimisation Microsoft (R) C/C++ versionÿ19.41.34120 pour x64
+Copyright (C) Microsoft Corporation. Tous droits r‚serv‚s.
+utilisationÿ: cl [ option... ] nom de fichier... [ /link linkoption... ]
+cl.exe /nologo /TC /Zi /D_DEBUG /DDEBUG /I"C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared" /I"C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt" /I"C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um" /I"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include" /c test_preprocessor.c /FoobjVS2022X64\Debug\test_preprocessor.obj
+test_preprocessor.c
+link.exe /nologo /LIBPATH:"C:\Program Files (x86)\Windows Kits\10\Lib\10.0.22621.0\ucrt\x64" /LIBPATH:"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\lib\x64" /LIBPATH:"C:\Program Files (x86)\Windows Kits\10\Lib\10.0.22621.0\um\x64" /LIBPATH:"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\lib\x64\store" /out:binVS2022X64\Debug\test_preprocessor.exe kernel32.lib user32.lib objVS2022X64\Debug\test_preprocessor.obj /debug /MACHINE:X64
+LINK : binVS2022X64\Debug\test_preprocessor.exe introuvable ou non g‚n‚r‚ par la derniŠre ‚dition de liens incr‚mentielleÿ; ‚dition de liens complŠte en cours
+Output file is binVS2022X64\Debug\test_preprocessor.exe with size 624.50 KB
+file binVS2022X64\Debug\test_preprocessor.exe
+binVS2022X64\Debug\test_preprocessor.exe: PE32+ executable (console) x86-64, for MS Windows, 7 sections
+binVS2022X64\Debug\test_preprocessor.exe MSVC64
+_WIN32 is defined with this compiler MSVC64.
+_WIN64 is defined with this compiler MSVC64.
+_MSC_VER is defined with this compiler MSVC64.
+C:\cygwin64\bin\ldd binVS2022X64\Debug\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+KERNEL32.DLL => /cygdrive/c/WINDOWS/System32/KERNEL32.DLL (0x7ff9102d0000)
+KERNELBASE.dll => /cygdrive/c/WINDOWS/System32/KERNELBASE.dll (0x7ff90ebe0000)
+-------------- Build: Release VS2022 X64 in test_preprocessor (compiler: Microsoft Visual C++ 2022 X64)---------------
+cl
+Compilateur d'optimisation Microsoft (R) C/C++ versionÿ19.41.34120 pour x64
+Copyright (C) Microsoft Corporation. Tous droits r‚serv‚s.
+utilisationÿ: cl [ option... ] nom de fichier... [ /link linkoption... ]
+cl.exe /nologo /TC -DNDEBUG /I"C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared" /I"C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt" /I"C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um" /I"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include" /c test_preprocessor.c /FoobjVS2022X64\Release\test_preprocessor.obj
+test_preprocessor.c
+link.exe /nologo /LIBPATH:"C:\Program Files (x86)\Windows Kits\10\Lib\10.0.22621.0\ucrt\x64" /LIBPATH:"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\lib\x64" /LIBPATH:"C:\Program Files (x86)\Windows Kits\10\Lib\10.0.22621.0\um\x64" /LIBPATH:"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\lib\x64\store" /out:binVS2022X64\Release\test_preprocessor.exe kernel32.lib user32.lib objVS2022X64\Release\test_preprocessor.obj /MACHINE:X64
+Output file is binVS2022X64\Release\test_preprocessor.exe with size 135.00 KB
+file binVS2022X64\Release\test_preprocessor.exe
+binVS2022X64\Release\test_preprocessor.exe: PE32+ executable (console) x86-64, for MS Windows, 5 sections
+binVS2022X64\Release\test_preprocessor.exe MSVC64
+_WIN32 is defined with this compiler MSVC64.
+_WIN64 is defined with this compiler MSVC64.
+_MSC_VER is defined with this compiler MSVC64.
+C:\cygwin64\bin\ldd binVS2022X32\Release\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+ntdll.dll => /cygdrive/c/Windows/SysWOW64/ntdll.dll (0x77e10000)
+wow64.dll => /cygdrive/c/WINDOWS/System32/wow64.dll (0x7ff90fac0000)
+wow64base.dll => /cygdrive/c/WINDOWS/System32/wow64base.dll (0x7ff90f700000)
+wow64win.dll => /cygdrive/c/WINDOWS/System32/wow64win.dll (0x7ff9107c0000)
+wow64con.dll => /cygdrive/c/WINDOWS/System32/wow64con.dll (0x7ff9115e0000)
+-------------- Build: Debug BorlandC in test_preprocessor (compiler: Borland C++ Compiler (5.5, 5.82))---------------
+bcc32.exe -q -tWC -6 -y -v -IC:\BCC55\include -oobjBC55\Debug\test_preprocessor.obj -c test_preprocessor.c
+test_preprocessor.c:
+Warning W8057 test_preprocessor.c 64: Parameter 'argc' is never used in function main
+ilink32.exe -q -ap -LC:\BCC55\lib -LC:\BCC55\lib\psdk c0x32 objBC55\Debug\test_preprocessor.obj,binBC55\Debug\test_preprocessor.exe,,kernel32.lib cw32.lib user32.lib import32.lib,,
+Output file is binBC55\Debug\test_preprocessor.exe with size 51.00 KB
+file binBC55\Debug\test_preprocessor.exe
+binBC55\Debug\test_preprocessor.exe: PE32 executable (console) Intel 80386 (stripped to external PDB), for MS Windows, 8 sections
+binBC55\Debug\test_preprocessor.exe BorlandC
+_WIN32 is defined with this compiler BorlandC.
+__WIN32__ is defined with this compiler BorlandC.
+__BORLANDC__ is defined with this compiler BorlandC.
+__TURBOC__ is defined with this compiler BorlandC.
+C:\cygwin64\bin\ldd binBC55\Debug\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+ntdll.dll => /cygdrive/c/Windows/SysWOW64/ntdll.dll (0x77e10000)
+wow64.dll => /cygdrive/c/WINDOWS/System32/wow64.dll (0x7ff90fac0000)
+wow64base.dll => /cygdrive/c/WINDOWS/System32/wow64base.dll (0x7ff90f700000)
+wow64win.dll => /cygdrive/c/WINDOWS/System32/wow64win.dll (0x7ff9107c0000)
+wow64con.dll => /cygdrive/c/WINDOWS/System32/wow64con.dll (0x7ff9115e0000)
+-------------- Build: Release BorlandC in test_preprocessor (compiler: Borland C++ Compiler (5.5, 5.82))---------------
+bcc32.exe -q -tWC -6 -v- -IC:\BCC55\include -oobjBC55\Release\test_preprocessor.obj -c test_preprocessor.c
+test_preprocessor.c:
+Warning W8057 test_preprocessor.c 64: Parameter 'argc' is never used in function main
+ilink32.exe -q -ap -LC:\BCC55\lib -LC:\BCC55\lib\psdk c0x32 objBC55\Release\test_preprocessor.obj,binBC55\Release\test_preprocessor.exe,,kernel32.lib cw32.lib user32.lib import32.lib,,
+Output file is binBC55\Release\test_preprocessor.exe with size 51.00 KB
+file binBC55\Release\test_preprocessor.exe
+binBC55\Release\test_preprocessor.exe: PE32 executable (console) Intel 80386 (stripped to external PDB), for MS Windows, 8 sections
+binBC55\Release\test_preprocessor.exe BorlandC
+_WIN32 is defined with this compiler BorlandC.
+__WIN32__ is defined with this compiler BorlandC.
+__BORLANDC__ is defined with this compiler BorlandC.
+__TURBOC__ is defined with this compiler BorlandC.
+C:\cygwin64\bin\ldd binBC55\Release\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+ntdll.dll => /cygdrive/c/Windows/SysWOW64/ntdll.dll (0x77e10000)
+wow64.dll => /cygdrive/c/WINDOWS/System32/wow64.dll (0x7ff90fac0000)
+wow64base.dll => /cygdrive/c/WINDOWS/System32/wow64base.dll (0x7ff90f700000)
+wow64win.dll => /cygdrive/c/WINDOWS/System32/wow64win.dll (0x7ff9107c0000)
+wow64con.dll => /cygdrive/c/WINDOWS/System32/wow64con.dll (0x7ff9115e0000)
+-------------- Build: Debug DMC in test_preprocessor (compiler: Digital Mars Compiler)---------------
+dmc.exe -mn -c -H -g -D_DEBUG -DDEBUG -IC:\dm\include\win32 -IC:\dm\stlport\stlport -IC:\dm\include -oobjDMC\Debug\test_preprocessor.obj test_preprocessor.c
+link.exe /NOLOGO objDMC\Debug\test_preprocessor.obj, binDMC\Debug\test_preprocessor.exe, , user32.lib kernel32.lib
+Output file is binDMC\Debug\test_preprocessor.exe with size 22.53 KB
+file binDMC\Debug\test_preprocessor.exe
+binDMC\Debug\test_preprocessor.exe: PE32 executable (console) Intel 80386, for MS Windows, 5 sections
+binDMC\Debug\test_preprocessor.exe DMC
+_WIN32 is defined with this compiler DMC.
+__NT__ is defined with this compiler DMC.
+WIN32 is defined with this compiler DMC.
+__DMC__ is defined with this compiler DMC.
+C:\cygwin64\bin\ldd binDMC\Debug\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+ntdll.dll => /cygdrive/c/Windows/SysWOW64/ntdll.dll (0x77e10000)
+wow64.dll => /cygdrive/c/WINDOWS/System32/wow64.dll (0x7ff90fac0000)
+wow64base.dll => /cygdrive/c/WINDOWS/System32/wow64base.dll (0x7ff90f700000)
+wow64win.dll => /cygdrive/c/WINDOWS/System32/wow64win.dll (0x7ff9107c0000)
+wow64con.dll => /cygdrive/c/WINDOWS/System32/wow64con.dll (0x7ff9115e0000)
+-------------- Build: Release DMC in test_preprocessor (compiler: Digital Mars Compiler)---------------
+dmc.exe -mn -c -H -DNEBUG -IC:\dm\include\win32 -IC:\dm\stlport\stlport -IC:\dm\include -oobjDMC\Release\test_preprocessor.obj test_preprocessor.c
+link.exe /NOLOGO objDMC\Release\test_preprocessor.obj, binDMC\Release\test_preprocessor.exe, , user32.lib kernel32.lib
+Output file is binDMC\Release\test_preprocessor.exe with size 22.53 KB
+file binDMC\Release\test_preprocessor.exe
+binDMC\Release\test_preprocessor.exe: PE32 executable (console) Intel 80386, for MS Windows, 5 sections
+binDMC\Release\test_preprocessor.exe DMC
+_WIN32 is defined with this compiler DMC.
+__NT__ is defined with this compiler DMC.
+WIN32 is defined with this compiler DMC.
+__DMC__ is defined with this compiler DMC.
+C:\cygwin64\bin\ldd binDMC\Release\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+ntdll.dll => /cygdrive/c/Windows/SysWOW64/ntdll.dll (0x77e10000)
+wow64.dll => /cygdrive/c/WINDOWS/System32/wow64.dll (0x7ff90fac0000)
+wow64base.dll => /cygdrive/c/WINDOWS/System32/wow64base.dll (0x7ff90f700000)
+wow64win.dll => /cygdrive/c/WINDOWS/System32/wow64win.dll (0x7ff9107c0000)
+wow64con.dll => /cygdrive/c/WINDOWS/System32/wow64con.dll (0x7ff9115e0000)
+-------------- Build: Debug lcc in test_preprocessor (compiler: LCC Compiler)---------------
+lcc -v
+Logiciels/Informatique lcc-win32 version 3.8. Compilation date: Mar 29 2013 13:11:27
+lcc.exe -c -IC:\lcc\include -g2 -D_DEBUG -DDEBUG test_preprocessor.c -Foobjlcc32\Debug\test_preprocessor.obj
+lcclnk.exe -subsystem console -LC:\lcc\lib -s objlcc32\Debug\test_preprocessor.obj kernel32.lib user32.lib -o binlcc32\Debug\test_preprocessor.exe
+Output file is binlcc32\Debug\test_preprocessor.exe with size 30.53 KB
+file binlcc32\Debug\test_preprocessor.exe
+binlcc32\Debug\test_preprocessor.exe: PE32 executable (console) Intel 80386, for MS Windows, 4 sections
+binlcc32\Debug\test_preprocessor.exe LCC32
+_WIN32 is defined with this compiler LCC32.
+WIN32 is defined with this compiler LCC32.
+__LCC__ is defined with this compiler LCC32.
+C:\cygwin64\bin\ldd binlcc32\Debug\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+ntdll.dll => /cygdrive/c/Windows/SysWOW64/ntdll.dll (0x77e10000)
+wow64.dll => /cygdrive/c/WINDOWS/System32/wow64.dll (0x7ff90fac0000)
+wow64base.dll => /cygdrive/c/WINDOWS/System32/wow64base.dll (0x7ff90f700000)
+wow64win.dll => /cygdrive/c/WINDOWS/System32/wow64win.dll (0x7ff9107c0000)
+wow64con.dll => /cygdrive/c/WINDOWS/System32/wow64con.dll (0x7ff9115e0000)
+-------------- Build: Release lcc in test_preprocessor (compiler: LCC Compiler)---------------
+lcc -v
+Logiciels/Informatique lcc-win32 version 3.8. Compilation date: Mar 29 2013 13:11:27
+lcc.exe -c -IC:\lcc\include -DNDEBUG test_preprocessor.c -Foobjlcc32\Release\test_preprocessor.obj
+lcclnk.exe -subsystem console -LC:\lcc\lib objlcc32\Release\test_preprocessor.obj kernel32.lib user32.lib -o binlcc32\Release\test_preprocessor.exe
+Output file is binlcc32\Release\test_preprocessor.exe with size 98.92 KB
+file binlcc32\Release\test_preprocessor.exe
+binlcc32\Release\test_preprocessor.exe: PE32 executable (console) Intel 80386, for MS Windows, 5 sections
+binlcc32\Release\test_preprocessor.exe LCC32
+_WIN32 is defined with this compiler LCC32.
+WIN32 is defined with this compiler LCC32.
+__LCC__ is defined with this compiler LCC32.
+C:\cygwin64\bin\ldd binlcc32\Release\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+ntdll.dll => /cygdrive/c/Windows/SysWOW64/ntdll.dll (0x77e10000)
+wow64.dll => /cygdrive/c/WINDOWS/System32/wow64.dll (0x7ff90fac0000)
+wow64base.dll => /cygdrive/c/WINDOWS/System32/wow64base.dll (0x7ff90f700000)
+wow64win.dll => /cygdrive/c/WINDOWS/System32/wow64win.dll (0x7ff9107c0000)
+wow64con.dll => /cygdrive/c/WINDOWS/System32/wow64con.dll (0x7ff9115e0000)
+-------------- Build: Debug lcc64 in test_preprocessor (compiler: LCC Compiler 64)---------------
+lcc64 -v
+Logiciels/Informatique lcc-win (64 bits) version 4.1.
+Compilation date: Oct 27 2016 16:34:50
+lcc64.exe -c -IC:\lcc64\include64 -IC:\lcc64\include -g2 -D_DEBUG -DDEBUG test_preprocessor.c -Foobjlcc64\Debug\test_preprocessor.obj
+lcclnk64.exe -subsystem console -LC:\lcc64\lib64 -LC:\lcc64\lib objlcc64\Debug\test_preprocessor.obj kernel32.lib user32.lib -o binlcc64\Debug\test_preprocessor.exe
+Output file is binlcc64\Debug\test_preprocessor.exe with size 154.97 KB
+file binlcc64\Debug\test_preprocessor.exe
+binlcc64\Debug\test_preprocessor.exe: PE32+ executable (console) x86-64, for MS Windows, 5 sections
+binlcc64\Debug\test_preprocessor.exe LCC64
+_WIN32 is defined with this compiler LCC64.
+_WIN64 is defined with this compiler LCC64.
+__LCC__ is defined with this compiler LCC64.
+C:\cygwin64\bin\ldd binlcc64\Debug\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+KERNEL32.DLL => /cygdrive/c/WINDOWS/System32/KERNEL32.DLL (0x7ff9102d0000)
+KERNELBASE.dll => /cygdrive/c/WINDOWS/System32/KERNELBASE.dll (0x7ff90ebe0000)
+USER32.dll => /cygdrive/c/WINDOWS/System32/USER32.dll (0x7ff90f910000)
+win32u.dll => /cygdrive/c/WINDOWS/System32/win32u.dll (0x7ff90ea90000)
+GDI32.dll => /cygdrive/c/WINDOWS/System32/GDI32.dll (0x7ff911700000)
+gdi32full.dll => /cygdrive/c/WINDOWS/System32/gdi32full.dll (0x7ff90ef90000)
+msvcp_win.dll => /cygdrive/c/WINDOWS/System32/msvcp_win.dll (0x7ff90eac0000)
+ucrtbase.dll => /cygdrive/c/WINDOWS/System32/ucrtbase.dll (0x7ff90f380000)
+-------------- Build: Release lcc64 in test_preprocessor (compiler: LCC Compiler 64)---------------
+lcc64 -v
+Logiciels/Informatique lcc-win (64 bits) version 4.1.
+Compilation date: Oct 27 2016 16:34:50
+lcc64.exe -c -IC:\lcc64\include64 -IC:\lcc64\include -DNDEBUG test_preprocessor.c -Foobjlcc64\Release\test_preprocessor.obj
+lcclnk64.exe -subsystem console -LC:\lcc64\lib64 -LC:\lcc64\lib objlcc64\Release\test_preprocessor.obj kernel32.lib user32.lib -o binlcc64\Release\test_preprocessor.exe
+Output file is binlcc64\Release\test_preprocessor.exe with size 153.97 KB
+file binlcc64\Release\test_preprocessor.exe
+binlcc64\Release\test_preprocessor.exe: PE32+ executable (console) x86-64, for MS Windows, 5 sections
+binlcc64\Release\test_preprocessor.exe LCC64
+_WIN32 is defined with this compiler LCC64.
+_WIN64 is defined with this compiler LCC64.
+__LCC__ is defined with this compiler LCC64.
+C:\cygwin64\bin\ldd binlcc64\Release\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+KERNEL32.DLL => /cygdrive/c/WINDOWS/System32/KERNEL32.DLL (0x7ff9102d0000)
+KERNELBASE.dll => /cygdrive/c/WINDOWS/System32/KERNELBASE.dll (0x7ff90ebe0000)
+USER32.dll => /cygdrive/c/WINDOWS/System32/USER32.dll (0x7ff90f910000)
+win32u.dll => /cygdrive/c/WINDOWS/System32/win32u.dll (0x7ff90ea90000)
+GDI32.dll => /cygdrive/c/WINDOWS/System32/GDI32.dll (0x7ff911700000)
+gdi32full.dll => /cygdrive/c/WINDOWS/System32/gdi32full.dll (0x7ff90ef90000)
+msvcp_win.dll => /cygdrive/c/WINDOWS/System32/msvcp_win.dll (0x7ff90eac0000)
+ucrtbase.dll => /cygdrive/c/WINDOWS/System32/ucrtbase.dll (0x7ff90f380000)
+-------------- Build: Debug OW 32 in test_preprocessor (compiler: OpenWatcom (W32) Compiler)---------------
+wcl386.exe -q -c -d2 -ecc -d_DEBUG -dDEBUG -bcl=nt -iC:\watcom\h\nt -iC:\watcom\h -iC:\watcom\h -iC:\watcom\h\nt -fo=objOW32\Debug\test_preprocessor.obj test_preprocessor.c
+wlink.exe option quiet debug all system nt LIBP C:\watcom\lib386\nt;C:\watcom\lib386;C:\watcom\lib386;C:\watcom\lib386\nt file objOW32\Debug\test_preprocessor.obj name binOW32\Debug\test_preprocessor.exe
+Output file is binOW32\Debug\test_preprocessor.exe with size 42.97 KB
+file binOW32\Debug\test_preprocessor.exe
+binOW32\Debug\test_preprocessor.exe: PE32 executable (console) Intel 80386, for MS Windows, 4 sections
+binOW32\Debug\test_preprocessor.exe OW32
+_WIN32 is defined with this compiler OW32.
+__NT__ is defined with this compiler OW32.
+__WATCOMC__ is defined with this compiler OW32.
+C:\cygwin64\bin\ldd binOW32\Debug\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+ntdll.dll => /cygdrive/c/Windows/SysWOW64/ntdll.dll (0x77e10000)
+wow64.dll => /cygdrive/c/WINDOWS/System32/wow64.dll (0x7ff90fac0000)
+wow64base.dll => /cygdrive/c/WINDOWS/System32/wow64base.dll (0x7ff90f700000)
+wow64win.dll => /cygdrive/c/WINDOWS/System32/wow64win.dll (0x7ff9107c0000)
+wow64con.dll => /cygdrive/c/WINDOWS/System32/wow64con.dll (0x7ff9115e0000)
+-------------- Build: Release OW 32 in test_preprocessor (compiler: OpenWatcom (W32) Compiler)---------------
+wcl386.exe -q -c -d0 -ecc -dNDEBUG -bcl=nt -iC:\watcom\h\nt -iC:\watcom\h -iC:\watcom\h -iC:\watcom\h\nt -fo=objOW32\Release\test_preprocessor.obj test_preprocessor.c
+wlink.exe option quiet system nt LIBP C:\watcom\lib386\nt;C:\watcom\lib386;C:\watcom\lib386;C:\watcom\lib386\nt file objOW32\Release\test_preprocessor.obj name binOW32\Release\test_preprocessor.exe
+Output file is binOW32\Release\test_preprocessor.exe with size 28.00 KB
+file binOW32\Release\test_preprocessor.exe
+binOW32\Release\test_preprocessor.exe: PE32 executable (console) Intel 80386, for MS Windows, 4 sections
+binOW32\Release\test_preprocessor.exe OW32
+_WIN32 is defined with this compiler OW32.
+__NT__ is defined with this compiler OW32.
+__WATCOMC__ is defined with this compiler OW32.
+C:\cygwin64\bin\ldd binOW32\Release\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+ntdll.dll => /cygdrive/c/Windows/SysWOW64/ntdll.dll (0x77e10000)
+wow64.dll => /cygdrive/c/WINDOWS/System32/wow64.dll (0x7ff90fac0000)
+wow64base.dll => /cygdrive/c/WINDOWS/System32/wow64base.dll (0x7ff90f700000)
+wow64win.dll => /cygdrive/c/WINDOWS/System32/wow64win.dll (0x7ff9107c0000)
+wow64con.dll => /cygdrive/c/WINDOWS/System32/wow64con.dll (0x7ff9115e0000)
+-------------- Build: Debug OW 64 in test_preprocessor (compiler: OpenWatcom (W64) Compiler)---------------
+wcl386.exe -q -c -d2 -ecc -d_DEBUG -dDEBUG -bcl=nt -iC:\watcom\h\nt -iC:\watcom\h -fo=objOW64\Debug\test_preprocessor.obj test_preprocessor.c
+wlink.exe option quiet debug all system nt LIBP C:\watcom\lib386\nt;C:\watcom\lib386 file objOW64\Debug\test_preprocessor.obj name binOW64\Debug\test_preprocessor.exe
+Output file is binOW64\Debug\test_preprocessor.exe with size 42.97 KB
+file binOW64\Debug\test_preprocessor.exe
+binOW64\Debug\test_preprocessor.exe: PE32 executable (console) Intel 80386, for MS Windows, 4 sections
+binOW64\Debug\test_preprocessor.exe OW64
+_WIN32 is defined with this compiler OW64.
+__NT__ is defined with this compiler OW64.
+__WATCOMC__ is defined with this compiler OW64.
+C:\cygwin64\bin\ldd binOW64\Debug\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+ntdll.dll => /cygdrive/c/Windows/SysWOW64/ntdll.dll (0x77e10000)
+wow64.dll => /cygdrive/c/WINDOWS/System32/wow64.dll (0x7ff90fac0000)
+wow64base.dll => /cygdrive/c/WINDOWS/System32/wow64base.dll (0x7ff90f700000)
+wow64win.dll => /cygdrive/c/WINDOWS/System32/wow64win.dll (0x7ff9107c0000)
+wow64con.dll => /cygdrive/c/WINDOWS/System32/wow64con.dll (0x7ff9115e0000)
+-------------- Build: Release OW 64 in test_preprocessor (compiler: OpenWatcom (W64) Compiler)---------------
+wcl386.exe -q -c -d0 -ecc -dNDEBUG -bcl=nt -iC:\watcom\h\nt -iC:\watcom\h -fo=objOW64\Release\test_preprocessor.obj test_preprocessor.c
+wlink.exe option quiet system nt LIBP C:\watcom\lib386\nt;C:\watcom\lib386 file objOW64\Release\test_preprocessor.obj name binOW64\Release\test_preprocessor.exe
+Output file is binOW64\Release\test_preprocessor.exe with size 28.00 KB
+file binOW64\Release\test_preprocessor.exe
+binOW64\Release\test_preprocessor.exe: PE32 executable (console) Intel 80386, for MS Windows, 4 sections
+binOW64\Release\test_preprocessor.exe OW64
+_WIN32 is defined with this compiler OW64.
+__NT__ is defined with this compiler OW64.
+__WATCOMC__ is defined with this compiler OW64.
+C:\cygwin64\bin\ldd binOW64\Release\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+ntdll.dll => /cygdrive/c/Windows/SysWOW64/ntdll.dll (0x77e10000)
+wow64.dll => /cygdrive/c/WINDOWS/System32/wow64.dll (0x7ff90fac0000)
+wow64base.dll => /cygdrive/c/WINDOWS/System32/wow64base.dll (0x7ff90f700000)
+wow64win.dll => /cygdrive/c/WINDOWS/System32/wow64win.dll (0x7ff9107c0000)
+wow64con.dll => /cygdrive/c/WINDOWS/System32/wow64con.dll (0x7ff9115e0000)
+-------------- Build: Debug PELLES C in test_preprocessor (compiler: PELLES C++ 2021)---------------
+pocc.exe /nologo /Zi /Ze /c /D_DEBUG /DDEBUG -Tx86-coff /D_X86_ /IC:\PellesC\include\Win /IC:\PellesC\include /c test_preprocessor.c /FoobjPELLESC32\Debug\test_preprocessor.obj
+polink.exe /nologo /LIBPATH:C:\PellesC\lib\Win /LIBPATH:C:\PellesC\lib /out:binPELLESC32\Debug\test_preprocessor.exe user32.lib kernel32.lib objPELLESC32\Debug\test_preprocessor.obj /debug /SUBSYSTEM:CONSOLE /MACHINE:X86
+Writing debug information
+Compacting debug information
+Output file is binPELLESC32\Debug\test_preprocessor.exe with size 46.00 KB
+file binPELLESC32\Debug\test_preprocessor.exe
+binPELLESC32\Debug\test_preprocessor.exe: PE32 executable (console) Intel 80386, for MS Windows, 4 sections
+binPELLESC32\Debug\test_preprocessor.exe Pelles_C32
+_WIN32 is defined with this compiler Pelles_C32.
+_MSC_VER is defined with this compiler Pelles_C32.
+__POCC__ is defined with this compiler Pelles_C32.
+C:\cygwin64\bin\ldd binPELLESC32\Debug\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+ntdll.dll => /cygdrive/c/Windows/SysWOW64/ntdll.dll (0x77e10000)
+wow64.dll => /cygdrive/c/WINDOWS/System32/wow64.dll (0x7ff90fac0000)
+wow64base.dll => /cygdrive/c/WINDOWS/System32/wow64base.dll (0x7ff90f700000)
+wow64win.dll => /cygdrive/c/WINDOWS/System32/wow64win.dll (0x7ff9107c0000)
+wow64con.dll => /cygdrive/c/WINDOWS/System32/wow64con.dll (0x7ff9115e0000)
+-------------- Build: Release PELLES C in test_preprocessor (compiler: PELLES C++ 2021)---------------
+pocc.exe /nologo /Gd /Ze /c /DNDEBUG -Tx86-coff /D_X86_ /IC:\PellesC\include\Win /IC:\PellesC\include /c test_preprocessor.c /FoobjPELLESC32\Release\test_preprocessor.obj
+polink.exe /nologo /LIBPATH:C:\PellesC\lib\Win /LIBPATH:C:\PellesC\lib /out:binPELLESC32\Release\test_preprocessor.exe shell32.lib user32.lib kernel32.lib objPELLESC32\Release\test_preprocessor.obj /SUBSYSTEM:CONSOLE /MACHINE:X86
+Output file is binPELLESC32\Release\test_preprocessor.exe with size 32.00 KB
+file binPELLESC32\Release\test_preprocessor.exe
+binPELLESC32\Release\test_preprocessor.exe: PE32 executable (console) Intel 80386, for MS Windows, 4 sections
+binPELLESC32\Release\test_preprocessor.exe Pelles_C32
+_WIN32 is defined with this compiler Pelles_C32.
+_MSC_VER is defined with this compiler Pelles_C32.
+__POCC__ is defined with this compiler Pelles_C32.
+C:\cygwin64\bin\ldd binPELLESC32\Release\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+ntdll.dll => /cygdrive/c/Windows/SysWOW64/ntdll.dll (0x77e10000)
+wow64.dll => /cygdrive/c/WINDOWS/System32/wow64.dll (0x7ff90fac0000)
+wow64base.dll => /cygdrive/c/WINDOWS/System32/wow64base.dll (0x7ff90f700000)
+wow64win.dll => /cygdrive/c/WINDOWS/System32/wow64win.dll (0x7ff9107c0000)
+wow64con.dll => /cygdrive/c/WINDOWS/System32/wow64con.dll (0x7ff9115e0000)
+-------------- Build: Debug PELLES C 64 in test_preprocessor (compiler: PELLES C++ 2021 (64b))---------------
+pocc.exe /nologo /Zi /Ze /c /D_DEBUG /DDEBUG -Tx64-coff /IC:\PellesC\include\Win /IC:\PellesC\include /c test_preprocessor.c /FoobjPELLESC64\Debug\test_preprocessor.obj
+polink.exe /nologo /LIBPATH:C:\PellesC\lib\Win64 /LIBPATH:C:\PellesC\lib /out:binPELLESC64\Debug\test_preprocessor.exe shell32.lib user32.lib kernel32.lib objPELLESC64\Debug\test_preprocessor.obj /debug /SUBSYSTEM:CONSOLE /MACHINE:X64
+Writing debug information
+Compacting debug information
+Output file is binPELLESC64\Debug\test_preprocessor.exe with size 50.50 KB
+file binPELLESC64\Debug\test_preprocessor.exe
+binPELLESC64\Debug\test_preprocessor.exe: PE32+ executable (console) x86-64, for MS Windows, 5 sections
+binPELLESC64\Debug\test_preprocessor.exe Pelles_C64
+_WIN32 is defined with this compiler Pelles_C64.
+_WIN64 is defined with this compiler Pelles_C64.
+_MSC_VER is defined with this compiler Pelles_C64.
+__POCC__ is defined with this compiler Pelles_C64.
+C:\cygwin64\bin\ldd binPELLESC64\Debug\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+KERNEL32.DLL => /cygdrive/c/WINDOWS/System32/KERNEL32.DLL (0x7ff9102d0000)
+KERNELBASE.dll => /cygdrive/c/WINDOWS/System32/KERNELBASE.dll (0x7ff90ebe0000)
+-------------- Build: Release PELLES C 64 in test_preprocessor (compiler: PELLES C++ 2021 (64b))---------------
+pocc.exe /nologo /Ze /c /DNDEBUG -Tx64-coff /IC:\PellesC\include\Win /IC:\PellesC\include /c test_preprocessor.c /FoobjPELLESC64\Release\test_preprocessor.obj
+polink.exe /nologo /LIBPATH:C:\PellesC\lib\Win64 /LIBPATH:C:\PellesC\lib /out:binPELLESC64\Release\test_preprocessor.exe user32.lib kernel32.lib objPELLESC64\Release\test_preprocessor.obj /SUBSYSTEM:CONSOLE /MACHINE:X64
+Output file is binPELLESC64\Release\test_preprocessor.exe with size 37.50 KB
+file binPELLESC64\Release\test_preprocessor.exe
+binPELLESC64\Release\test_preprocessor.exe: PE32+ executable (console) x86-64, for MS Windows, 5 sections
+binPELLESC64\Release\test_preprocessor.exe Pelles_C64
+_WIN32 is defined with this compiler Pelles_C64.
+_WIN64 is defined with this compiler Pelles_C64.
+_MSC_VER is defined with this compiler Pelles_C64.
+__POCC__ is defined with this compiler Pelles_C64.
+C:\cygwin64\bin\ldd binPELLESC64\Release\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+KERNEL32.DLL => /cygdrive/c/WINDOWS/System32/KERNEL32.DLL (0x7ff9102d0000)
+KERNELBASE.dll => /cygdrive/c/WINDOWS/System32/KERNELBASE.dll (0x7ff90ebe0000)
+-------------- Build: Debug CLANG Mingw32 in test_preprocessor (compiler: LLVM Clang Compiler W32)---------------
+clang --version
+(built by Brecht Sanders, r1) clang version 18.1.8
+Target: i686-w64-windows-gnu
+Thread model: posix
+InstalledDir: C:/mingw32/bin
+clang.exe -g -D_DEBUG -DDEBUG -m32 -IC:\mingw32\i686-w64-mingw32\include -c C:\src\C\prepocessor\test_preprocessor.c -o objCLANGW32\Debug\test_preprocessor.o
+clang.exe -LC:\mingw32\i686-w64-mingw32\lib -o binCLANGW32\Debug\test_preprocessor.exe objCLANGW32\Debug\test_preprocessor.o -m32 -lkernel32 -luser32
+Output file is binCLANGW32\Debug\test_preprocessor.exe with size 56.09 KB
+file binCLANGW32\Debug\test_preprocessor.exe
+binCLANGW32\Debug\test_preprocessor.exe: PE32 executable (console) Intel 80386, for MS Windows, 16 sections
+binCLANGW32\Debug\test_preprocessor.exe CLANG_MinGW32
+_WIN32 is defined with this compiler CLANG_MinGW32.
+WIN32 is defined with this compiler CLANG_MinGW32.
+__WIN32__ is defined with this compiler CLANG_MinGW32.
+__MINGW32__ is defined with this compiler CLANG_MinGW32.
+__GNUC__ is defined with this compiler CLANG_MinGW32.
+__clang__ is defined with this compiler CLANG_MinGW32.
+C:\cygwin64\bin\ldd binCLANGW32\Debug\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+ntdll.dll => /cygdrive/c/Windows/SysWOW64/ntdll.dll (0x77e10000)
+wow64.dll => /cygdrive/c/WINDOWS/System32/wow64.dll (0x7ff90fac0000)
+wow64base.dll => /cygdrive/c/WINDOWS/System32/wow64base.dll (0x7ff90f700000)
+wow64win.dll => /cygdrive/c/WINDOWS/System32/wow64win.dll (0x7ff9107c0000)
+wow64con.dll => /cygdrive/c/WINDOWS/System32/wow64con.dll (0x7ff9115e0000)
+-------------- Build: Release CLANG Mingw32 in test_preprocessor (compiler: LLVM Clang Compiler W32)---------------
+clang --version
+(built by Brecht Sanders, r1) clang version 18.1.8
+Target: i686-w64-windows-gnu
+Thread model: posix
+InstalledDir: C:/mingw32/bin
+clang.exe -DNDEBUG -m32 -IC:\mingw32\i686-w64-mingw32\include -c C:\src\C\prepocessor\test_preprocessor.c -o objCLANGW32\release\test_preprocessor.o
+clang.exe -LC:\mingw32\i686-w64-mingw32\lib -o binCLANGW32\Release\test_preprocessor.exe objCLANGW32\release\test_preprocessor.o -m32 -lkernel32 -luser32
+Output file is binCLANGW32\Release\test_preprocessor.exe with size 55.91 KB
+file binCLANGW32\Release\test_preprocessor.exe
+binCLANGW32\Release\test_preprocessor.exe: PE32 executable (console) Intel 80386, for MS Windows, 16 sections
+binCLANGW32\Release\test_preprocessor.exe CLANG_MinGW32
+_WIN32 is defined with this compiler CLANG_MinGW32.
+WIN32 is defined with this compiler CLANG_MinGW32.
+__WIN32__ is defined with this compiler CLANG_MinGW32.
+__MINGW32__ is defined with this compiler CLANG_MinGW32.
+__GNUC__ is defined with this compiler CLANG_MinGW32.
+__clang__ is defined with this compiler CLANG_MinGW32.
+C:\cygwin64\bin\ldd binCLANGW32\Release\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+ntdll.dll => /cygdrive/c/Windows/SysWOW64/ntdll.dll (0x77e10000)
+wow64.dll => /cygdrive/c/WINDOWS/System32/wow64.dll (0x7ff90fac0000)
+wow64base.dll => /cygdrive/c/WINDOWS/System32/wow64base.dll (0x7ff90f700000)
+wow64win.dll => /cygdrive/c/WINDOWS/System32/wow64win.dll (0x7ff9107c0000)
+wow64con.dll => /cygdrive/c/WINDOWS/System32/wow64con.dll (0x7ff9115e0000)
+-------------- Build: Debug CLANG Mingw64 in test_preprocessor (compiler: LLVM Clang Compiler W64)---------------
+clang --version
+(built by Brecht Sanders, r1) clang version 18.1.8
+Target: x86_64-w64-windows-gnu
+Thread model: posix
+InstalledDir: C:/mingw64/bin
+clang.exe -g -D_DEBUG -DDEBUG -m64 -IC:\mingw64\x86_64-w64-mingw32\include -c C:\src\C\prepocessor\test_preprocessor.c -o objCLANGW64\Debug\test_preprocessor.o
+clang.exe -LC:\mingw64\x86_64-w64-mingw32\lib -o binCLANGW64\Debug\test_preprocessor.exe objCLANGW64\Debug\test_preprocessor.o -m64 -lkernel32 -luser32
+Output file is binCLANGW64\Debug\test_preprocessor.exe with size 62.98 KB
+file binCLANGW64\Debug\test_preprocessor.exe
+binCLANGW64\Debug\test_preprocessor.exe: PE32+ executable (console) x86-64, for MS Windows, 18 sections
+binCLANGW64\Debug\test_preprocessor.exe CLANG_MinGW64
+_WIN32 is defined with this compiler CLANG_MinGW64.
+_WIN64 is defined with this compiler CLANG_MinGW64.
+WIN32 is defined with this compiler CLANG_MinGW64.
+__WIN32__ is defined with this compiler CLANG_MinGW64.
+__MINGW32__ is defined with this compiler CLANG_MinGW64.
+__MINGW64__ is defined with this compiler CLANG_MinGW64.
+__GNUC__ is defined with this compiler CLANG_MinGW64.
+__clang__ is defined with this compiler CLANG_MinGW64.
+C:\cygwin64\bin\ldd binCLANGW64\Debug\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+KERNEL32.DLL => /cygdrive/c/WINDOWS/System32/KERNEL32.DLL (0x7ff9102d0000)
+KERNELBASE.dll => /cygdrive/c/WINDOWS/System32/KERNELBASE.dll (0x7ff90ebe0000)
+ucrtbase.dll => /cygdrive/c/WINDOWS/System32/ucrtbase.dll (0x7ff90f380000)
+-------------- Build: Release CLANG Mingw64 in test_preprocessor (compiler: LLVM Clang Compiler W64)---------------
+clang --version
+(built by Brecht Sanders, r1) clang version 18.1.8
+Target: x86_64-w64-windows-gnu
+Thread model: posix
+InstalledDir: C:/mingw64/bin
+clang.exe -DNDEBUG -m64 -IC:\mingw64\x86_64-w64-mingw32\include -c C:\src\C\prepocessor\test_preprocessor.c -o objCLANGW64\Release\test_preprocessor.o
+clang.exe -LC:\mingw64\x86_64-w64-mingw32\lib -o binCLANGW64\Release\test_preprocessor.exe objCLANGW64\Release\test_preprocessor.o -m64 -lkernel32 -luser32
+Output file is binCLANGW64\Release\test_preprocessor.exe with size 62.84 KB
+file binCLANGW64\Release\test_preprocessor.exe
+binCLANGW64\Release\test_preprocessor.exe: PE32+ executable (console) x86-64, for MS Windows, 18 sections
+binCLANGW64\Release\test_preprocessor.exe CLANG_MinGW64
+_WIN32 is defined with this compiler CLANG_MinGW64.
+_WIN64 is defined with this compiler CLANG_MinGW64.
+WIN32 is defined with this compiler CLANG_MinGW64.
+__WIN32__ is defined with this compiler CLANG_MinGW64.
+__MINGW32__ is defined with this compiler CLANG_MinGW64.
+__MINGW64__ is defined with this compiler CLANG_MinGW64.
+__GNUC__ is defined with this compiler CLANG_MinGW64.
+__clang__ is defined with this compiler CLANG_MinGW64.
+C:\cygwin64\bin\ldd binCLANGW64\Release\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+KERNEL32.DLL => /cygdrive/c/WINDOWS/System32/KERNEL32.DLL (0x7ff9102d0000)
+KERNELBASE.dll => /cygdrive/c/WINDOWS/System32/KERNELBASE.dll (0x7ff90ebe0000)
+ucrtbase.dll => /cygdrive/c/WINDOWS/System32/ucrtbase.dll (0x7ff90f380000)
+-------------- Build: Debug CLANG MSX32 in test_preprocessor (compiler: LLVM Clang Compiler X32)---------------
+clang --version
+clang version 19.1.0
+Target: i686-pc-windows-msvc
+Thread model: posix
+InstalledDir: C:\Program Files (x86)\LLVM\bin
+clang.exe -g -D_DEBUG -DDEBUG -fms-extensions -m32 -I"C:\Program Files (X86)\LLVM\lib\clang\19.1.0\include" -I"C:\Program Files (X86)\Windows Kits\10\include\10.0.22621.0\shared" -I"C:\Program Files (X86)\Windows Kits\10\include\10.0.22621.0\ucrt" -I"C:\Program Files (X86)\Windows Kits\10\include\10.0.22621.0\um" -I"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include" -c C:\src\C\prepocessor\test_preprocessor.c -o objCLANGX32\Debug\test_preprocessor.o
+clang.exe -L"C:\Program Files (X86)\LLVM\lib\clang\19.1.0\lib\windows" -L"C:\Program Files (X86)\Windows Kits\10\lib\10.0.22621.0\um\x86" -L"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\lib\x86" -L"C:\Program Files (X86)\Windows Kits\10\lib\10.0.22621.0\ucrt\x86" -L"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\lib\x86\store" -o binCLANGX32\Debug\test_preprocessor.exe objCLANGX32\Debug\test_preprocessor.o -m32 -luser32 -lkernel32
+Output file is binCLANGX32\Debug\test_preprocessor.exe with size 109.50 KB
+file binCLANGX32\Debug\test_preprocessor.exe
+binCLANGX32\Debug\test_preprocessor.exe: PE32 executable (console) Intel 80386, for MS Windows, 4 sections
+binCLANGX32\Debug\test_preprocessor.exe CLANG_MSVC32
+_WIN32 is defined with this compiler CLANG_MSVC32.
+_MSC_VER is defined with this compiler CLANG_MSVC32.
+__clang__ is defined with this compiler CLANG_MSVC32.
+C:\cygwin64\bin\ldd binCLANGX32\Debug\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+ntdll.dll => /cygdrive/c/Windows/SysWOW64/ntdll.dll (0x77e10000)
+wow64.dll => /cygdrive/c/WINDOWS/System32/wow64.dll (0x7ff90fac0000)
+wow64base.dll => /cygdrive/c/WINDOWS/System32/wow64base.dll (0x7ff90f700000)
+wow64win.dll => /cygdrive/c/WINDOWS/System32/wow64win.dll (0x7ff9107c0000)
+wow64con.dll => /cygdrive/c/WINDOWS/System32/wow64con.dll (0x7ff9115e0000)
+-------------- Build: Release CLANG MSX32 in test_preprocessor (compiler: LLVM Clang Compiler X32)---------------
+clang --version
+clang version 19.1.0
+Target: i686-pc-windows-msvc
+Thread model: posix
+InstalledDir: C:\Program Files (x86)\LLVM\bin
+clang.exe -DNDEBUG -fms-extensions -m32 -I"C:\Program Files (X86)\LLVM\lib\clang\19.1.0\include" -I"C:\Program Files (X86)\Windows Kits\10\include\10.0.22621.0\shared" -I"C:\Program Files (X86)\Windows Kits\10\include\10.0.22621.0\ucrt" -I"C:\Program Files (X86)\Windows Kits\10\include\10.0.22621.0\um" -I"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include" -c C:\src\C\prepocessor\test_preprocessor.c -o objCLANGX32\Release\test_preprocessor.o
+clang.exe -L"C:\Program Files (X86)\LLVM\lib\clang\19.1.0\lib\windows" -L"C:\Program Files (X86)\Windows Kits\10\lib\10.0.22621.0\um\x86" -L"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\lib\x86" -L"C:\Program Files (X86)\Windows Kits\10\lib\10.0.22621.0\ucrt\x86" -L"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\lib\x86\store" -o binCLANGX32\Release\test_preprocessor.exe objCLANGX32\Release\test_preprocessor.o -m32 -luser32 -lkernel32
+Output file is binCLANGX32\Release\test_preprocessor.exe with size 109.50 KB
+file binCLANGX32\Release\test_preprocessor.exe
+binCLANGX32\Release\test_preprocessor.exe: PE32 executable (console) Intel 80386, for MS Windows, 4 sections
+binCLANGX32\Release\test_preprocessor.exe CLANG_MSVC32
+_WIN32 is defined with this compiler CLANG_MSVC32.
+_MSC_VER is defined with this compiler CLANG_MSVC32.
+__clang__ is defined with this compiler CLANG_MSVC32.
+C:\cygwin64\bin\ldd binCLANGX32\Release\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+ntdll.dll => /cygdrive/c/Windows/SysWOW64/ntdll.dll (0x77e10000)
+wow64.dll => /cygdrive/c/WINDOWS/System32/wow64.dll (0x7ff90fac0000)
+wow64base.dll => /cygdrive/c/WINDOWS/System32/wow64base.dll (0x7ff90f700000)
+wow64win.dll => /cygdrive/c/WINDOWS/System32/wow64win.dll (0x7ff9107c0000)
+wow64con.dll => /cygdrive/c/WINDOWS/System32/wow64con.dll (0x7ff9115e0000)
+-------------- Build: Debug CLANG MSX64 in test_preprocessor (compiler: LLVM Clang Compiler X64)---------------
+clang --version
+clang version 19.1.0
+Target: x86_64-pc-windows-msvc
+Thread model: posix
+InstalledDir: C:\Program Files\LLVM\bin
+clang.exe -g -D_DEBUG -DDEBUG -fms-extensions -m64 -target x86_64-pc-windows-msvc -I"C:\Program Files\LLVM\lib\clang\19.1.0\include" -I"C:\Program Files (X86)\Windows Kits\10\include\10.0.22621.0\shared" -I"C:\Program Files (X86)\Windows Kits\10\include\10.0.22621.0\ucrt" -I"C:\Program Files (X86)\Windows Kits\10\include\10.0.22621.0\um" -I"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include" -c C:\src\C\prepocessor\test_preprocessor.c -o objCLANGX64\Debug\test_preprocessor.o
+clang.exe -L"C:\Program Files\LLVM\lib\clang\19.1.0\lib\windows" -L"C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64" -L"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\lib\x64" -L"C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\ucrt\x64" -L"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\lib\x64\store" -o binCLANGX64\Debug\test_preprocessor.exe objCLANGX64\Debug\test_preprocessor.o -m64 -target x86_64-pc-windows-msvc -luser32 -lkernel32
+Output file is binCLANGX64\Debug\test_preprocessor.exe with size 135.50 KB
+file binCLANGX64\Debug\test_preprocessor.exe
+binCLANGX64\Debug\test_preprocessor.exe: PE32+ executable (console) x86-64, for MS Windows, 5 sections
+binCLANGX64\Debug\test_preprocessor.exe CLANG_MSVC64
+_WIN32 is defined with this compiler CLANG_MSVC64.
+_WIN64 is defined with this compiler CLANG_MSVC64.
+_MSC_VER is defined with this compiler CLANG_MSVC64.
+__clang__ is defined with this compiler CLANG_MSVC64.
+C:\cygwin64\bin\ldd binCLANGX64\Debug\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+KERNEL32.DLL => /cygdrive/c/WINDOWS/System32/KERNEL32.DLL (0x7ff9102d0000)
+KERNELBASE.dll => /cygdrive/c/WINDOWS/System32/KERNELBASE.dll (0x7ff90ebe0000)
+-------------- Build: Release CLANG MSX64 in test_preprocessor (compiler: LLVM Clang Compiler X64)---------------
+clang --version
+clang version 19.1.0
+Target: x86_64-pc-windows-msvc
+Thread model: posix
+InstalledDir: C:\Program Files\LLVM\bin
+clang.exe -DNDEBUG -fms-extensions -m64 -target x86_64-pc-windows-msvc -I"C:\Program Files\LLVM\lib\clang\19.1.0\include" -I"C:\Program Files (X86)\Windows Kits\10\include\10.0.22621.0\shared" -I"C:\Program Files (X86)\Windows Kits\10\include\10.0.22621.0\ucrt" -I"C:\Program Files (X86)\Windows Kits\10\include\10.0.22621.0\um" -I"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include" -c C:\src\C\prepocessor\test_preprocessor.c -o objCLANGX64\Release\test_preprocessor.o
+clang.exe -L"C:\Program Files\LLVM\lib\clang\19.1.0\lib\windows" -L"C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64" -L"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\lib\x64" -L"C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\ucrt\x64" -L"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\lib\x64\store" -o binCLANGX64\Release\test_preprocessor.exe objCLANGX64\Release\test_preprocessor.o -m64 -target x86_64-pc-windows-msvc -luser32 -lkernel32
+Output file is binCLANGX64\Release\test_preprocessor.exe with size 135.50 KB
+file binCLANGX64\Release\test_preprocessor.exe
+binCLANGX64\Release\test_preprocessor.exe: PE32+ executable (console) x86-64, for MS Windows, 5 sections
+binCLANGX64\Release\test_preprocessor.exe CLANG_MSVC64
+_WIN32 is defined with this compiler CLANG_MSVC64.
+_WIN64 is defined with this compiler CLANG_MSVC64.
+_MSC_VER is defined with this compiler CLANG_MSVC64.
+__clang__ is defined with this compiler CLANG_MSVC64.
+C:\cygwin64\bin\ldd binCLANGX64\Release\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+KERNEL32.DLL => /cygdrive/c/WINDOWS/System32/KERNEL32.DLL (0x7ff9102d0000)
+KERNELBASE.dll => /cygdrive/c/WINDOWS/System32/KERNELBASE.dll (0x7ff90ebe0000)
+-------------- Build: Debug CLANG MSYS W32 in test_preprocessor (compiler: CLANG MSYS W32 Compiler)---------------
+clang --version
+clang version 18.1.8
+Target: i686-w64-windows-gnu
+Thread model: posix
+InstalledDir: C:/msys64/mingw32/bin
+clang.exe -g -D_DEBUG -DDEBUG -m32 -IC:\msys64\mingw32\i686-w64-mingw32\include -c C:\src\C\prepocessor\test_preprocessor.c -o objCLANGMW32\Debug\test_preprocessor.o
+clang.exe -LC:\msys64\mingw32\i686-w64-mingw32\lib -o binCLANGMW32\Debug\test_preprocessor.exe objCLANGMW32\Debug\test_preprocessor.o -m32 -lkernel32 -luser32
+Output file is binCLANGMW32\Debug\test_preprocessor.exe with size 237.87 KB
+file binCLANGMW32\Debug\test_preprocessor.exe
+binCLANGMW32\Debug\test_preprocessor.exe: PE32 executable (console) Intel 80386, for MS Windows, 18 sections
+binCLANGMW32\Debug\test_preprocessor.exe CLANG_MSYS32
+_WIN32 is defined with this compiler CLANG_MSYS32.
+WIN32 is defined with this compiler CLANG_MSYS32.
+__WIN32__ is defined with this compiler CLANG_MSYS32.
+__MINGW32__ is defined with this compiler CLANG_MSYS32.
+__GNUC__ is defined with this compiler CLANG_MSYS32.
+__clang__ is defined with this compiler CLANG_MSYS32.
+C:\cygwin64\bin\ldd binCLANGMW32\Debug\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+ntdll.dll => /cygdrive/c/Windows/SysWOW64/ntdll.dll (0x77e10000)
+wow64.dll => /cygdrive/c/WINDOWS/System32/wow64.dll (0x7ff90fac0000)
+wow64base.dll => /cygdrive/c/WINDOWS/System32/wow64base.dll (0x7ff90f700000)
+wow64win.dll => /cygdrive/c/WINDOWS/System32/wow64win.dll (0x7ff9107c0000)
+wow64con.dll => /cygdrive/c/WINDOWS/System32/wow64con.dll (0x7ff9115e0000)
+-------------- Build: Release CLANG MSYS W32 in test_preprocessor (compiler: CLANG MSYS W32 Compiler)---------------
+clang --version
+clang version 18.1.8
+Target: i686-w64-windows-gnu
+Thread model: posix
+InstalledDir: C:/msys64/mingw32/bin
+clang.exe -DNDEBUG -m32 -IC:\msys64\mingw32\i686-w64-mingw32\include -c C:\src\C\prepocessor\test_preprocessor.c -o objCLANGMW32\release\test_preprocessor.o
+clang.exe -LC:\msys64\mingw32\i686-w64-mingw32\lib -o binCLANGMW32\Release\test_preprocessor.exe objCLANGMW32\release\test_preprocessor.o -m32 -lkernel32 -luser32
+Output file is binCLANGMW32\Release\test_preprocessor.exe with size 236.16 KB
+file binCLANGMW32\Release\test_preprocessor.exe
+binCLANGMW32\Release\test_preprocessor.exe: PE32 executable (console) Intel 80386, for MS Windows, 17 sections
+binCLANGMW32\Release\test_preprocessor.exe CLANG_MSYS32
+_WIN32 is defined with this compiler CLANG_MSYS32.
+WIN32 is defined with this compiler CLANG_MSYS32.
+__WIN32__ is defined with this compiler CLANG_MSYS32.
+__MINGW32__ is defined with this compiler CLANG_MSYS32.
+__GNUC__ is defined with this compiler CLANG_MSYS32.
+__clang__ is defined with this compiler CLANG_MSYS32.
+C:\cygwin64\bin\ldd binCLANGMW32\Release\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+ntdll.dll => /cygdrive/c/Windows/SysWOW64/ntdll.dll (0x77e10000)
+wow64.dll => /cygdrive/c/WINDOWS/System32/wow64.dll (0x7ff90fac0000)
+wow64base.dll => /cygdrive/c/WINDOWS/System32/wow64base.dll (0x7ff90f700000)
+wow64win.dll => /cygdrive/c/WINDOWS/System32/wow64win.dll (0x7ff9107c0000)
+wow64con.dll => /cygdrive/c/WINDOWS/System32/wow64con.dll (0x7ff9115e0000)
+-------------- Build: Debug CLANG MSYS W64 in test_preprocessor (compiler: CLANG MSYS W64 Compiler)---------------
+clang --version
+clang version 18.1.8
+Target: x86_64-w64-windows-gnu
+Thread model: posix
+InstalledDir: C:/msys64/mingw64/bin
+clang.exe -g -D_DEBUG -DDEBUG -m64 -IC:\msys64\mingw64\x86_64-w64-mingw32\include -c C:\src\C\prepocessor\test_preprocessor.c -o objCLANGMW64\Debug\test_preprocessor.o
+clang.exe -LC:\msys64\mingw64\x86_64-w64-mingw32\lib -o binCLANGMW64\Debug\test_preprocessor.exe objCLANGMW64\Debug\test_preprocessor.o -m64 -lkernel32 -luser32
+Output file is binCLANGMW64\Debug\test_preprocessor.exe with size 250.12 KB
+file binCLANGMW64\Debug\test_preprocessor.exe
+binCLANGMW64\Debug\test_preprocessor.exe: PE32+ executable (console) x86-64, for MS Windows, 19 sections
+binCLANGMW64\Debug\test_preprocessor.exe CLANG_MSYS64
+_WIN32 is defined with this compiler CLANG_MSYS64.
+_WIN64 is defined with this compiler CLANG_MSYS64.
+WIN32 is defined with this compiler CLANG_MSYS64.
+__WIN32__ is defined with this compiler CLANG_MSYS64.
+__MINGW32__ is defined with this compiler CLANG_MSYS64.
+__MINGW64__ is defined with this compiler CLANG_MSYS64.
+__GNUC__ is defined with this compiler CLANG_MSYS64.
+__clang__ is defined with this compiler CLANG_MSYS64.
+C:\cygwin64\bin\ldd binCLANGMW64\Debug\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+KERNEL32.DLL => /cygdrive/c/WINDOWS/System32/KERNEL32.DLL (0x7ff9102d0000)
+KERNELBASE.dll => /cygdrive/c/WINDOWS/System32/KERNELBASE.dll (0x7ff90ebe0000)
+msvcrt.dll => /cygdrive/c/WINDOWS/System32/msvcrt.dll (0x7ff911600000)
+-------------- Build: Release CLANG MSYS W64 in test_preprocessor (compiler: CLANG MSYS W64 Compiler)---------------
+clang --version
+clang version 18.1.8
+Target: x86_64-w64-windows-gnu
+Thread model: posix
+InstalledDir: C:/msys64/mingw64/bin
+clang.exe -DNDEBUG -m64 -IC:\msys64\mingw64\x86_64-w64-mingw32\include -c C:\src\C\prepocessor\test_preprocessor.c -o objCLANGMW64\release\test_preprocessor.o
+clang.exe -LC:\msys64\mingw64\x86_64-w64-mingw32\lib -o binCLANGMW64\Release\test_preprocessor.exe objCLANGMW64\release\test_preprocessor.o -m64 -lkernel32 -luser32
+Output file is binCLANGMW64\Release\test_preprocessor.exe with size 248.48 KB
+file binCLANGMW64\Release\test_preprocessor.exe
+binCLANGMW64\Release\test_preprocessor.exe: PE32+ executable (console) x86-64, for MS Windows, 19 sections
+binCLANGMW64\Release\test_preprocessor.exe CLANG_MSYS64
+_WIN32 is defined with this compiler CLANG_MSYS64.
+_WIN64 is defined with this compiler CLANG_MSYS64.
+WIN32 is defined with this compiler CLANG_MSYS64.
+__WIN32__ is defined with this compiler CLANG_MSYS64.
+__MINGW32__ is defined with this compiler CLANG_MSYS64.
+__MINGW64__ is defined with this compiler CLANG_MSYS64.
+__GNUC__ is defined with this compiler CLANG_MSYS64.
+__clang__ is defined with this compiler CLANG_MSYS64.
+C:\cygwin64\bin\ldd binCLANGMW64\Release\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+KERNEL32.DLL => /cygdrive/c/WINDOWS/System32/KERNEL32.DLL (0x7ff9102d0000)
+KERNELBASE.dll => /cygdrive/c/WINDOWS/System32/KERNELBASE.dll (0x7ff90ebe0000)
+msvcrt.dll => /cygdrive/c/WINDOWS/System32/msvcrt.dll (0x7ff911600000)
+-------------- Build: Debug Intel X32 in test_preprocessor (compiler: Intel C/C++ Compiler (32 bits))---------------
+icx --version
+Intel(R) oneAPI DPC++/C++ Compiler for applications running on Intel(R) 64, Version 2024.2.0 Build 20240602
+Copyright (C) 1985-2024 Intel Corporation. All rights reserved.
+Intel(R) oneAPI DPC++/C++ Compiler 2024.2.0 (2024.2.0.20240602)
+Target: x86_64-pc-windows-msvc
+Thread model: posix
+InstalledDir: C:\Program Files (x86)\Intel\oneAPI\compiler\2024.2\bin\compiler
+Configuration file: C:\Program Files (x86)\Intel\oneAPI\compiler\2024.2\bin\compiler\..\icx.cfg
+icx.exe /nologo -Wall /Zi /DDEBUG /D_DEBUG -m32 /I"C:\Program Files (x86)\Intel\oneAPI\compiler\latest\lib" /I"C:\Program Files (x86)\Intel\oneAPI\compiler\latest\include" /I"C:\Program Files (x86)\Intel\oneAPI\compiler\latest\lib\clang\18\include" /I"C:\Program Files (x86)\Intel\oneAPI\tbb\latest\include" /I"C:\Program Files (x86)\Intel\oneAPI\compiler\latest\include" /I"C:\Program Files (x86)\Intel\oneAPI\dev-utilities\latest\include" /I"C:\Program Files (x86)\Intel\oneAPI\ocloc\latest\include" /I"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include" /I"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include" /I"C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt" /I"C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um" /I"C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared" /I"C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\winrt" /I"C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\cppwinrt" /c test_preprocessor.c /FoobjINTELX32\Debug\test_preprocessor.obj
+icx: remark: Note that use of '-Zi' without any optimization-level option will turn off most compiler optimizations similar to use of '/Od'; use '-Rno-debug-disables-optimization' to disable this remark [-Rdebug-disables-optimization]
+xilink.exe /nologo /LIBPATH:"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\lib\x86" /LIBPATH:"C:\Program Files (x86)\Windows Kits\10\Lib\10.0.22621.0\ucrt\x86" /LIBPATH:"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\lib\x86\store" /LIBPATH:"C:\Program Files (x86)\Windows Kits\10\Lib\10.0.22621.0\um\x86" /LIBPATH:"C:\Program Files (x86)\Intel\oneAPI\compiler\latest\lib32" /out:binINTELX32\Debug\test_preprocessor.exe objINTELX32\Debug\test_preprocessor.obj /MACHINE:X86
+Output file is binINTELX32\Debug\test_preprocessor.exe with size 109.50 KB
+file binINTELX32\Debug\test_preprocessor.exe
+binINTELX32\Debug\test_preprocessor.exe: PE32 executable (console) Intel 80386, for MS Windows, 4 sections
+binINTELX32\Debug\test_preprocessor.exe INTEL32
+_WIN32 is defined with this compiler INTEL32.
+_MSC_VER is defined with this compiler INTEL32.
+__INTEL_LLVM_COMPILER is defined with this compiler INTEL32.
+__clang__ is defined with this compiler INTEL32.
+C:\cygwin64\bin\ldd binINTELX32\Debug\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+ntdll.dll => /cygdrive/c/Windows/SysWOW64/ntdll.dll (0x77e10000)
+wow64.dll => /cygdrive/c/WINDOWS/System32/wow64.dll (0x7ff90fac0000)
+wow64base.dll => /cygdrive/c/WINDOWS/System32/wow64base.dll (0x7ff90f700000)
+wow64win.dll => /cygdrive/c/WINDOWS/System32/wow64win.dll (0x7ff9107c0000)
+wow64con.dll => /cygdrive/c/WINDOWS/System32/wow64con.dll (0x7ff9115e0000)
+-------------- Build: Release Intel X32 in test_preprocessor (compiler: Intel C/C++ Compiler (32 bits))---------------
+icx --version
+Intel(R) oneAPI DPC++/C++ Compiler for applications running on Intel(R) 64, Version 2024.2.0 Build 20240602
+Copyright (C) 1985-2024 Intel Corporation. All rights reserved.
+Intel(R) oneAPI DPC++/C++ Compiler 2024.2.0 (2024.2.0.20240602)
+Target: x86_64-pc-windows-msvc
+Thread model: posix
+InstalledDir: C:\Program Files (x86)\Intel\oneAPI\compiler\2024.2\bin\compiler
+Configuration file: C:\Program Files (x86)\Intel\oneAPI\compiler\2024.2\bin\compiler\..\icx.cfg
+icx.exe /nologo -Wall /DNDEBUG -m32 /I"C:\Program Files (x86)\Intel\oneAPI\compiler\latest\lib" /I"C:\Program Files (x86)\Intel\oneAPI\compiler\latest\include" /I"C:\Program Files (x86)\Intel\oneAPI\compiler\latest\lib\clang\18\include" /I"C:\Program Files (x86)\Intel\oneAPI\tbb\latest\include" /I"C:\Program Files (x86)\Intel\oneAPI\compiler\latest\include" /I"C:\Program Files (x86)\Intel\oneAPI\dev-utilities\latest\include" /I"C:\Program Files (x86)\Intel\oneAPI\ocloc\latest\include" /I"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include" /I"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include" /I"C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt" /I"C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um" /I"C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared" /I"C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\winrt" /I"C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\cppwinrt" /c test_preprocessor.c /FoobjINTELX32\Release\test_preprocessor.obj
+xilink.exe /nologo /LIBPATH:"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\lib\x86" /LIBPATH:"C:\Program Files (x86)\Windows Kits\10\Lib\10.0.22621.0\ucrt\x86" /LIBPATH:"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\lib\x86\store" /LIBPATH:"C:\Program Files (x86)\Windows Kits\10\Lib\10.0.22621.0\um\x86" /LIBPATH:"C:\Program Files (x86)\Intel\oneAPI\compiler\latest\lib32" /out:binINTELX32\Release\test_preprocessor.exe objINTELX32\Release\test_preprocessor.obj /MACHINE:X86
+Output file is binINTELX32\Release\test_preprocessor.exe with size 109.50 KB
+file binINTELX32\Release\test_preprocessor.exe
+binINTELX32\Release\test_preprocessor.exe: PE32 executable (console) Intel 80386, for MS Windows, 4 sections
+binINTELX32\Release\test_preprocessor.exe INTEL32
+_WIN32 is defined with this compiler INTEL32.
+_MSC_VER is defined with this compiler INTEL32.
+__INTEL_LLVM_COMPILER is defined with this compiler INTEL32.
+__clang__ is defined with this compiler INTEL32.
+C:\cygwin64\bin\ldd binINTELX32\Release\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+ntdll.dll => /cygdrive/c/Windows/SysWOW64/ntdll.dll (0x77e10000)
+wow64.dll => /cygdrive/c/WINDOWS/System32/wow64.dll (0x7ff90fac0000)
+wow64base.dll => /cygdrive/c/WINDOWS/System32/wow64base.dll (0x7ff90f700000)
+wow64win.dll => /cygdrive/c/WINDOWS/System32/wow64win.dll (0x7ff9107c0000)
+wow64con.dll => /cygdrive/c/WINDOWS/System32/wow64con.dll (0x7ff9115e0000)
+-------------- Build: Debug Intel X64 in test_preprocessor (compiler: Intel C/C++ Compiler (64 bits))---------------
+icx --version
+Intel(R) oneAPI DPC++/C++ Compiler for applications running on Intel(R) 64, Version 2024.2.0 Build 20240602
+Copyright (C) 1985-2024 Intel Corporation. All rights reserved.
+Intel(R) oneAPI DPC++/C++ Compiler 2024.2.0 (2024.2.0.20240602)
+Target: x86_64-pc-windows-msvc
+Thread model: posix
+InstalledDir: C:\Program Files (x86)\Intel\oneAPI\compiler\2024.2\bin\compiler
+Configuration file: C:\Program Files (x86)\Intel\oneAPI\compiler\2024.2\bin\compiler\..\icx.cfg
+icx.exe /nologo -Wall /Zi /DDEBUG /D_DEBUG /I"C:\Program Files (x86)\Intel\oneAPI\compiler\latest\lib\clang\18\include" /I"C:\Program Files (x86)\Intel\oneAPI\tbb\latest\include" /I"C:\Program Files (x86)\Intel\oneAPI\compiler\latest\include" /I"C:\Program Files (x86)\Intel\oneAPI\dev-utilities\latest\include" /I"C:\Program Files (x86)\Intel\oneAPI\ocloc\latest\include" /I"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include" /I"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include" /I"C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt" /I"C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um" /I"C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared" /I"C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\winrt" /I"C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\cppwinrt" /c test_preprocessor.c /FoobjINTELX64\Debug\test_preprocessor.obj
+icx: remark: Note that use of '-Zi' without any optimization-level option will turn off most compiler optimizations similar to use of '/Od'; use '-Rno-debug-disables-optimization' to disable this remark [-Rdebug-disables-optimization]
+xilink.exe /nologo /LIBPATH:"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\lib\x64" /LIBPATH:"C:\Program Files (x86)\Windows Kits\10\Lib\10.0.22621.0\ucrt\x64" /LIBPATH:"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\lib\x64\store" /LIBPATH:"C:\Program Files (x86)\Windows Kits\10\Lib\10.0.22621.0\um\x64" /LIBPATH:"C:\Program Files (x86)\Intel\oneAPI\compiler\latest\lib" /out:binINTELX64\Debug\test_preprocessor.exe objINTELX64\Debug\test_preprocessor.obj /MACHINE:X64
+Output file is binINTELX64\Debug\test_preprocessor.exe with size 135.50 KB
+file binINTELX64\Debug\test_preprocessor.exe
+binINTELX64\Debug\test_preprocessor.exe: PE32+ executable (console) x86-64, for MS Windows, 5 sections
+binINTELX64\Debug\test_preprocessor.exe INTEL64
+_WIN32 is defined with this compiler INTEL64.
+_WIN64 is defined with this compiler INTEL64.
+_MSC_VER is defined with this compiler INTEL64.
+__INTEL_LLVM_COMPILER is defined with this compiler INTEL64.
+__clang__ is defined with this compiler INTEL64.
+C:\cygwin64\bin\ldd binINTELX64\Debug\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+KERNEL32.DLL => /cygdrive/c/WINDOWS/System32/KERNEL32.DLL (0x7ff9102d0000)
+KERNELBASE.dll => /cygdrive/c/WINDOWS/System32/KERNELBASE.dll (0x7ff90ebe0000)
+-------------- Build: Release Intel X64 in test_preprocessor (compiler: Intel C/C++ Compiler (64 bits))---------------
+icx --version
+Intel(R) oneAPI DPC++/C++ Compiler for applications running on Intel(R) 64, Version 2024.2.0 Build 20240602
+Copyright (C) 1985-2024 Intel Corporation. All rights reserved.
+Intel(R) oneAPI DPC++/C++ Compiler 2024.2.0 (2024.2.0.20240602)
+Target: x86_64-pc-windows-msvc
+Thread model: posix
+InstalledDir: C:\Program Files (x86)\Intel\oneAPI\compiler\2024.2\bin\compiler
+Configuration file: C:\Program Files (x86)\Intel\oneAPI\compiler\2024.2\bin\compiler\..\icx.cfg
+icx.exe /nologo -Wall /DNDEBUG /I"C:\Program Files (x86)\Intel\oneAPI\compiler\latest\lib\clang\18\include" /I"C:\Program Files (x86)\Intel\oneAPI\tbb\latest\include" /I"C:\Program Files (x86)\Intel\oneAPI\compiler\latest\include" /I"C:\Program Files (x86)\Intel\oneAPI\dev-utilities\latest\include" /I"C:\Program Files (x86)\Intel\oneAPI\ocloc\latest\include" /I"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include" /I"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include" /I"C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt" /I"C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um" /I"C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared" /I"C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\winrt" /I"C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\cppwinrt" /c test_preprocessor.c /FoobjINTELX64\Release\test_preprocessor.obj
+xilink.exe /nologo /LIBPATH:"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\lib\x64" /LIBPATH:"C:\Program Files (x86)\Windows Kits\10\Lib\10.0.22621.0\ucrt\x64" /LIBPATH:"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\lib\x64\store" /LIBPATH:"C:\Program Files (x86)\Windows Kits\10\Lib\10.0.22621.0\um\x64" /LIBPATH:"C:\Program Files (x86)\Intel\oneAPI\compiler\latest\lib" /out:binINTELX64\Release\test_preprocessor.exe objINTELX64\Release\test_preprocessor.obj /MACHINE:X64
+Output file is binINTELX64\Release\test_preprocessor.exe with size 135.00 KB
+file binINTELX64\Release\test_preprocessor.exe
+binINTELX64\Release\test_preprocessor.exe: PE32+ executable (console) x86-64, for MS Windows, 5 sections
+binINTELX64\Release\test_preprocessor.exe INTEL64
+_WIN32 is defined with this compiler INTEL64.
+_WIN64 is defined with this compiler INTEL64.
+_MSC_VER is defined with this compiler INTEL64.
+__INTEL_LLVM_COMPILER is defined with this compiler INTEL64.
+__clang__ is defined with this compiler INTEL64.
+C:\cygwin64\bin\ldd binINTELX64\Release\test_preprocessor.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff911770000)
+KERNEL32.DLL => /cygdrive/c/WINDOWS/System32/KERNEL32.DLL (0x7ff9102d0000)
+KERNELBASE.dll => /cygdrive/c/WINDOWS/System32/KERNELBASE.dll (0x7ff90ebe0000)
+Process terminated with status 0 (0 minute(s), 49 second(s))
+0 error(s), 2 warning(s) (0 minute(s), 49 second(s))
+
+REMARK : Certains options during compilation or linkage into CB are issued of general settings of compilers,and 
+   another are defined into project. Example options "-m32" or "-m64", and "/MACHINE:X64" or "/MACHINE:X86" are 
+   defined globally (differentiation beetween version 32 or 64 bit of compilers, with ident of these differen-
+   tiated into CB), but "/debug" or "/Zi" options are defined only at project level (into *.cbp describe below).
