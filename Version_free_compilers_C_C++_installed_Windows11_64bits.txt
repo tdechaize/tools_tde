@@ -180,13 +180,15 @@ Two compilers Open Watcom C/C++ (celle disponible sur GitHub, pas celle de Sourc
 WARNING : Same with compiler Open Watcom version in directory "64 bit", you can't generate an target (exe or dll) in version 64 
   bit on Windows (or on Linux). All tools generate 32 bit version only ...  Then, why distinguish 32 or 64 bit version ???
 
-GENERAL REMARK : With compilers that support "real" 64 bit version (exclude Borland C/C++, DMC and Open WATCOM), if you 
- want distinguish in your code if you construct targets 32 bit or 64 bit, you can test variable "#ifdef _WIN64". If test
+GENERAL REMARK : With compilers that support "real" 64 bit version on Windows systems (exclude Borland C/C++, DMC and Open WATCOM), 
+ if you want distinguish in your code if you construct targets 32 bit or 64 bit, you can test variable "#ifdef _WIN64". If test
  is positive, you build targets to 64 bit version.
  In all case, if you want test if you build targets on Windows system, only test like "#ifdef _WIN32" be enougth.
  The logic is next : always define _WIN32 for all compilers (32 or 64 bit), and only if 64 bit, define _WIN64.
  With GCC/MinGW, same principle : always define __MINGW32__ for 32 or 64 bit, and only if 64 bit, define __MINGW64__.
  Only "native" GCC compiler of CYGWIN64 define __CYGWIN__. 
+ Note that this explanation is only true on Windows systems, if you want test support of 64 bit of your targets out of Windows,
+ another principes and tests must be used.
 	
 ******************			End of listing of all "free" compilers C/C++ installed 			*****************
 
