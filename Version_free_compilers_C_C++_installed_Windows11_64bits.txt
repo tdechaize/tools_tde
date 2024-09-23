@@ -79,7 +79,7 @@ GCC compiler included in development package MinGW64/ucrt provided with improved
 	- InstalledDir : 			C:/CodeBlocks/MinGW/bin
 	- Identification of this compiler by preprocessor : __GNUC__ and __MINGW64__
 	
-GCC included in "official" development package MinGW (32 bits) (MinGW want not migrate to 64 bit !!!)
+GCC included in "official" development package MinGW (32 bits) (Teams MinGW want not migrate to 64 bit !!!)
 	- Ident of compiler : gcc (MinGW.org GCC Build-2) 9.2.0, 
 	- InstalledDir: 			C:/MinGW/bin
 	- Identification of this compiler by preprocessor : __GNUC__  
@@ -3007,7 +3007,11 @@ KERNELBASE.dll => /cygdrive/c/WINDOWS/System32/KERNELBASE.dll (0x7ff90ebe0000)
 Process terminated with status 0 (0 minute(s), 49 second(s))
 0 error(s), 2 warning(s) (0 minute(s), 49 second(s))
 
-REMARK : Certains options during compilation or linkage into CB are issued of general settings of compilers,and 
+REMARK : Certains options during compilation or linkage into CB are issued of general settings of compilers, and 
    another are defined into project. Example options "-m32" or "-m64", and "/MACHINE:X64" or "/MACHINE:X86" are 
    defined globally (differentiation beetween version 32 or 64 bit of compilers, with ident of these differen-
    tiated into CB), but "/debug" or "/Zi" options are defined only at project level (into *.cbp describe below).
+   
+REMARK2 : With 32 categories of "free" compilers C/C++ on Windows 11, with differenciation beetween "Debug" and
+   "Release" for each, it's have "only" 64 generations of targets defined into project CB. It's only for "academic
+   demonstration" of all capabilities of CB ... Only an exercice of style. But, good and very open IDE !!!
