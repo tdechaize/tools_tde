@@ -8,7 +8,7 @@ Prerequisite : To test and generate executable or DLL on Windows 11 64 bits with
 	  the last recent packaged evolution with "nigthly build" version 13538 june 2023 that provided MinGW64 package) 
 	  or Red-Panda Cpp version 3.1 2024 with MinGW64 too,
 	- and also, useful tools of GNU ported on Windows (file, ldd, make, ...) issued of Sourceforge, project "ezwinport", 
-	 or much old, project "UnxUtils", or after install of CYGWIN64.
+	 or project "GnuWin32 Files", or after install of CYGWIN64 in which you can use tools stored in C:\Cygwin64\bin.
 
 NB : InstalledDir is the full name of directory to access at all executables or tools included in "free" compilers.
 	By example, if you want to use these compilers in "command line" (into console CMD or PowerShell) or with CMAKE, 
